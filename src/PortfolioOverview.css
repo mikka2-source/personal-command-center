@@ -1,0 +1,53 @@
+.portfolio-overview {
+  width: 100%;
+  text-align: center;
+}
+
+.portfolio-total {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #1a1a1a;
+  margin: 20px 0;
+}
+
+body.dark-mode .portfolio-total {
+  color: #f1f5f9;
+}
+
+.portfolio-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.portfolio-stat {
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.02);
+  border-radius: 12px;
+}
+
+body.dark-mode .portfolio-stat {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.portfolio-stat .stat-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #64748b;
+  margin-bottom: 8px;
+}
+
+.portfolio-stat .stat-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.portfolio-stat .stat-value.positive {
+  color: #10b981;
+}
+
+.portfolio-stat .stat-value.negative {
+  color: #ef4444;
+}

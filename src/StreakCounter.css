@@ -1,0 +1,80 @@
+.streak-counter {
+  width: 100%;
+}
+
+.streak-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.streak-circle-container {
+  position: relative;
+  width: 150px;
+  height: 150px;
+}
+
+.streak-circle-svg {
+  transform: rotate(-90deg);
+}
+
+.streak-circle-bg {
+  fill: none;
+  stroke: rgba(0, 0, 0, 0.1);
+  stroke-width: 10;
+}
+
+body.dark-mode .streak-circle-bg {
+  stroke: rgba(255, 255, 255, 0.1);
+}
+
+.streak-circle-progress {
+  fill: none;
+  stroke: #f59e0b;
+  stroke-width: 10;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.5s ease;
+}
+
+.streak-number {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.current-streak {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #f59e0b;
+  line-height: 1;
+}
+
+.streak-label {
+  font-size: 0.75rem;
+  color: #64748b;
+  letter-spacing: 1px;
+  margin-top: 4px;
+}
+
+.streak-info {
+  text-align: center;
+}
+
+.streak-target {
+  font-size: 1.125rem;
+  color: #1a1a1a;
+  margin-bottom: 4px;
+}
+
+body.dark-mode .streak-target {
+  color: #f1f5f9;
+}
+
+.streak-percentage {
+  font-size: 0.875rem;
+  color: #64748b;
+  letter-spacing: 1px;
+}

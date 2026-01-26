@@ -1,0 +1,140 @@
+/* Daily Focus - The ONE thing */
+
+.daily-focus {
+  position: relative;
+  overflow: hidden;
+}
+
+.daily-focus.empty {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(59, 130, 246, 0.02) 100%);
+  border: 1px dashed rgba(59, 130, 246, 0.3);
+}
+
+body.dark-mode .daily-focus.empty {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(59, 130, 246, 0.02) 100%);
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+.focus-prompt {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.focus-icon {
+  font-size: 3rem;
+  margin-bottom: 16px;
+}
+
+.focus-prompt h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 8px 0;
+}
+
+body.dark-mode .focus-prompt h2 {
+  color: #f1f5f9;
+}
+
+.focus-prompt p {
+  color: #64748b;
+  margin: 0 0 20px 0;
+  font-size: 0.9rem;
+}
+
+.set-focus-btn {
+  padding: 12px 24px;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.set-focus-btn:hover {
+  background: #2563eb;
+  transform: translateY(-1px);
+}
+
+/* Focus Content */
+.focus-content {
+  padding: 8px 0;
+}
+
+.focus-task {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+  padding: 8px;
+  margin: -8px;
+  border-radius: 8px;
+  transition: background 0.2s ease;
+}
+
+.focus-task:hover {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+body.dark-mode .focus-task:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.focus-checkbox {
+  width: 28px;
+  height: 28px;
+  border: 2px solid #3b82f6;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: white;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.focus-checkbox.checked {
+  background: #22c55e;
+  border-color: #22c55e;
+}
+
+.focus-text {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #1a1a1a;
+  transition: all 0.2s ease;
+}
+
+body.dark-mode .focus-text {
+  color: #f1f5f9;
+}
+
+.focus-text.done {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+/* Completed State */
+.daily-focus.completed {
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.08) 0%, rgba(34, 197, 94, 0.02) 100%);
+  border-color: rgba(34, 197, 94, 0.2);
+}
+
+.focus-completed-message {
+  margin-top: 16px;
+  padding: 12px;
+  background: rgba(34, 197, 94, 0.1);
+  border-radius: 8px;
+  text-align: center;
+  color: #16a34a;
+  font-size: 0.9rem;
+}
+
+body.dark-mode .focus-completed-message {
+  background: rgba(34, 197, 94, 0.15);
+  color: #4ade80;
+}

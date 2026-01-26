@@ -1,0 +1,128 @@
+.health-stats {
+  width: 100%;
+}
+
+.health-header {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.health-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.health-value {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: rgba(0, 0, 0, 0.02);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+body.dark-mode .health-value {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.health-value:hover {
+  transform: translateY(-2px);
+  background: rgba(0, 0, 0, 0.04);
+}
+
+body.dark-mode .health-value:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.health-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.health-number {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1a1a1a;
+  margin-bottom: 0.25rem;
+}
+
+body.dark-mode .health-number {
+  color: #f1f5f9;
+}
+
+.health-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #64748b;
+  text-transform: uppercase;
+}
+
+.steps-container {
+  position: relative;
+}
+
+.steps-progress-container {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.steps-progress-svg {
+  position: absolute;
+  transform: rotate(-90deg);
+}
+
+.steps-progress-ring-background {
+  fill: none;
+  stroke-width: 8;
+  stroke: rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .steps-progress-ring-background {
+  stroke: rgba(255, 255, 255, 0.1);
+}
+
+.steps-progress-ring {
+  fill: none;
+  stroke-width: 8;
+  stroke: #22c55e;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.5s ease;
+}
+
+.steps-progress-content {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.steps-progress-content .health-icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.steps-progress-content .health-number {
+  font-size: 1.1rem;
+}
+
+.steps-goal {
+  font-size: 0.7rem;
+  color: #94a3b8;
+}
+
+@media (max-width: 768px) {
+  .health-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

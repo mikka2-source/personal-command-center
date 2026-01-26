@@ -1,0 +1,77 @@
+.assets-breakdown {
+  width: 100%;
+}
+
+.assets-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.asset-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.02);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+body.dark-mode .asset-card {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.asset-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.asset-icon {
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+
+.asset-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #64748b;
+  margin-bottom: 8px;
+}
+
+.asset-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1a1a1a;
+  margin-bottom: 4px;
+}
+
+body.dark-mode .asset-value {
+  color: #f1f5f9;
+}
+
+.asset-holdings {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  margin-bottom: 8px;
+}
+
+.asset-change {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.asset-change.positive {
+  color: #10b981;
+}
+
+.asset-change.negative {
+  color: #ef4444;
+}
+
+@media (max-width: 768px) {
+  .assets-grid {
+    grid-template-columns: 1fr;
+  }
+}
