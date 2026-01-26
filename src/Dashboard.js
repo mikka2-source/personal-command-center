@@ -41,11 +41,38 @@ function Dashboard() {
   
   const [waitingFor, setWaitingFor] = useState([]);
   
-  const [activeProjects, setActiveProjects] = useState([
-    { id: 1, name: 'Personal Command Center', area: 'personal', nextStep: 'Calendar integration' },
-    { id: 2, name: 'FLUIDITY Exit Strategy', area: 'work', nextStep: 'Prepare buyer deck' },
-    { id: 3, name: 'KEEPER Exit Strategy', area: 'work', nextStep: 'Patent documentation' }
-  ]);
+  const [activeProjects, setActiveProjects] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  // Fetch data from APIs on mount
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        // Fetch dashboard data
+        const dataRes = await fetch('/api/data');
+        if (dataRes.ok) {
+          const data = await dataRes.json();
+          if (data.dailyFocus) setDailyFocus(data.dailyFocus);
+          if (data.tasks) setTasks(data.tasks);
+          if (data.morningRoutine) setMorningRoutine(data.morningRoutine);
+          if (data.waitingFor) setWaitingFor(data.waitingFor);
+          if (data.activeProjects) setActiveProjects(data.activeProjects);
+        }
+        
+        // Fetch calendar data
+        const calRes = await fetch('/api/calendar');
+        if (calRes.ok) {
+          const calData = await calRes.json();
+          if (calData.meetings) setMeetings(calData.meetings);
+        }
+      } catch (err) {
+        console.log('API not available, using defaults');
+      }
+      setLoading(false);
+    };
+    
+    fetchData();
+  }, []);
 
   useEffect(() => {
     const timer = setInterval(() => {
