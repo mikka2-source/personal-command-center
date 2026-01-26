@@ -9,7 +9,7 @@ module.exports = async (req, res) => {
     // Daily Focus - The ONE thing for today
     dailyFocus: {
       id: 1,
-      text: 'חברות צ'כיות - הכנה לדדליין רביעי',
+      text: "חברות צ'כיות - הכנה לדדליין רביעי",
       area: 'work',
       deadline: '2026-01-28'
     },
@@ -20,7 +20,7 @@ module.exports = async (req, res) => {
         { id: 1, text: 'לדבר עם עידו על Rapid', area: 'work', done: false }
       ],
       today: [
-        { id: 2, text: 'חברות צ'כיות - עבודה על המסמכים', area: 'work', done: false },
+        { id: 2, text: "חברות צ'כיות - עבודה על המסמכים", area: 'work', done: false },
         { id: 3, text: 'ריצה בוקר ✅ 5.2 ק"מ', area: 'health', done: true }
       ],
       later: [
@@ -48,7 +48,7 @@ module.exports = async (req, res) => {
     activeProjects: [
       { 
         id: 1, 
-        name: 'חברות צ'כיות', 
+        name: "חברות צ'כיות", 
         area: 'work', 
         nextStep: 'דדליין רביעי 28/1!',
         urgent: true
