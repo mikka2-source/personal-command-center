@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICE Barcelona 2026 - BD Summary</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            min-height: 100vh;
+        }
+        
+        .slide {
+            min-height: 100vh;
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-bottom: 2px solid rgba(255,255,255,0.1);
+        }
+        
+        .slide-title {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);
+        }
+        
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #00d4ff, #7b2cbf);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: #00d4ff;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #e94560;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            color: #a0a0a0;
+        }
+        
+        .date {
+            font-size: 1.2rem;
+            color: #666;
+            margin-top: 40px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .stat-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .stat-number {
+            font-size: 4rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 1.2rem;
+            color: #a0a0a0;
+        }
+        
+        .good { color: #00ff88; }
+        .ok { color: #ffd700; }
+        .bad { color: #ff4444; }
+        .follow { color: #00d4ff; }
+        
+        .leads-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+        }
+        
+        .leads-table th,
+        .leads-table td {
+            padding: 15px 20px;
+            text-align: right;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .leads-table th {
+            background: rgba(0,212,255,0.2);
+            font-size: 1.1rem;
+        }
+        
+        .leads-table tr:hover {
+            background: rgba(255,255,255,0.05);
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+        
+        .badge-good { background: rgba(0,255,136,0.2); color: #00ff88; }
+        .badge-ok { background: rgba(255,215,0,0.2); color: #ffd700; }
+        .badge-ben { background: rgba(59,130,246,0.3); color: #60a5fa; }
+        .badge-jj { background: rgba(139,92,246,0.3); color: #a78bfa; }
+        .badge-diego { background: rgba(236,72,153,0.3); color: #f472b6; }
+        
+        .rep-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .rep-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .rep-name {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        
+        .rep-stats {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .rep-stat {
+            text-align: center;
+        }
+        
+        .rep-stat-num {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        
+        .rep-stat-label {
+            font-size: 0.9rem;
+            color: #888;
+        }
+        
+        .meetings-list {
+            margin-top: 30px;
+        }
+        
+        .meeting-item {
+            background: rgba(255,255,255,0.05);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-right: 4px solid #00d4ff;
+        }
+        
+        .meeting-date {
+            font-size: 1.5rem;
+            color: #00d4ff;
+            min-width: 100px;
+        }
+        
+        .meeting-info {
+            flex: 1;
+            margin: 0 30px;
+        }
+        
+        .meeting-company {
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+        
+        .meeting-contact {
+            color: #888;
+            margin-top: 5px;
+        }
+        
+        .action-items {
+            margin-top: 30px;
+        }
+        
+        .action-item {
+            background: rgba(233,69,96,0.1);
+            border-radius: 15px;
+            padding: 20px 30px;
+            margin-bottom: 15px;
+            border-right: 4px solid #e94560;
+            font-size: 1.2rem;
+        }
+        
+        .logo {
+            font-size: 5rem;
+            margin-bottom: 20px;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        @media print {
+            .slide {
+                page-break-after: always;
+                min-height: 100vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Slide 1: Title -->
+    <div class="slide slide-title">
+        <div class="logo">🎰</div>
+        <h1>ICE Barcelona 2026</h1>
+        <p class="subtitle">Business Development Summary</p>
+        <p class="subtitle">XBO.com</p>
+        <p class="date">ינואר 2026</p>
+    </div>
+    
+    <!-- Slide 2: Overview Stats -->
+    <div class="slide">
+        <h2>📊 סיכום כללי</h2>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number" style="color: #00d4ff;">65</div>
+                <div class="stat-label">סה"כ לידים</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number good">15</div>
+                <div class="stat-label">לידים חמים (Good)</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number ok">9</div>
+                <div class="stat-label">לידים בינוניים (OK)</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number follow">8</div>
+                <div class="stat-label">דורש Follow-up</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Slide 3: By Sales Rep -->
+    <div class="slide">
+        <h2>👥 לפי נציג מכירות</h2>
+        <div class="rep-grid">
+            <div class="rep-card">
+                <div class="rep-name" style="color: #60a5fa;">Ben</div>
+                <div class="rep-stats">
+                    <div class="rep-stat">
+                        <div class="rep-stat-num good">9</div>
+                        <div class="rep-stat-label">Good</div>
+                    </div>
+                    <div class="rep-stat">
+                        <div class="rep-stat-num ok">4</div>
+                        <div class="rep-stat-label">OK</div>
+                    </div>
+                    <div class="rep-stat">
+                        <div class="rep-stat-num" style="color: white;">15</div>
+                        <div class="rep-stat-label">סה"כ</div>
+                    </div>
+                </div>
+            </div>
+            <div class="rep-card">
+                <div class="rep-name" style="color: #a78bfa;">JJ</div>
+                <div class="rep-stats">
+                    <div class="rep-stat">
+                        <div class="rep-stat-num good">4</div>
+                        <div class="rep-stat-label">Good</div>
+                    </div>
+                    <div class="rep-stat">
+                        <div class="rep-stat-num ok">6</div>
+                        <div class="rep-stat-label">OK</div>
+                    </div>
+                    <div class="rep-stat">
+                        <div class="rep-stat-num" style="color: white;">16</div>
+                        <div class="rep-stat-label">סה"כ</div>
+                    </div>
+                </div>
+            </div>
+            <div class="rep-card">
+                <div class="rep-name" style="color: #f472b6;">Diego</div>
+                <div class="rep-stats">
+                    <div class="rep-stat">
+                        <div class="rep-stat-num good">5</div>
+                        <div class="rep-stat-label">Good</div>
+                    </div>
+                    <div class="rep-stat">
+                        <div class="rep-stat-num ok">0</div>
+                        <div class="rep-stat-label">OK</div>
+                    </div>
+                    <div class="rep-stat">
+                        <div class="rep-stat-num" style="color: white;">10</div>
+                        <div class="rep-stat-label">סה"כ</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Slide 4: Hot Leads -->
+    <div class="slide">
+        <h2>🔥 לידים חמים - Good</h2>
+        <table class="leads-table">
+            <thead>
+                <tr>
+                    <th>חברה</th>
+                    <th>איש קשר</th>
+                    <th>תחום</th>
+                    <th>נציג</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>LuxPay</strong></td>
+                    <td>Romanas Urbonas</td>
+                    <td>Payments</td>
+                    <td><span class="badge badge-ben">Ben</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Finon Tech</strong></td>
+                    <td>Ali Makina</td>
+                    <td>Fintech</td>
+                    <td><span class="badge badge-ben">Ben</span></td>
+                </tr>
+                <tr>
+                    <td><strong>CatalystPay</strong></td>
+                    <td>Ivan Milpetrov</td>
+                    <td>Payments</td>
+                    <td><span class="badge badge-diego">Diego</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Möllnir</strong></td>
+                    <td>Igor Legkodymov</td>
+                    <td>Banking</td>
+                    <td><span class="badge badge-ben">Ben</span></td>
+                </tr>
+                <tr>
+                    <td><strong>EcommPay</strong></td>
+                    <td>Erik Donnelly</td>
+                    <td>Payments</td>
+                    <td><span class="badge badge-jj">JJ</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Thunes</strong></td>
+                    <td>Pietro Cupolo</td>
+                    <td>Cross-border Payments</td>
+                    <td><span class="badge badge-ben">Ben</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Monetix</strong></td>
+                    <td>Vlad Chechetkin</td>
+                    <td>Banking APAC</td>
+                    <td><span class="badge badge-ben">Ben</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Scientific Games</strong></td>
+                    <td>Agustin Nieto</td>
+                    <td>iGaming LATAM</td>
+                    <td><span class="badge badge-diego">Diego</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <!-- Slide 5: This Week Meetings -->
+    <div class="slide">
+        <h2>📅 פגישות השבוע (27-29 ינואר)</h2>
+        <div class="meetings-list">
+            <div class="meeting-item">
+                <div class="meeting-date">27.01</div>
+                <div class="meeting-info">
+                    <div class="meeting-company">Dionisijs Markovs</div>
+                    <div class="meeting-contact">Global Banking & Licensing Strategy</div>
+                </div>
+                <span class="badge badge-diego">Diego</span>
+            </div>
+            <div class="meeting-item">
+                <div class="meeting-date">27.01</div>
+                <div class="meeting-info">
+                    <div class="meeting-company">Nuno Santos</div>
+                    <div class="meeting-contact">Web3, Blockchain - 14:30</div>
+                </div>
+                <span class="badge badge-diego">Diego</span>
+            </div>
+            <div class="meeting-item">
+                <div class="meeting-date">27.01</div>
+                <div class="meeting-info">
+                    <div class="meeting-company">Infipay Tech - Ariyo</div>
+                    <div class="meeting-contact">12:00</div>
+                </div>
+                <span class="badge badge-diego">Diego</span>
+            </div>
+            <div class="meeting-item">
+                <div class="meeting-date">28.01</div>
+                <div class="meeting-info">
+                    <div class="meeting-company">Alejandro Cartagena</div>
+                    <div class="meeting-contact">Sportsbook & iGaming Specialist</div>
+                </div>
+                <span class="badge badge-diego">Diego</span>
+            </div>
+            <div class="meeting-item">
+                <div class="meeting-date">29.01</div>
+                <div class="meeting-info">
+                    <div class="meeting-company">Kevin Goncalves Segredo</div>
+                    <div class="meeting-contact">Compliance & Licensing - 16:00</div>
+                </div>
+                <span class="badge badge-ben">Ben</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Slide 6: Action Items -->
+    <div class="slide">
+        <h2>🎯 פעולות נדרשות</h2>
+        <div class="action-items">
+            <div class="action-item">
+                <strong>1.</strong> JJ - לטפל ב-5 follow-ups פתוחים (Payomatix, Flamingo Pay, Andrew Frost...)
+            </div>
+            <div class="action-item">
+                <strong>2.</strong> להכניס את כל ה-Good leads ל-Pipedrive עם next steps
+            </div>
+            <div class="action-item">
+                <strong>3.</strong> Diego - להתכונן ל-4 פגישות השבוע
+            </div>
+            <div class="action-item">
+                <strong>4.</strong> Ben - לשלוח emails ל-Udi Algrassi ו-Kevin Goncalves
+            </div>
+            <div class="action-item">
+                <strong>5.</strong> לסגור לופ עם לידים שממתינים לתשובה (4 לידים)
+            </div>
+        </div>
+    </div>
+    
+    <!-- Slide 7: Summary -->
+    <div class="slide slide-title">
+        <h2>💪 סיכום</h2>
+        <div class="stats-grid" style="max-width: 800px;">
+            <div class="stat-card">
+                <div class="stat-number good">15</div>
+                <div class="stat-label">לידים חמים לקדם</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number follow">7</div>
+                <div class="stat-label">פגישות השבוע</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number ok">8</div>
+                <div class="stat-label">Follow-ups דחופים</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" style="color: #e94560;">5</div>
+                <div class="stat-label">Action Items</div>
+            </div>
+        </div>
+        <p class="date" style="margin-top: 60px;">XBO.com Business Development | ICE Barcelona 2026</p>
+    </div>
+    
+    <div class="footer">
+        נוצר על ידי מיקה 2.0 ✨ | 26 ינואר 2026
+    </div>
+</body>
+</html>
