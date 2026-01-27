@@ -83,25 +83,7 @@ function Dashboard() {
     }
   }, []);
 
-  // Save state to localStorage
-  const saveToStorage = useCallback((key, data) => {
-    try {
-      localStorage.setItem(key, JSON.stringify(data));
-    } catch (err) {
-      console.warn('Failed to save to localStorage:', err);
-    }
-  }, []);
-
-  // Load state from localStorage
-  const loadFromStorage = useCallback((key, defaultValue) => {
-    try {
-      const stored = localStorage.getItem(key);
-      return stored ? JSON.parse(stored) : defaultValue;
-    } catch (err) {
-      console.warn('Failed to load from localStorage:', err);
-      return defaultValue;
-    }
-  }, []);
+  // Note: localStorage is now handled inside persistence.js
 
   // Persist data changes (localStorage + Supabase)
   useEffect(() => {
@@ -185,7 +167,7 @@ function Dashboard() {
     };
     
     fetchData();
-  }, [checkDailyReset, loadFromStorage, fetchCalendar]);
+  }, [checkDailyReset, fetchCalendar]);
 
   // Refresh calendar every 5 minutes
   useEffect(() => {
