@@ -54,7 +54,8 @@ module.exports = async (req, res) => {
       { id: 1, name: 'Rapyd Research', area: 'work', nextStep: 'לדבר עם רגי ועידו' },
       { id: 2, name: 'Personal Command Center', area: 'personal', nextStep: 'Supabase integration' },
       { id: 3, name: 'IG Longevity Account', area: 'personal', nextStep: 'תוכנית מלאה' },
-      { id: 4, name: "חברות צ'כיות", area: 'work', nextStep: 'דדליין רביעי!', urgent: true }
+      { id: 4, name: "חברות צ'כיות", area: 'work', nextStep: 'דדליין רביעי!', urgent: true },
+      { id: 5, name: 'סלון יופי - הרחבה', area: 'salon', nextStep: 'תכנון ותפעול' }
     ],
     
     lastUpdated: new Date().toISOString()
