@@ -1,0 +1,159 @@
+.trading-analytics {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px 16px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #e2e8f0;
+  min-height: 100vh;
+}
+
+.ta-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.ta-header h1 { font-size: 24px; margin: 0; color: #f8fafc; }
+.ta-subtitle { color: #94a3b8; margin: 4px 0 0; font-size: 14px; }
+
+.ta-tabs {
+  display: flex;
+  gap: 4px;
+  background: rgba(30, 41, 59, 0.8);
+  padding: 4px;
+  border-radius: 10px;
+}
+.ta-tabs button {
+  background: none;
+  border: none;
+  color: #94a3b8;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+.ta-tabs button.active {
+  background: rgba(99, 102, 241, 0.3);
+  color: #a5b4fc;
+}
+.ta-tabs button:hover:not(.active) { color: #e2e8f0; }
+
+/* KPI Grid */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+  margin-bottom: 24px;
+}
+.kpi-card {
+  background: rgba(30, 41, 59, 0.6);
+  border: 1px solid rgba(148, 163, 184, 0.1);
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+}
+.kpi-label { font-size: 12px; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.5px; }
+.kpi-value { font-size: 28px; font-weight: 700; color: #f8fafc; margin: 4px 0; }
+.kpi-sub { font-size: 13px; color: #64748b; }
+.kpi-down { color: #ef4444 !important; font-weight: 600; }
+.highlight-warn { border-color: rgba(239, 68, 68, 0.3); background: rgba(239, 68, 68, 0.08); }
+
+/* Cards */
+.ta-card {
+  background: rgba(30, 41, 59, 0.6);
+  border: 1px solid rgba(148, 163, 184, 0.1);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+.ta-card h2 { font-size: 16px; color: #f8fafc; margin: 0 0 16px; }
+.highlight-card { border-color: rgba(239, 68, 68, 0.25); }
+
+/* Bar Charts */
+.chart-area { display: flex; flex-direction: column; gap: 8px; }
+.bar-row { display: flex; align-items: center; gap: 12px; }
+.bar-label { width: 56px; font-size: 13px; color: #94a3b8; flex-shrink: 0; }
+.bar-track { flex: 1; height: 28px; background: rgba(15, 23, 42, 0.5); border-radius: 6px; overflow: hidden; }
+.bar-fill { height: 100%; border-radius: 6px; transition: width 0.6s ease; min-width: 2px; }
+.bar-value { width: 72px; text-align: right; font-size: 13px; font-weight: 600; color: #e2e8f0; flex-shrink: 0; }
+
+/* Stacked bars */
+.stacked-row { display: flex; align-items: center; gap: 12px; }
+.stacked-track {
+  display: flex;
+  height: 28px;
+  border-radius: 6px;
+  overflow: hidden;
+  transition: width 0.6s ease;
+  min-width: 20px;
+}
+.stacked-segment { height: 100%; transition: width 0.4s; cursor: pointer; }
+.stacked-segment:first-child { border-radius: 6px 0 0 6px; }
+.stacked-segment:last-child { border-radius: 0 6px 6px 0; }
+
+/* Legend */
+.legend-row { display: flex; gap: 16px; margin-bottom: 12px; flex-wrap: wrap; }
+.legend-item { display: flex; align-items: center; gap: 6px; font-size: 12px; color: #94a3b8; }
+.legend-dot { width: 10px; height: 10px; border-radius: 3px; flex-shrink: 0; }
+
+/* BTC Trend */
+.btc-trend {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  height: 140px;
+  padding: 0 8px;
+  margin: 16px 0;
+}
+.btc-bar-col { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.btc-pct { font-size: 13px; font-weight: 700; color: #f8fafc; }
+.btc-pct.alert { color: #ef4444; }
+.btc-bar-outer { display: flex; align-items: flex-end; height: 100px; }
+.btc-bar-inner { width: 40px; border-radius: 6px 6px 0 0; transition: height 0.6s ease; }
+.btc-month { font-size: 11px; color: #64748b; }
+.btc-insight { font-size: 14px; color: #94a3b8; line-height: 1.5; margin: 8px 0 0; }
+.btc-insight strong { color: #f8fafc; }
+
+/* Tables */
+.ta-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.ta-table th { text-align: left; padding: 8px 12px; color: #64748b; font-weight: 500; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 1px solid rgba(148, 163, 184, 0.1); }
+.ta-table td { padding: 10px 12px; border-bottom: 1px solid rgba(148, 163, 184, 0.05); }
+.sym-cell { font-weight: 600; color: #a5b4fc; }
+.mono { font-family: 'SF Mono', monospace; font-size: 12px; color: #94a3b8; }
+.mini-bar { width: 120px; height: 8px; background: rgba(15, 23, 42, 0.5); border-radius: 4px; overflow: hidden; }
+.mini-bar div { height: 100%; border-radius: 4px; }
+
+/* Month breakdown */
+.month-breakdown { margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid rgba(148, 163, 184, 0.08); }
+.month-breakdown h3 { font-size: 14px; color: #cbd5e1; margin: 0 0 8px; }
+.coin-row { display: flex; align-items: center; gap: 8px; padding: 3px 0; font-size: 13px; }
+.coin-dot { width: 8px; height: 8px; border-radius: 2px; flex-shrink: 0; }
+.coin-name { width: 48px; color: #94a3b8; }
+.coin-pct { width: 50px; text-align: right; font-weight: 600; color: #e2e8f0; }
+.coin-vol { color: #64748b; margin-left: 8px; }
+
+/* Source cards */
+.source-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 12px; margin-bottom: 16px; }
+.source-card { background: rgba(15, 23, 42, 0.4); border-radius: 10px; padding: 16px; }
+.source-card h3 { margin: 0 0 8px; font-size: 14px; color: #a5b4fc; }
+.source-vol { font-size: 24px; font-weight: 700; color: #f8fafc; }
+.source-meta { display: flex; gap: 16px; font-size: 12px; color: #64748b; margin: 8px 0; }
+.source-pct-bar { height: 6px; background: rgba(148, 163, 184, 0.1); border-radius: 3px; overflow: hidden; }
+.source-pct-bar div { height: 100%; border-radius: 3px; }
+
+.ta-note { font-size: 13px; color: #64748b; margin: 12px 0 0; font-style: italic; }
+
+/* Responsive */
+@media (max-width: 600px) {
+  .ta-header { flex-direction: column; }
+  .kpi-grid { grid-template-columns: 1fr 1fr; }
+  .kpi-value { font-size: 22px; }
+  .btc-bar-inner { width: 28px; }
+  .ta-table { font-size: 12px; }
+  .ta-table th, .ta-table td { padding: 6px 8px; }
+}
