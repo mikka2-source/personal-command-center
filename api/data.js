@@ -1,95 +1,62 @@
-// Vercel Serverless Function - Dashboard Data API
-// This serves as initial seed data. The client persists changes in localStorage.
+// Vercel Serverless Function - Dashboard Seed Data API
+// Serves initial data on first load when localStorage is empty.
+// After first load, all edits are persisted locally (and optionally to Supabase).
 
 module.exports = async (req, res) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET');
   res.setHeader('Cache-Control', 's-maxage=60, stale-while-revalidate=30');
   
-  // Seed data - only used for first load when localStorage is empty
   const data = {
     // Daily Focus - The ONE thing for today
     dailyFocus: {
       id: 1,
       text: "חברות צ'כיות - הכנה לדדליין רביעי",
       area: 'work',
-      deadline: '2026-01-28',
       completed: false
     },
     
     // Tasks by priority
     tasks: {
       now: [
-        { id: 1, text: 'לדבר עם עידו על Rapid', area: 'work', done: false, completed: false }
+        { id: 101, text: 'לדבר עם רגי על Rapyd', area: 'work', done: false, completed: false },
+        { id: 102, text: 'לדבר עם עידו על Rapyd', area: 'work', done: false, completed: false }
       ],
       today: [
-        { id: 2, text: "חברות צ'כיות - עבודה על המסמכים", area: 'work', done: false, completed: false },
-        { id: 3, text: 'ריצה בוקר ✅ 5.2 ק"מ', area: 'health', done: true, completed: true }
+        { id: 201, text: "חברות צ'כיות - עבודה על המסמכים", area: 'work', done: false, completed: false },
+        { id: 202, text: 'Online banking - CTYA + מים + חשמל', area: 'personal', done: false, completed: false },
+        { id: 203, text: 'לבדוק ביטוח לאומי בחשבון אישי', area: 'personal', done: false, completed: false }
       ],
       later: [
-        { id: 4, text: 'Personal Command Center - Supabase integration', area: 'personal', done: false, completed: false },
-        { id: 5, text: 'FLUIDITY/KEEPER - אסטרטגיית אקזיט', area: 'work', done: false, completed: false },
-        { id: 6, text: 'Power BI / Pipedrive API setup', area: 'work', done: false, completed: false }
+        { id: 301, text: 'IG Longevity - תוכנית מלאה לחשבון חדש', area: 'personal', done: false, completed: false },
+        { id: 302, text: 'Bitwarden - להוסיף סיסמאות (FB, IG, GitHub, Canva)', area: 'personal', done: false, completed: false },
+        { id: 303, text: 'Graph API / Power Automate - גישה למשתתפי פגישות', area: 'work', done: false, completed: false },
+        { id: 304, text: 'Supabase - הגדרת ענן ל-Command Center', area: 'personal', done: false, completed: false }
       ]
     },
     
     // Morning routine checklist
     morningRoutine: {
       supplements: false,
-      workout: true,  // Did the run!
+      workout: false,
       protein: false,
       meditation: false
     },
     
     // Waiting For - things blocked on others
     waitingFor: [
-      { id: 1, text: 'תשובה מעידו על Rapid', person: 'עידו', since: '2026-01-26' },
-      { id: 2, text: 'Pipedrive API key', person: 'IT/Admin', since: '2026-01-26' }
+      { id: 1, text: 'Bitwarden הזמנה - dann.mizrahi@gmail.com', person: 'Bitwarden', since: '2026-01-25' },
+      { id: 2, text: 'אסי 2000 - follow up', person: 'אסי', since: '2026-01-24' }
     ],
     
     // Active Projects
     activeProjects: [
-      { 
-        id: 1, 
-        name: "חברות צ'כיות", 
-        area: 'work', 
-        nextStep: 'דדליין רביעי 28/1!',
-        urgent: true
-      },
-      { 
-        id: 2, 
-        name: 'Personal Command Center', 
-        area: 'personal', 
-        nextStep: 'Calendar integration'
-      },
-      { 
-        id: 3, 
-        name: 'FLUIDITY Exit Strategy', 
-        area: 'work', 
-        nextStep: 'Prepare buyer deck'
-      },
-      { 
-        id: 4, 
-        name: 'KEEPER Exit Strategy', 
-        area: 'work', 
-        nextStep: 'Patent documentation'
-      }
+      { id: 1, name: 'Rapyd Research', area: 'work', nextStep: 'לדבר עם רגי ועידו' },
+      { id: 2, name: 'Personal Command Center', area: 'personal', nextStep: 'Supabase integration' },
+      { id: 3, name: 'IG Longevity Account', area: 'personal', nextStep: 'תוכנית מלאה' },
+      { id: 4, name: "חברות צ'כיות", area: 'work', nextStep: 'דדליין רביעי!', urgent: true }
     ],
     
-    // Running stats
-    running: {
-      lastRun: {
-        date: '2026-01-26',
-        distance: 5.2,
-        pace: '7:25/km',
-        duration: '39 min',
-        improvement: '+48 sec faster than previous'
-      },
-      goal: '10K באפריל 2026',
-      weeklyTarget: '4-5 ריצות'
-    },
-    
-    // Last updated
     lastUpdated: new Date().toISOString()
   };
   
