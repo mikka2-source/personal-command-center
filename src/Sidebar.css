@@ -25,6 +25,22 @@ body.dark-mode .sidebar-card {
   margin-bottom: 12px;
 }
 
+.sidebar-header.clickable {
+  cursor: pointer;
+  padding: 4px;
+  margin: -4px;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+}
+
+.sidebar-header.clickable:hover {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+body.dark-mode .sidebar-header.clickable:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
 .sidebar-header h3 {
   font-size: 0.85rem;
   font-weight: 600;
@@ -50,6 +66,12 @@ body.dark-mode .count-badge {
   background: rgba(59, 130, 246, 0.2);
 }
 
+.routine-complete {
+  font-size: 0.8rem;
+  color: #22c55e;
+  font-weight: 500;
+}
+
 /* Morning Routine */
 .routine-grid {
   display: grid;
@@ -67,6 +89,7 @@ body.dark-mode .count-badge {
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.2s ease;
+  position: relative;
 }
 
 body.dark-mode .routine-item {
@@ -93,10 +116,17 @@ body.dark-mode .routine-item.done {
 .routine-label {
   font-size: 0.8rem;
   color: #1a1a1a;
+  flex: 1;
 }
 
 body.dark-mode .routine-label {
   color: #e2e8f0;
+}
+
+.routine-check {
+  font-size: 0.75rem;
+  color: #22c55e;
+  font-weight: bold;
 }
 
 /* Empty States */
@@ -130,40 +160,270 @@ body.dark-mode .routine-label {
 .meetings-list {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
 }
 
 .meeting-item {
   display: flex;
   gap: 12px;
-  padding: 8px;
+  padding: 10px;
   background: rgba(0, 0, 0, 0.02);
-  border-radius: 6px;
+  border-radius: 8px;
+  border-right: 3px solid #3b82f6;
+  transition: all 0.2s ease;
 }
 
 body.dark-mode .meeting-item {
   background: rgba(255, 255, 255, 0.04);
 }
 
+.meeting-item.now {
+  border-right-color: #f59e0b;
+  background: rgba(245, 158, 11, 0.08);
+}
+
+body.dark-mode .meeting-item.now {
+  background: rgba(245, 158, 11, 0.12);
+}
+
+.meeting-item.done {
+  border-right-color: #22c55e;
+  opacity: 0.6;
+}
+
+.meeting-item.waiting {
+  border-right-color: #64748b;
+}
+
+.meeting-time-status {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  min-width: 50px;
+}
+
 .meeting-time {
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   font-weight: 600;
   color: #3b82f6;
-  min-width: 50px;
+}
+
+.meeting-item.now .meeting-time {
+  color: #f59e0b;
+}
+
+.meeting-item.done .meeting-time {
+  color: #22c55e;
+}
+
+.meeting-status {
+  font-size: 0.9rem;
+}
+
+.meeting-info {
+  flex: 1;
+  min-width: 0;
 }
 
 .meeting-title {
   font-size: 0.85rem;
   color: #1a1a1a;
+  font-weight: 500;
+  margin-bottom: 4px;
 }
 
 body.dark-mode .meeting-title {
   color: #e2e8f0;
 }
 
+.meeting-location {
+  font-size: 0.75rem;
+  color: #64748b;
+  margin-bottom: 6px;
+}
+
+.meeting-duration {
+  font-size: 0.7rem;
+  color: #94a3b8;
+  margin-bottom: 4px;
+}
+
 .meeting-with {
   font-size: 0.75rem;
   color: #64748b;
+}
+
+.meeting-actions {
+  display: flex;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.meeting-action-btn {
+  font-size: 0.7rem;
+  padding: 4px 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.meeting-action-btn.prep {
+  background: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+}
+
+.meeting-action-btn.prep:hover {
+  background: rgba(59, 130, 246, 0.2);
+}
+
+.meeting-action-btn.summary {
+  background: rgba(34, 197, 94, 0.1);
+  color: #22c55e;
+}
+
+.meeting-action-btn.summary:hover {
+  background: rgba(34, 197, 94, 0.2);
+}
+
+/* Meeting Modal */
+.meeting-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.meeting-modal {
+  background: white;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 500px;
+  max-height: 80vh;
+  overflow-y: auto;
+  padding: 24px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .meeting-modal {
+  background: #1e293b;
+}
+
+.meeting-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.meeting-modal-header h3 {
+  font-size: 1.1rem;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+body.dark-mode .meeting-modal-header h3 {
+  color: #f1f5f9;
+}
+
+.modal-close {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #64748b;
+}
+
+body.dark-mode .modal-close {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.meeting-modal-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+}
+
+body.dark-mode .meeting-modal-title {
+  color: #f1f5f9;
+}
+
+.meeting-modal-time {
+  font-size: 0.85rem;
+  color: #3b82f6;
+  margin-bottom: 20px;
+}
+
+.meeting-prep-content h4,
+.meeting-summary-content h4 {
+  font-size: 0.9rem;
+  color: #1a1a1a;
+  margin: 16px 0 8px 0;
+}
+
+body.dark-mode .meeting-prep-content h4,
+body.dark-mode .meeting-summary-content h4 {
+  color: #e2e8f0;
+}
+
+.meeting-prep-content ul {
+  margin: 0;
+  padding-right: 20px;
+  color: #64748b;
+  font-size: 0.85rem;
+}
+
+.meeting-prep-content li {
+  margin-bottom: 6px;
+}
+
+.summary-textarea,
+.tasks-textarea {
+  width: 100%;
+  min-height: 80px;
+  padding: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  resize: vertical;
+  background: rgba(0, 0, 0, 0.02);
+}
+
+body.dark-mode .summary-textarea,
+body.dark-mode .tasks-textarea {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #f1f5f9;
+}
+
+.ai-assist-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 16px;
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ai-assist-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
 }
 
 /* Waiting For */
@@ -222,6 +482,12 @@ body.dark-mode .project-item:hover {
   background: rgba(255, 255, 255, 0.04);
 }
 
+.project-item.urgent {
+  background: rgba(239, 68, 68, 0.05);
+  border-right: 2px solid #ef4444;
+  border-radius: 0 6px 6px 0;
+}
+
 .project-name {
   font-size: 0.85rem;
   color: #1a1a1a;
@@ -236,6 +502,11 @@ body.dark-mode .project-name {
 
 .project-area-icon {
   font-size: 0.9rem;
+}
+
+.urgent-badge {
+  font-size: 0.8rem;
+  margin-right: auto;
 }
 
 .project-next {

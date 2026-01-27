@@ -1,25 +1,28 @@
 import React, { useState } from 'react';
 import './TaskList.css';
 
-function TaskList({ tasks, onToggle, onMove, areas }) {
+function TaskList({ tasks, completedToday, onToggle, onMove, onRestore, areas }) {
   const [showLater, setShowLater] = useState(false);
+  const [showCompleted, setShowCompleted] = useState(false);
 
   const getArea = (areaId) => areas.find(a => a.id === areaId) || areas[0];
 
-  const TaskItem = ({ task, priority }) => {
+  const TaskItem = ({ task, priority, isCompleted }) => {
     const area = getArea(task.area);
     
     return (
-      <div className={`task-item ${task.completed ? 'completed' : ''}`}>
-        <div 
-          className={`task-checkbox ${task.completed ? 'checked' : ''}`}
-          onClick={() => onToggle(priority, task.id)}
-        >
-          {task.completed && '✓'}
-        </div>
+      <div className={`task-item ${task.completed || task.done ? 'completed' : ''}`}>
+        {!isCompleted && (
+          <div 
+            className={`task-checkbox ${task.completed || task.done ? 'checked' : ''}`}
+            onClick={() => onToggle(priority, task.id)}
+          >
+            {(task.completed || task.done) && '✓'}
+          </div>
+        )}
         
         <div className="task-content">
-          <span className={`task-text ${task.completed ? 'done' : ''}`}>
+          <span className={`task-text ${task.completed || task.done ? 'done' : ''}`}>
             {task.text}
           </span>
           <div className="task-meta">
@@ -28,8 +31,26 @@ function TaskList({ tasks, onToggle, onMove, areas }) {
             </span>
             {task.owner === 'pa' && <span className="owner-badge">PA</span>}
             {task.from && <span className="from-badge">מ: {task.from}</span>}
+            {isCompleted && task.completedAt && (
+              <span className="completed-time">
+                {new Date(task.completedAt).toLocaleTimeString('he-IL', { 
+                  hour: '2-digit', 
+                  minute: '2-digit' 
+                })}
+              </span>
+            )}
           </div>
         </div>
+
+        {isCompleted && (
+          <button 
+            className="restore-btn"
+            onClick={() => onRestore(task.id)}
+            title="החזר משימה"
+          >
+            ↩️
+          </button>
+        )}
       </div>
     );
   };
@@ -105,6 +126,34 @@ function TaskList({ tasks, onToggle, onMove, areas }) {
           </div>
         )}
       </div>
+
+      {/* Completed Today - Collapsed by default */}
+      {completedToday && completedToday.length > 0 && (
+        <div className="task-section completed-section">
+          <div 
+            className="section-header clickable"
+            onClick={() => setShowCompleted(!showCompleted)}
+          >
+            <h4 className="section-title completed-title">
+              {showCompleted ? '▼' : '▶'} הושלם היום
+            </h4>
+            <span className="section-count completed-count">{completedToday.length}</span>
+          </div>
+          
+          {showCompleted && (
+            <div className="task-list completed-list">
+              {completedToday.map(task => (
+                <TaskItem 
+                  key={task.id} 
+                  task={task} 
+                  priority="completed" 
+                  isCompleted={true}
+                />
+              ))}
+            </div>
+          )}
+        </div>
+      )}
     </div>
   );
 }

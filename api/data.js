@@ -1,32 +1,35 @@
 // Vercel Serverless Function - Dashboard Data API
+// This serves as initial seed data. The client persists changes in localStorage.
 
 module.exports = async (req, res) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET');
+  res.setHeader('Cache-Control', 's-maxage=60, stale-while-revalidate=30');
   
-  // Current data - will be updated by Mikka 2.0
+  // Seed data - only used for first load when localStorage is empty
   const data = {
     // Daily Focus - The ONE thing for today
     dailyFocus: {
       id: 1,
       text: "חברות צ'כיות - הכנה לדדליין רביעי",
       area: 'work',
-      deadline: '2026-01-28'
+      deadline: '2026-01-28',
+      completed: false
     },
     
     // Tasks by priority
     tasks: {
       now: [
-        { id: 1, text: 'לדבר עם עידו על Rapid', area: 'work', done: false }
+        { id: 1, text: 'לדבר עם עידו על Rapid', area: 'work', done: false, completed: false }
       ],
       today: [
-        { id: 2, text: "חברות צ'כיות - עבודה על המסמכים", area: 'work', done: false },
-        { id: 3, text: 'ריצה בוקר ✅ 5.2 ק"מ', area: 'health', done: true }
+        { id: 2, text: "חברות צ'כיות - עבודה על המסמכים", area: 'work', done: false, completed: false },
+        { id: 3, text: 'ריצה בוקר ✅ 5.2 ק"מ', area: 'health', done: true, completed: true }
       ],
       later: [
-        { id: 4, text: 'Personal Command Center - Supabase integration', area: 'personal', done: false },
-        { id: 5, text: 'FLUIDITY/KEEPER - אסטרטגיית אקזיט', area: 'work', done: false },
-        { id: 6, text: 'Power BI / Pipedrive API setup', area: 'work', done: false }
+        { id: 4, text: 'Personal Command Center - Supabase integration', area: 'personal', done: false, completed: false },
+        { id: 5, text: 'FLUIDITY/KEEPER - אסטרטגיית אקזיט', area: 'work', done: false, completed: false },
+        { id: 6, text: 'Power BI / Pipedrive API setup', area: 'work', done: false, completed: false }
       ]
     },
     

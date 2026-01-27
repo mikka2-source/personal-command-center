@@ -38,6 +38,33 @@ body.dark-mode .header-left h1 {
   margin: 0;
 }
 
+.header-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.undo-btn {
+  padding: 8px 16px;
+  background: rgba(245, 158, 11, 0.1);
+  color: #f59e0b;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.undo-btn:hover {
+  background: rgba(245, 158, 11, 0.2);
+  border-color: #f59e0b;
+}
+
+body.dark-mode .undo-btn {
+  background: rgba(245, 158, 11, 0.15);
+}
+
 .quick-capture-btn {
   padding: 10px 20px;
   background: #3b82f6;
