@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { Link } from 'react-router-dom';
 import './Dashboard.css';
 import DailyFocus from './DailyFocus';
 import TaskList from './TaskList';
@@ -353,7 +352,6 @@ function Dashboard() {
           <p className="date-time">{formatDate()} • {formatTime()}</p>
         </div>
         <div className="header-actions">
-          <Link to="/rapyd" className="nav-link-btn">🔍 Rapyd מחקר</Link>
           {undoHistory.length > 0 && (
             <button className="undo-btn" onClick={handleUndo} title="בטל פעולה אחרונה">
               ↩️ בטל

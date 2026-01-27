@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 import Dashboard from './Dashboard';
-import RapydResearch from './RapydResearch';
 import DarkModeToggle from './DarkModeToggle';
 
 function App() {
@@ -21,15 +19,10 @@ function App() {
   };
 
   return (
-    <Router>
-      <div className="App">
-        <DarkModeToggle darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-        <Routes>
-          <Route path="/" element={<Dashboard />} />
-          <Route path="/rapyd" element={<RapydResearch />} />
-        </Routes>
-      </div>
-    </Router>
+    <div className="App">
+      <DarkModeToggle darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+      <Dashboard />
+    </div>
   );
 }
 
