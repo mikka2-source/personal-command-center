@@ -1,25 +1,61 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { supabase, isSupabaseConfigured } from './supabaseClient';
 import './HealthStats.css';
 
 function HealthStats() {
-  const stats = [
-    { icon: '😴', label: 'SLEEP SCORE', value: '82' },
-    { icon: '⚡', label: 'BODY BATTERY', value: '68' },
-    { icon: '⚖️', label: 'WEIGHT', value: '78.5kg' }
-  ];
+  const [health, setHealth] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-  const stepsData = {
-    current: 4235,
-    goal: 10000,
-    percentage: 42.35
-  };
+  useEffect(() => {
+    async function fetchHealth() {
+      if (!isSupabaseConfigured()) {
+        setLoading(false);
+        return;
+      }
 
+      const { data, error } = await supabase
+        .from('health_data')
+        .select('*')
+        .eq('user_id', 'dan')
+        .order('date', { ascending: false })
+        .limit(1)
+        .single();
+
+      if (!error && data) {
+        setHealth(data);
+      }
+      setLoading(false);
+    }
+    fetchHealth();
+  }, []);
+
+  // Use real data if available, otherwise defaults
+  const sleepHours = health?.sleep_hours || null;
+  const bodyBattery = health?.body_battery || null;
+  const restingHr = health?.resting_hr || null;
+  const steps = health?.steps || null;
+  const stressLevel = health?.stress_level || null;
+  const workoutType = health?.workout_type || null;
+  const workoutDuration = health?.workout_duration || null;
+
+  const stats = [];
+  if (sleepHours) stats.push({ icon: '😴', label: 'שינה', value: `${sleepHours}h` });
+  if (bodyBattery) stats.push({ icon: '🔋', label: 'סוללת גוף', value: bodyBattery });
+  if (restingHr) stats.push({ icon: '❤️', label: 'דופק מנוחה', value: restingHr });
+  if (stressLevel) stats.push({ icon: '😰', label: 'סטרס', value: stressLevel });
+  if (workoutType) stats.push({ icon: '🏋️', label: workoutType, value: workoutDuration ? `${workoutDuration}m` : '✓' });
+
+  const stepsGoal = 10000;
+  const stepsPercentage = steps ? Math.min(100, (steps / stepsGoal) * 100) : 0;
   const circumference = 2 * Math.PI * 45;
-  const strokeDashoffset = circumference - (stepsData.percentage / 100) * circumference;
+  const strokeDashoffset = circumference - (stepsPercentage / 100) * circumference;
+
+  if (loading) return null;
+  if (stats.length === 0 && !steps) return null;
 
   return (
     <div className="health-stats">
-      <h2>💪 Health Snapshot</h2>
+      <h2>💪 בריאות</h2>
       <div className="health-grid">
         {stats.map((stat, index) => (
           <div key={index} className="health-value">
@@ -28,35 +64,35 @@ function HealthStats() {
             <div className="health-label">{stat.label}</div>
           </div>
         ))}
-        <div className="health-value steps-container">
-          <div className="steps-progress-container">
-            <svg className="steps-progress-svg" width="120" height="120">
-              <circle
-                className="steps-progress-ring-background"
-                cx="60"
-                cy="60"
-                r="45"
-              />
-              <circle
-                className="steps-progress-ring"
-                cx="60"
-                cy="60"
-                r="45"
-                style={{
-                  strokeDasharray: `${circumference} ${circumference}`,
-                  strokeDashoffset: strokeDashoffset
-                }}
-              />
-            </svg>
-            <div className="steps-progress-content">
-              <div className="health-icon">👟</div>
-              <div className="health-number">{stepsData.current.toLocaleString()}</div>
-              <div className="steps-goal">of {stepsData.goal.toLocaleString()}</div>
+        {steps && (
+          <div className="health-value steps-container">
+            <div className="steps-progress-container">
+              <svg className="steps-progress-svg" width="120" height="120">
+                <circle className="steps-progress-ring-background" cx="60" cy="60" r="45" />
+                <circle
+                  className="steps-progress-ring"
+                  cx="60" cy="60" r="45"
+                  style={{
+                    strokeDasharray: `${circumference} ${circumference}`,
+                    strokeDashoffset: strokeDashoffset
+                  }}
+                />
+              </svg>
+              <div className="steps-progress-content">
+                <div className="health-icon">👟</div>
+                <div className="health-number">{steps.toLocaleString()}</div>
+                <div className="steps-goal">of {stepsGoal.toLocaleString()}</div>
+              </div>
             </div>
+            <div className="health-label">צעדים</div>
           </div>
-          <div className="health-label">STEPS</div>
-        </div>
+        )}
       </div>
+      {health?.date && (
+        <div className="health-date">
+          עדכון אחרון: {new Date(health.date).toLocaleDateString('he-IL')}
+        </div>
+      )}
     </div>
   );
 }

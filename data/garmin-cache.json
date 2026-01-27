@@ -1,0 +1,139 @@
+{
+  "lastUpdated": "2026-01-27T21:39:15.194Z",
+  "sleepTrend": "unknown",
+  "recordCount": 7,
+  "records": [
+    {
+      "user_id": "dan",
+      "date": "2026-01-27",
+      "sleep_hours": null,
+      "sleep_quality": null,
+      "body_battery": null,
+      "stress_level": null,
+      "steps": null,
+      "active_minutes": null,
+      "calories_burned": null,
+      "resting_hr": 50,
+      "workout_type": "paddelball",
+      "workout_duration": 86,
+      "metadata": {
+        "max_hr": 166,
+        "avg_hr": null,
+        "workout_calories": 882,
+        "workout_distance": 583.9199829101562
+      }
+    },
+    {
+      "user_id": "dan",
+      "date": "2026-01-26",
+      "sleep_hours": null,
+      "sleep_quality": null,
+      "body_battery": null,
+      "stress_level": null,
+      "steps": null,
+      "active_minutes": null,
+      "calories_burned": null,
+      "resting_hr": 49,
+      "workout_type": "treadmill_running",
+      "workout_duration": 39,
+      "metadata": {
+        "max_hr": 143,
+        "avg_hr": null,
+        "workout_calories": 374,
+        "workout_distance": 5196.91015625
+      }
+    },
+    {
+      "user_id": "dan",
+      "date": "2026-01-25",
+      "sleep_hours": null,
+      "sleep_quality": null,
+      "body_battery": null,
+      "stress_level": null,
+      "steps": null,
+      "active_minutes": null,
+      "calories_burned": null,
+      "resting_hr": 53,
+      "workout_type": null,
+      "workout_duration": null,
+      "metadata": {
+        "max_hr": 108,
+        "avg_hr": null
+      }
+    },
+    {
+      "user_id": "dan",
+      "date": "2026-01-24",
+      "sleep_hours": null,
+      "sleep_quality": null,
+      "body_battery": null,
+      "stress_level": null,
+      "steps": null,
+      "active_minutes": null,
+      "calories_burned": null,
+      "resting_hr": 50,
+      "workout_type": null,
+      "workout_duration": null,
+      "metadata": {
+        "max_hr": 97,
+        "avg_hr": null
+      }
+    },
+    {
+      "user_id": "dan",
+      "date": "2026-01-23",
+      "sleep_hours": null,
+      "sleep_quality": null,
+      "body_battery": null,
+      "stress_level": null,
+      "steps": null,
+      "active_minutes": null,
+      "calories_burned": null,
+      "resting_hr": 52,
+      "workout_type": null,
+      "workout_duration": null,
+      "metadata": {
+        "max_hr": 97,
+        "avg_hr": null
+      }
+    },
+    {
+      "user_id": "dan",
+      "date": "2026-01-22",
+      "sleep_hours": null,
+      "sleep_quality": null,
+      "body_battery": null,
+      "stress_level": null,
+      "steps": null,
+      "active_minutes": null,
+      "calories_burned": null,
+      "resting_hr": 46,
+      "workout_type": "treadmill_running",
+      "workout_duration": 45,
+      "metadata": {
+        "max_hr": 140,
+        "avg_hr": null,
+        "workout_calories": 320,
+        "workout_distance": 5447.7099609375
+      }
+    },
+    {
+      "user_id": "dan",
+      "date": "2026-01-21",
+      "sleep_hours": null,
+      "sleep_quality": null,
+      "body_battery": null,
+      "stress_level": null,
+      "steps": null,
+      "active_minutes": null,
+      "calories_burned": null,
+      "resting_hr": 48,
+      "workout_type": null,
+      "workout_duration": null,
+      "metadata": {
+        "max_hr": 101,
+        "avg_hr": null
+      }
+    }
+  ]
+}

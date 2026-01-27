@@ -1,0 +1,26 @@
+{
+  "user_id": "dan",
+  "date": "2026-01-27",
+  "doing_today": [
+    "14:00 XBO | EQ - Intro meeting"
+  ],
+  "not_doing_today": [],
+  "warning": null,
+  "small_action": "10 דקות הליכה בחוץ. אוויר צח עוזר לריכוז.",
+  "load_score": 20,
+  "sleep_trend": "unknown",
+  "metadata": {
+    "calendar_hours": 1.25,
+    "event_count": 2,
+    "energy_budget": 10,
+    "energy_used": 0,
+    "body_battery": null,
+    "stress": null,
+    "sleep_avg": null,
+    "sleep_deficit": 0,
+    "all_warnings": [],
+    "active_projects": [],
+    "pending_dependencies": [],
+    "generated_at": "2026-01-27T21:39:18.728Z"
+  }
+}

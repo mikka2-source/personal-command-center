@@ -1,27 +1,31 @@
-/* App - Base Styles */
+/* App - Life OS Base Styles */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 .App {
   min-height: 100vh;
-  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
-  transition: background 0.3s ease;
+  background: #0a0a0f;
 }
 
-body.dark-mode .App {
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+body.dark-mode {
+  background: #0a0a0f;
+  color: #e2e8f0;
+}
+
+/* Main content area - offset for sidebar */
+.app-content {
+  margin-right: 220px;
+  min-height: 100vh;
+  transition: margin-right 0.25s ease;
 }
 
 /* Global Typography */
 * {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-}
-
-/* RTL Support for Hebrew */
-.dashboard,
-.sidebar-card,
-.task-item,
-.capture-modal {
-  direction: rtl;
-  text-align: right;
 }
 
 /* Scrollbar Styling */
@@ -34,47 +38,33 @@ body.dark-mode .App {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.08);
   border-radius: 3px;
 }
 
-body.dark-mode ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.1);
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.15);
 }
 
 /* Selection */
 ::selection {
-  background: rgba(59, 130, 246, 0.2);
+  background: rgba(59, 130, 246, 0.3);
 }
 
-body.dark-mode ::selection {
-  background: rgba(59, 130, 246, 0.4);
+/* Links */
+a {
+  color: #3b82f6;
+  text-decoration: none;
 }
 
-/* App Navigation */
-.app-nav {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  padding: 12px 16px 0;
+a:hover {
+  text-decoration: underline;
 }
-.app-nav button {
-  background: rgba(148, 163, 184, 0.1);
-  border: 1px solid rgba(148, 163, 184, 0.15);
-  color: #94a3b8;
-  padding: 8px 20px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 14px;
-  font-weight: 500;
-  transition: all 0.2s;
-}
-.app-nav button.nav-active {
-  background: rgba(99, 102, 241, 0.2);
-  border-color: rgba(99, 102, 241, 0.4);
-  color: #a5b4fc;
-}
-.app-nav button:hover:not(.nav-active) {
-  background: rgba(148, 163, 184, 0.15);
-  color: #e2e8f0;
+
+/* Responsive - Mobile */
+@media (max-width: 768px) {
+  .app-content {
+    margin-right: 0;
+    padding-top: 56px; /* Space for mobile hamburger */
+  }
 }

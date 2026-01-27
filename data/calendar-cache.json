@@ -1,0 +1,2292 @@
+{
+  "lastUpdated": "2026-01-27T21:39:02.650Z",
+  "eventCount": 127,
+  "events": [
+    {
+      "id": "040000008200E00074C5B7101A82E0080000000012A260B3FF77DC01000000000000000010000000603744CB4ECC6E4AB92B98B605F0E7C0",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "LinkedIn Leads → CRM Flow & Lead Assignment",
+      "start_time": "2025-12-29T10:00:00.000Z",
+      "end_time": "2025-12-29T11:00:00.000Z",
+      "category": "work",
+      "energy_level": "low",
+      "immutable": false,
+      "location": "Microsoft Teams Meeting",
+      "metadata": {
+        "calendar_source": "work",
+        "description": "\n________________________________________________________________________________\nMicrosoft Teams Need help?<https://aka.ms/JoinTeamsMeeting?omkt=en-US>\nJoin the meeting now<https://teams.microsoft.com/l/meetup-join/19%3ameeting_NWQxMzA0ZDYtMmZlZi00NDE4LTk2OGYtZmRjM2E4ODdlMmM1%40thread.v2/0?context=%7b%22Tid%22%3a%228dfc9b7a-c1f2-44e2-826c-43386be451a7%22%2c%22Oid%22%3a%224953426e-3bd7-44bf-8e41-7d1392ec05bb%22%7d>\nMeeting ID: 381 860 383 276 56\nPasscode: kX6YG6Ux\n_______________________________",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E008000000003F95BF162C78DC01000000000000000010000000E149389C60C2444F8A4C70EF49F094FC",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Marcelle & Dan ",
+      "start_time": "2025-12-30T09:00:00.000Z",
+      "end_time": "2025-12-30T10:30:00.000Z",
+      "category": "personal",
+      "energy_level": "mid",
+      "immutable": false,
+      "location": "Microsoft Teams Meeting",
+      "metadata": {
+        "calendar_source": "work",
+        "description": "VIP Report\nNew reports\nRegis involvement\nPD -> CRM\n\n\n1. Sales Team Requirements\nMandatory Fields: Ensure all key fields from Pipedrive are present in CRM, including company name, contact person, company group, industry, expected close/FTD dates, expected volume, agreed fees, services/products, referral details, source channel, sales stages, deal status, and reason for loss.\nSales Tab: Suggests creating a dedicated sales section/tab in CRM for easier access and organization of sales information.\n",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E00800000000629489E72B78DC01000000000000000010000000010E2F53C0C14148BFACAC25A223D1C2",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Commissions sales ",
+      "start_time": "2025-12-30T10:00:00.000Z",
+      "end_time": "2025-12-30T11:30:00.000Z",
+      "category": "work",
+      "energy_level": "mid",
+      "immutable": false,
+      "location": null,
+      "metadata": {
+        "calendar_source": "work",
+        "description": "\n",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E0080000000042E58282FF78DC010000000000000000100000006972F5D9AE7EE749AABC77EC2B0F426B",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Dan | Ben",
+      "start_time": "2025-12-30T12:00:00.000Z",
+      "end_time": "2025-12-30T13:30:00.000Z",
+      "category": "work",
+      "energy_level": "mid",
+      "immutable": false,
+      "location": "Ground Floor Meeting Room (CY)",
+      "metadata": {
+        "calendar_source": "work",
+        "description": "\n________________________________________________________________________________\nMicrosoft Teams Need help?<https://aka.ms/JoinTeamsMeeting?omkt=en-US>\nJoin the meeting now<https://teams.microsoft.com/l/meetup-join/19%3ameeting_MWUxMTM4YzAtMzE0NC00MGM1LWJjNzAtMjRiMzNiNjVhNzk0%40thread.v2/0?context=%7b%22Tid%22%3a%228dfc9b7a-c1f2-44e2-826c-43386be451a7%22%2c%22Oid%22%3a%224953426e-3bd7-44bf-8e41-7d1392ec05bb%22%7d>\nMeeting ID: 354 414 348 391 82\nPasscode: xG3Bm6cd\n_______________________________",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E00800000000051A84C32E78DC01000000000000000010000000112CCDC6231E304CA178C16636BA5CF6",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "OOO Family time ",
+      "start_time": "2026-01-01T22:00:00.000Z",
+      "end_time": "2026-01-11T22:00:00.000Z",
+      "category": "family",
+      "energy_level": "high",
+      "immutable": false,
+      "location": null,
+      "metadata": {
+        "calendar_source": "work",
+        "description": "\n",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E0080000000058FA537FEE87DC01000000000000000010000000DDEC3AAAB75318469A969330C9BC68E4",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Call",
+      "start_time": "2026-01-03T13:07:00.000Z",
+      "end_time": "2026-01-03T13:07:00.000Z",
+      "category": "work",
+      "energy_level": "low",
+      "immutable": true,
+      "location": null,
+      "metadata": {
+        "calendar_source": "work",
+        "description": "\n",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E0080000000017C60C7EEE87DC01000000000000000010000000BC2E8E0191946F41A1BB549CAABE26C6",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Call",
+      "start_time": "2026-01-03T13:08:00.000Z",
+      "end_time": "2026-01-03T13:08:00.000Z",
+      "category": "work",
+      "energy_level": "low",
+      "immutable": true,
+      "location": null,
+      "metadata": {
+        "calendar_source": "work",
+        "description": "\n",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E008000000004E082A80EE87DC01000000000000000010000000FE43F020E2DDD44EAA50AAAB3365DEBC",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Call",
+      "start_time": "2026-01-03T13:08:00.000Z",
+      "end_time": "2026-01-03T13:08:00.000Z",
+      "category": "work",
+      "energy_level": "low",
+      "immutable": true,
+      "location": null,
+      "metadata": {
+        "calendar_source": "work",
+        "description": "\n",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E00800000000E9CA0281EE87DC0100000000000000001000000049CC6D8CA8B0C645A930A74C8CD03DEE",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Call",
+      "start_time": "2026-01-03T13:09:00.000Z",
+      "end_time": "2026-01-03T13:09:00.000Z",
+      "category": "work",
+      "energy_level": "low",
+      "immutable": true,
+      "location": null,
+      "metadata": {
+        "calendar_source": "work",
+        "description": "\n",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E008000000007459B47DEE87DC01000000000000000010000000F5CFF6972463D344A6959269CE73BC21",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Call",
+      "start_time": "2026-01-03T13:11:00.000Z",
+      "end_time": "2026-01-03T13:11:00.000Z",
+      "category": "work",
+      "energy_level": "low",
+      "immutable": true,
+      "location": null,
+      "metadata": {
+        "calendar_source": "work",
+        "description": "\n",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E00800000000EC09A57FEE87DC01000000000000000010000000B5B54B9ACA6E1247B8951A8096A6031B",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Call",
+      "start_time": "2026-01-03T13:28:00.000Z",
+      "end_time": "2026-01-03T13:28:00.000Z",
+      "category": "work",
+      "energy_level": "low",
+      "immutable": true,
+      "location": null,
+      "metadata": {
+        "calendar_source": "work",
+        "description": "\n",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E00800000000A1E61E82EE87DC010000000000000000100000000BB41372E933074A8373F807A7169F69",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "follow up",
+      "start_time": "2026-01-04T22:00:00.000Z",
+      "end_time": "2026-01-05T22:00:00.000Z",
+      "category": "work",
+      "energy_level": "high",
+      "immutable": false,
+      "location": null,
+      "metadata": {
+        "calendar_source": "work",
+        "description": "\n",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E00800000000EDB87ACAC27DDC01000000000000000010000000B7460EE3A7832243AE0DF7C7CA704F24",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Day organization",
+      "start_time": "2026-01-05T06:30:00.000Z",
+      "end_time": "2026-01-05T08:00:00.000Z",
+      "category": "health",
+      "energy_level": "mid",
+      "immutable": false,
+      "location": null,
+      "metadata": {
+        "calendar_source": "work",
+        "description": "Decline all meetings for the day / Weak\nmake one pager for the 15:00 meeting (management )\nMessage to Ido - Few days off\nMessage to Lior - let’s schedule for next week\nMessage to Regi - welcome aboard  VIP report as first priority.\n\nOpen cases: May, Alon, tango/Ofer reports, Ben Barcelona, traffic feedback and flow, Sonia, TG groups, approval to Nicole, Invesus fee, Emoney onboarding.\nTal mashkis and RH credit, David &1B deal, Gotcha and PSV Realestate deals in Portugal 500M\n\nGo to storage:\nBrin",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E008000000006D7E50DFCD78DC0100000000000000001000000035549C40C404454F97156CC927971CA1",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Tango report ",
+      "start_time": "2026-01-05T09:00:00.000Z",
+      "end_time": "2026-01-05T09:30:00.000Z",
+      "category": "work",
+      "energy_level": "low",
+      "immutable": false,
+      "location": null,
+      "metadata": {
+        "calendar_source": "work",
+        "description": "Sent report to Tango based on Mariis information\nMonthly\n",
+        "attendees": 0,
+        "recurrence": true
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E00800000000B37ABCFFCD78DC01000000000000000010000000756DA5EAD3BAE04EAAE4CD2854293B89",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Ofer Report ",
+      "start_time": "2026-01-05T09:30:00.000Z",
+      "end_time": "2026-01-05T10:00:00.000Z",
+      "category": "work",
+      "energy_level": "low",
+      "immutable": false,
+      "location": null,
+      "metadata": {
+        "calendar_source": "work",
+        "description": "Send information to Ofer based On Mariis info\n",
+        "attendees": 0,
+        "recurrence": true
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E00800000000BD17CB11487FDC01000000000000000010000000CD1489A7694ACA48B092EBC85C938025",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Libby doctor ",
+      "start_time": "2026-01-07T06:45:00.000Z",
+      "end_time": "2026-01-07T08:00:00.000Z",
+      "category": "health",
+      "energy_level": "mid",
+      "immutable": false,
+      "location": null,
+      "metadata": {
+        "calendar_source": "work",
+        "description": "\n",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E0080000000070BB5F34D27BDC010000000000000000100000006A57EC4B16F9CD43A909837979CD5E2F",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "פגישת הנהלה: בניית יעדים ו-OKRs לשנת 2026",
+      "start_time": "2026-01-07T09:00:00.000Z",
+      "end_time": "2026-01-07T10:00:00.000Z",
+      "category": "work",
+      "energy_level": "low",
+      "immutable": false,
+      "location": "Microsoft Teams Meeting",
+      "metadata": {
+        "calendar_source": "work",
+        "description": "\n________________________________________________________________________________\nMicrosoft Teams Need help?<https://eur06.safelinks.protection.outlook.com/?url=https%3A%2F%2Faka.ms%2FJoinTeamsMeeting%3Fomkt%3Den-US&data=05%7C02%7Cdan.m%40xbo.com%7C4a92046948f24c537edc08de4c311ec2%7C8dfc9b7ac1f244e2826c43386be451a7%7C0%7C0%7C639031971008921906%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=yOoZmsJfUHVOFQuM15",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E00800000000C3B42929EF7FDC0100000000000000001000000012500D47C7E7534790EFC2051588EEA1",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Tomer & Alon",
+      "start_time": "2026-01-08T08:00:00.000Z",
+      "end_time": "2026-01-08T09:00:00.000Z",
+      "category": "work",
+      "energy_level": "low",
+      "immutable": false,
+      "location": null,
+      "metadata": {
+        "calendar_source": "work",
+        "description": "\n",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E0080000000097F2182DEF7FDC01000000000000000010000000FD5AD1D25CC043418FC87FEBF84995F4",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Ofer ",
+      "start_time": "2026-01-08T09:00:00.000Z",
+      "end_time": "2026-01-08T09:30:00.000Z",
+      "category": "work",
+      "energy_level": "low",
+      "immutable": false,
+      "location": null,
+      "metadata": {
+        "calendar_source": "work",
+        "description": "\n",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E00800000000D0FD87668279DC01000000000000000010000000EC974D528F6BDC48B53D19A9CFB6F608",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Pipedrive / CRM scope",
+      "start_time": "2026-01-08T12:00:00.000Z",
+      "end_time": "2026-01-08T12:45:00.000Z",
+      "category": "work",
+      "energy_level": "low",
+      "immutable": false,
+      "location": "Microsoft Teams Meeting",
+      "metadata": {
+        "calendar_source": "work",
+        "description": "\n________________________________________________________________________________\nMicrosoft Teams Need help?<https://eur06.safelinks.protection.outlook.com/?url=https%3A%2F%2Faka.ms%2FJoinTeamsMeeting%3Fomkt%3Den-US&data=05%7C02%7Cdan.m%40xbo.com%7C8984b00e311542614a6a08de4c3d65ec%7C8dfc9b7ac1f244e2826c43386be451a7%7C0%7C0%7C639032023755714513%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=el0GaUYKm6fUOnSTxv",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E00800000000D56A89E24881DC01000000000000000010000000CA9A554C5EA337489225C4DAEA61B5F1",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Automated Bot -B2B ",
+      "start_time": "2026-01-13T09:00:00.000Z",
+      "end_time": "2026-01-13T10:00:00.000Z",
+      "category": "work",
+      "energy_level": "low",
+      "immutable": false,
+      "location": "4TH FLOOR Meeting room ",
+      "metadata": {
+        "calendar_source": "work",
+        "description": "\n",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E008000000002FBDAA44A583DC01000000000000000010000000EEBCF344C3F16C4B963EC76C420A36C4",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Regi & Dan - Catch up ",
+      "start_time": "2026-01-13T10:00:00.000Z",
+      "end_time": "2026-01-13T11:00:00.000Z",
+      "category": "work",
+      "energy_level": "low",
+      "immutable": false,
+      "location": "Microsoft Teams Meeting",
+      "metadata": {
+        "calendar_source": "work",
+        "description": "\n________________________________________________________________________________\nMicrosoft Teams meeting\nJoin: https://teams.microsoft.com/meet/32919268863372?p=vCQrx3KYVBUz6nYowq\nMeeting ID: 329 192 688 633 72\nPasscode: Fv3dP7Zs\n________________________________\nNeed help?<https://aka.ms/JoinTeamsMeeting?omkt=en-US> | System reference<https://teams.microsoft.com/l/meetup-join/19%3ameeting_NGNhYTA0MDItYTNhNy00MGE4LThmNDEtMDRjY2ExNDI4ZWYx%40thread.v2/0?context=%7b%22Tid%22%3a%228dfc9b7a-c1f2-44e2",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E00800000000ABB5B1F75D84DC01000000000000000010000000BBA008D30088D44F855EC3A2FF85F0B6",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "meeting conferences ",
+      "start_time": "2026-01-13T12:00:00.000Z",
+      "end_time": "2026-01-13T13:00:00.000Z",
+      "category": "work",
+      "energy_level": "low",
+      "immutable": true,
+      "location": null,
+      "metadata": {
+        "calendar_source": "work",
+        "description": "\n",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E00800000000109585A01A85DC010000000000000000100000006BDFF44782E2E947B3C5AE504F558ABB",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Register Libby ",
+      "start_time": "2026-01-14T06:30:00.000Z",
+      "end_time": "2026-01-14T07:00:00.000Z",
+      "category": "work",
+      "energy_level": "low",
+      "immutable": false,
+      "location": null,
+      "metadata": {
+        "calendar_source": "work",
+        "description": "\n",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E008000000005FA8AB14B184DC01000000000000000010000000F896AADB33D8D34E81C04008F894F3C2",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Open Credits Sync ",
+      "start_time": "2026-01-14T07:30:00.000Z",
+      "end_time": "2026-01-14T08:00:00.000Z",
+      "category": "work",
+      "energy_level": "low",
+      "immutable": true,
+      "location": "Microsoft Teams Meeting",
+      "metadata": {
+        "calendar_source": "work",
+        "description": "Nextdesk\nAsaf\nTal Mashkif\nMega\n\n________________________________________________________________________________\nMicrosoft Teams meeting\nJoin: https://teams.microsoft.com/meet/38510067047523?p=oqFddhImhkIqOh41Af\nMeeting ID: 385 100 670 475 23\nPasscode: VS6Lk9Bn\n________________________________\nNeed help?<https://aka.ms/JoinTeamsMeeting?omkt=en-US> | System reference<https://teams.microsoft.com/l/meetup-join/19%3ameeting_N2ZlYzMzYWMtMDEwMi00YWFjLTllZDktNTI1MDgwNmJiZTk1%40thread.v2/0?context=%7b%2",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E008000000005578CA0B6E85DC01000000000000000010000000BD49801F47C2294C91A63399934EB464",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "American bank ",
+      "start_time": "2026-01-14T19:00:00.000Z",
+      "end_time": "2026-01-14T20:00:00.000Z",
+      "category": "work",
+      "energy_level": "low",
+      "immutable": false,
+      "location": null,
+      "metadata": {
+        "calendar_source": "work",
+        "description": "\n",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E0080000000025CBB8339E84DC01000000000000000010000000772C1C4E07CA42488C28884314D9697B",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Dan X Maria Catch up ",
+      "start_time": "2026-01-15T08:00:00.000Z",
+      "end_time": "2026-01-15T09:00:00.000Z",
+      "category": "work",
+      "energy_level": "low",
+      "immutable": false,
+      "location": "Microsoft Teams Meeting",
+      "metadata": {
+        "calendar_source": "work",
+        "description": "Please prepare macro report and information about the upcoming ICE conference and share it with me before the end of the day tomorrow.\n\n________________________________________________________________________________\nMicrosoft Teams meeting\nJoin: https://teams.microsoft.com/meet/36135406445269?p=QgpgWagCmdbSnxycEx\nMeeting ID: 361 354 064 452 69\nPasscode: nc9Xy7dp\n________________________________\nNeed help?<https://aka.ms/JoinTeamsMeeting?omkt=en-US> | System reference<https://teams.microsoft.com",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E00800000000533489A53F85DC01000000000000000010000000CF3EE46DDB4B77409CCD19400812C4C0",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Client Success Meeting",
+      "start_time": "2026-01-15T09:00:00.000Z",
+      "end_time": "2026-01-15T09:30:00.000Z",
+      "category": "work",
+      "energy_level": "low",
+      "immutable": true,
+      "location": "Microsoft Teams Meeting",
+      "metadata": {
+        "calendar_source": "work",
+        "description": "\n________________________________________________________________________________\nMicrosoft Teams meeting\nJoin: https://teams.microsoft.com/meet/31239387228153?p=SEWT3ZI2DjqsUfNJK2<https://eur06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fteams.microsoft.com%2Fmeet%2F31239387228153%3Fp%3DSEWT3ZI2DjqsUfNJK2&data=05%7C02%7Cdan.m%40xbo.com%7Cb04a7d4891a14561f8a108de5356cae5%7C8dfc9b7ac1f244e2826c43386be451a7%7C0%7C0%7C639039829410440143%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOi",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E0080000000017199970A183DC01000000000000000010000000942A16D603D896408D3C6A936B51D72B",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Corporate Client Lifecycle Review",
+      "start_time": "2026-01-15T12:30:00.000Z",
+      "end_time": "2026-01-15T13:30:00.000Z",
+      "category": "work",
+      "energy_level": "low",
+      "immutable": true,
+      "location": "Ground Floor Meeting Room (CY)",
+      "metadata": {
+        "calendar_source": "work",
+        "description": "Prior to this meeting please :\n\n  *\nReview the documented current state<https://xbotechcorp.sharepoint.com/:w:/r/sites/Operations/_layouts/15/Doc.aspx?sourcedoc=%7b1945B954-1985-4D9C-9AEE-6BE628C58907%7d&file=Corporate+client+-+Current+flow+.docx&action=default&mobileredirect=true&xsdata=MDV8MDJ8ZGFuLm1AeGJvLmNvbXxmNDA3MDkzN2Y2NTk0NjZiYTM0ZTA4ZGU1MWI4OTNlMHw4ZGZjOWI3YWMxZjI0NGUyODI2YzQzMzg2YmU0NTFhN3wwfDB8NjM5MDM4MDUwMzc3Nzg0ODA0fFVua25vd258VFdGcGJHWnNiM2Q4ZXlKRmJYQjBlVTFoY0draU9uUnlkV1VzSWxZaU9",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E008000000003D4D9CF08484DC010000000000000000100000000C8870BD99374D4CB9256C4F340F764B",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Partnership pipeline ",
+      "start_time": "2026-01-15T14:00:00.000Z",
+      "end_time": "2026-01-15T15:00:00.000Z",
+      "category": "work",
+      "energy_level": "low",
+      "immutable": false,
+      "location": "Microsoft Teams Meeting",
+      "metadata": {
+        "calendar_source": "work",
+        "description": "\n________________________________________________________________________________\nMicrosoft Teams meeting\nJoin: https://teams.microsoft.com/meet/3473541558062?p=RUq76ElkbOKPuuy363\nMeeting ID: 347 354 155 806 2\nPasscode: aF2j2Fn3\n________________________________\nNeed help?<https://aka.ms/JoinTeamsMeeting?omkt=en-US> | System reference<https://teams.microsoft.com/l/meetup-join/19%3ameeting_MGVmMDc3NzItZjYyNS00NGJmLWJlMTEtY2U0MjU2MjIyOGQz%40thread.v2/0?context=%7b%22Tid%22%3a%228dfc9b7a-c1f2-44e2-8",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E0080000000030B4CE82EE87DC01000000000000000010000000155F28E34498364CB503DFC4CA21FDC3",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Linkedin Conversation",
+      "start_time": "2026-01-15T16:39:00.000Z",
+      "end_time": "2026-01-15T16:39:00.000Z",
+      "category": "work",
+      "energy_level": "low",
+      "immutable": false,
+      "location": null,
+      "metadata": {
+        "calendar_source": "work",
+        "description": "\n",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E00800000000B7462C84EE87DC0100000000000000001000000076F6AFC1B57ABC47B2B606DF31948328",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Linkedin Conversation",
+      "start_time": "2026-01-15T16:47:00.000Z",
+      "end_time": "2026-01-15T16:47:00.000Z",
+      "category": "work",
+      "energy_level": "low",
+      "immutable": false,
+      "location": null,
+      "metadata": {
+        "calendar_source": "work",
+        "description": "\n",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E008000000007BEF9F209F78DC01000000000000000010000000736FD03B9F29424DA3CE048288158819",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Regi Barcelona",
+      "start_time": "2026-01-15T22:00:00.000Z",
+      "end_time": "2026-01-16T22:00:00.000Z",
+      "category": "work",
+      "energy_level": "high",
+      "immutable": false,
+      "location": null,
+      "metadata": {
+        "calendar_source": "work",
+        "description": "\n",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E0080000000060E9D02BCB86DC01000000000000000010000000D4B760E3BCA2D545B566C38D94255DA6",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Telegram bot ",
+      "start_time": "2026-01-16T09:00:00.000Z",
+      "end_time": "2026-01-16T10:00:00.000Z",
+      "category": "work",
+      "energy_level": "low",
+      "immutable": false,
+      "location": null,
+      "metadata": {
+        "calendar_source": "work",
+        "description": "\n",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E00800000000C843B2E14086DC010000000000000000100000004BB23E3224551044A8DFFC4574FF2566",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Refferal KPI ",
+      "start_time": "2026-01-16T10:00:00.000Z",
+      "end_time": "2026-01-16T11:30:00.000Z",
+      "category": "work",
+      "energy_level": "mid",
+      "immutable": false,
+      "location": null,
+      "metadata": {
+        "calendar_source": "work",
+        "description": "\n",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E0080000000063931786C686DC010000000000000000100000005E3D4EBE9DE50246B40481983D0A2183",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Dan X Ido - Referral KPI 2026",
+      "start_time": "2026-01-16T13:00:00.000Z",
+      "end_time": "2026-01-16T14:00:00.000Z",
+      "category": "work",
+      "energy_level": "low",
+      "immutable": false,
+      "location": "Microsoft Teams Meeting",
+      "metadata": {
+        "calendar_source": "work",
+        "description": "\n________________________________________________________________________________\nMicrosoft Teams meeting\nJoin: https://teams.microsoft.com/meet/33501815366293?p=PcXwbdTRzJU8V5kDZR\nMeeting ID: 335 018 153 662 93\nPasscode: 5rK7zH75\n________________________________\nNeed help?<https://aka.ms/JoinTeamsMeeting?omkt=en-US> | System reference<https://teams.microsoft.com/l/meetup-join/19%3ameeting_Mzg1MWJiZTEtOGQxMS00YzFhLTg4YmYtMjM5MDVhY2E2YmVh%40thread.v2/0?context=%7b%22Tid%22%3a%228dfc9b7a-c1f2-44e2",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E00800000000D03C4BA1A280DC010000000000000000100000007BD2C51A41DD824DB4E77869B0E71525",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Introduction XBO / PayU EU",
+      "start_time": "2026-01-16T14:00:00.000Z",
+      "end_time": "2026-01-16T14:30:00.000Z",
+      "category": "work",
+      "energy_level": "low",
+      "immutable": false,
+      "location": "Spotkanie w aplikacji Microsoft Teams",
+      "metadata": {
+        "calendar_source": "work",
+        "description": "Niektóre osoby, które odebrały tę wiadomość, nie otrzymują często wiadomości e-mail z adresu karolina.lecyk@payu.com. Dowiedz się, dlaczego jest to ważne<https://aka.ms/LearnAboutSenderIdentification>\n\n________________________________________________________________________________\nMicrosoft Teams Potrzebujesz pomocy?<https://eur06.safelinks.protection.outlook.com/?url=https%3A%2F%2Faka.ms%2FJoinTeamsMeeting%3Fomkt%3Dpl-PL&data=05%7C02%7Cdan.m%40xbo.com%7C618d2656355d4dcfd30108de4eb9d24e%7C8dfc9",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E008000000008AED7E82EE87DC01000000000000000010000000BFE423D63B3C9D489C704C70E85593A3",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Linkedin Conversation",
+      "start_time": "2026-01-16T15:52:00.000Z",
+      "end_time": "2026-01-16T15:52:00.000Z",
+      "category": "work",
+      "energy_level": "low",
+      "immutable": false,
+      "location": null,
+      "metadata": {
+        "calendar_source": "work",
+        "description": "\n",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E00800000000DA5C232E9F78DC0100000000000000001000000027CF92B00FB3F948B37ADFFA89DD14D6",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Regi Barcelona",
+      "start_time": "2026-01-16T22:00:00.000Z",
+      "end_time": "2026-01-17T22:00:00.000Z",
+      "category": "work",
+      "energy_level": "high",
+      "immutable": false,
+      "location": null,
+      "metadata": {
+        "calendar_source": "work",
+        "description": "\n",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E00800000000D4C987659F78DC01000000000000000010000000589669B19DBA7543A6008E44A5A1B2BE",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "ICE BARCELONA",
+      "start_time": "2026-01-17T22:00:00.000Z",
+      "end_time": "2026-01-21T22:00:00.000Z",
+      "category": "work",
+      "energy_level": "high",
+      "immutable": false,
+      "location": "Fira de Barcelona Gran Via",
+      "metadata": {
+        "calendar_source": "work",
+        "description": "Attendees:\n\nRegi, JJ, Aleksandra & Diego\n",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E00800000000A020C983EE87DC01000000000000000010000000B7CA762B2839344BA9C583ED5969530F",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "ICE Barcelona",
+      "start_time": "2026-01-18T22:00:00.000Z",
+      "end_time": "2026-01-21T22:00:00.000Z",
+      "category": "work",
+      "energy_level": "high",
+      "immutable": false,
+      "location": null,
+      "metadata": {
+        "calendar_source": "work",
+        "description": "\n",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E00800000000436EEB87F27EDC01000000000000000010000000C361222FA0CCAB40AEACEA806882E4C1",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "ICE Barcelona",
+      "start_time": "2026-01-18T22:00:00.000Z",
+      "end_time": "2026-01-21T22:00:00.000Z",
+      "category": "work",
+      "energy_level": "high",
+      "immutable": false,
+      "location": null,
+      "metadata": {
+        "calendar_source": "work",
+        "description": "\n",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E008000000000D9E8FF5CB83DC010000000000000000100000001298F9C86BCB6044AFD51235CB41FB38",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "1:1 Introductory Meeting Dan Mizrahi (VP of Corporate) & Lior",
+      "start_time": "2026-01-19T09:00:00.000Z",
+      "end_time": "2026-01-19T10:00:00.000Z",
+      "category": "work",
+      "energy_level": "low",
+      "immutable": true,
+      "location": "Microsoft Teams Meeting",
+      "metadata": {
+        "calendar_source": "work",
+        "description": "Dear Dan,\nI’m scheduling a one-hour 1:1 meeting with you to get acquainted and better understand your role and the department you work in. During our discussion, I’d also like to hear your perspective on how AI could bring value to your area of work.\nIt would be great if you could come prepared with:\n\n  *   Thoughts on the main challenges you currently face\n  *   Any AI tools you’ve tried so far\n  *   Your ideas on potential quick wins we could achieve together\n\nLooking forward to our conversati",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E008000000007DD60D88EE87DC010000000000000000100000003502B8681A7B494A8789E3F83C641648",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Karol Chrzanowski / JJ - ICE Barcelona XBO meeting",
+      "start_time": "2026-01-19T09:45:00.000Z",
+      "end_time": "2026-01-19T10:15:00.000Z",
+      "category": "work",
+      "energy_level": "low",
+      "immutable": true,
+      "location": "To be determined",
+      "metadata": {
+        "calendar_source": "work",
+        "description": "JJ invited you to a scheduled meeting.\nTime doesn't fit with your schedule? Reschedule it here<https://xbo.pipedrive.com/scheduler/pK242LiM/ice-barcelona-xbo-meeting/reschedule/3gaqg>.\nCan't attend? Cancel here<https://xbo.pipedrive.com/scheduler/pK242LiM/ice-barcelona-xbo-meeting/cancel/3gaqg>.\nSchedule meetings quickly with Pipedrive\npipedrive.com/schedule-meeting<https://www.pipedrive.com/schedule-meeting>\n",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E0080000000000DCB688EE87DC01000000000000000010000000370C995C6D31D24A941472A28FE306D7",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Ali Ben-Hariz / JJ - ICE Barcelona XBO meeting",
+      "start_time": "2026-01-19T10:30:00.000Z",
+      "end_time": "2026-01-19T11:00:00.000Z",
+      "category": "work",
+      "energy_level": "low",
+      "immutable": true,
+      "location": "To be determined",
+      "metadata": {
+        "calendar_source": "work",
+        "description": "JJ invited you to a scheduled meeting.\nTime doesn't fit with your schedule? Reschedule it here<https://xbo.pipedrive.com/scheduler/pK242LiM/ice-barcelona-xbo-meeting/reschedule/zn4Rg>.\nCan't attend? Cancel here<https://xbo.pipedrive.com/scheduler/pK242LiM/ice-barcelona-xbo-meeting/cancel/zn4Rg>.\nSchedule meetings quickly with Pipedrive\npipedrive.com/schedule-meeting<https://www.pipedrive.com/schedule-meeting>\n",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E00800000000F2260D89EE87DC01000000000000000010000000CE0409F1B25EC645A7DC49DDF6C45A70",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Aran Singh S / JJ - ICE Barcelona XBO meeting",
+      "start_time": "2026-01-19T11:00:00.000Z",
+      "end_time": "2026-01-19T11:30:00.000Z",
+      "category": "work",
+      "energy_level": "low",
+      "immutable": true,
+      "location": "To be determined",
+      "metadata": {
+        "calendar_source": "work",
+        "description": "JJ invited you to a scheduled meeting.\nTime doesn't fit with your schedule? Reschedule it here<https://xbo.pipedrive.com/scheduler/pK242LiM/ice-barcelona-xbo-meeting/reschedule/pVOeN>.\nCan't attend? Cancel here<https://xbo.pipedrive.com/scheduler/pK242LiM/ice-barcelona-xbo-meeting/cancel/pVOeN>.\nSchedule meetings quickly with Pipedrive\npipedrive.com/schedule-meeting<https://www.pipedrive.com/schedule-meeting>\n",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E00800000000A12A75F13289DC010000000000000000100000006FA7A62BA7A50447B6E009ADB8FD5682",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "VIP Report completion ",
+      "start_time": "2026-01-19T12:00:00.000Z",
+      "end_time": "2026-01-19T13:00:00.000Z",
+      "category": "work",
+      "energy_level": "low",
+      "immutable": false,
+      "location": null,
+      "metadata": {
+        "calendar_source": "work",
+        "description": "\n",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E00800000000B75E4F7DEE87DC010000000000000000100000002E8BB3E7A9248B4DAFB12BD8C734499B",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Erik Donnelly / JJ - ICE Barcelona XBO meeting",
+      "start_time": "2026-01-19T13:00:00.000Z",
+      "end_time": "2026-01-19T13:30:00.000Z",
+      "category": "work",
+      "energy_level": "low",
+      "immutable": true,
+      "location": "To be determined",
+      "metadata": {
+        "calendar_source": "work",
+        "description": "JJ invited you to a scheduled meeting.\nTime doesn't fit with your schedule? Reschedule it here<https://xbo.pipedrive.com/scheduler/pK242LiM/ice-barcelona-xbo-meeting/reschedule/7gmWn>.\nCan't attend? Cancel here<https://xbo.pipedrive.com/scheduler/pK242LiM/ice-barcelona-xbo-meeting/cancel/7gmWn>.\nSchedule meetings quickly with Pipedrive\npipedrive.com/schedule-meeting<https://www.pipedrive.com/schedule-meeting>\n",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E008000000009C6C1A592689DC010000000000000000100000003A16CB44D713BC4B8765C39BBC434D52",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Dan& Lior",
+      "start_time": "2026-01-19T13:30:00.000Z",
+      "end_time": "2026-01-19T14:00:00.000Z",
+      "category": "work",
+      "energy_level": "low",
+      "immutable": false,
+      "location": "Microsoft Teams Meeting",
+      "metadata": {
+        "calendar_source": "work",
+        "description": "\n________________________________________________________________________________\nMicrosoft Teams meeting\nJoin: https://teams.microsoft.com/meet/38270652146050?p=k0qN1XhGLLYO6vdy67<https://eur06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fteams.microsoft.com%2Fmeet%2F38270652146050%3Fp%3Dk0qN1XhGLLYO6vdy67&data=05%7C02%7Cdan.m%40xbo.com%7C9ba898e40e6342a3e79208de573d7ca4%7C8dfc9b7ac1f244e2826c43386be451a7%7C0%7C0%7C639044118757156325%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOi",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E008000000003CAADA4F1486DC0100000000000000001000000045C306414E87744CB0F01AD98636CDC3",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Corporate VIP - Managment sync   ",
+      "start_time": "2026-01-19T14:00:00.000Z",
+      "end_time": "2026-01-19T15:00:00.000Z",
+      "category": "work",
+      "energy_level": "low",
+      "immutable": true,
+      "location": "Microsoft Teams Meeting",
+      "metadata": {
+        "calendar_source": "work",
+        "description": "Hi all,\nThis meeting is intended to align the management team on XBO’s VIP clients. I’ll be sharing an overview of key clients, their current stages, and their individual needs.\nThe goal is to ensure everyone is familiar with the relevant names and activities so we can collaborate effectively and drive progress together.\nWe will do it once a month from now on\nThank you,\nDan\n________________________________________________________________________________\nMicrosoft Teams meeting\nJoin: https://team",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E008000000001DD3487DEE87DC010000000000000000100000002171732ECF84F742B23A4049AC44570C",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Michal Tyczynski / JJ - ICE Barcelona XBO meeting",
+      "start_time": "2026-01-19T14:00:00.000Z",
+      "end_time": "2026-01-19T14:30:00.000Z",
+      "category": "work",
+      "energy_level": "low",
+      "immutable": true,
+      "location": "To be determined",
+      "metadata": {
+        "calendar_source": "work",
+        "description": "JJ zaprosił Cię na zaplanowane spotkanie.\nTermin nie pasuje do Twoich planów? Zmień go tutaj<https://xbo.pipedrive.com/scheduler/pK242LiM/ice-barcelona-xbo-meeting/reschedule/KVAKN>.\nNie możesz uczestniczyć? Anuluj tutaj<https://xbo.pipedrive.com/scheduler/pK242LiM/ice-barcelona-xbo-meeting/cancel/KVAKN>.\nSzybko planuj spotkania z Pipedrive\npipedrive.com/schedule-meeting<https://www.pipedrive.com/schedule-meeting>\n",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E00800000000B952B38AEE87DC01000000000000000010000000C7089231F8FFCD498D988AAD52B129F6",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "John Williams / JJ - ICE Barcelona XBO meeting",
+      "start_time": "2026-01-19T14:30:00.000Z",
+      "end_time": "2026-01-19T15:00:00.000Z",
+      "category": "work",
+      "energy_level": "low",
+      "immutable": true,
+      "location": "To be determined",
+      "metadata": {
+        "calendar_source": "work",
+        "description": "JJ invited you to a scheduled meeting.\nTime doesn't fit with your schedule? Reschedule it here<https://xbo.pipedrive.com/scheduler/pK242LiM/ice-barcelona-xbo-meeting/reschedule/ag6WV>.\nCan't attend? Cancel here<https://xbo.pipedrive.com/scheduler/pK242LiM/ice-barcelona-xbo-meeting/cancel/ag6WV>.\nSchedule meetings quickly with Pipedrive\npipedrive.com/schedule-meeting<https://www.pipedrive.com/schedule-meeting>\n",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E008000000005DB4FE89EE87DC01000000000000000010000000B9D0BAB2A6B7D1448066CF003E6247CA",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Valeriia / JJ - ICE Barcelona XBO meeting",
+      "start_time": "2026-01-19T15:30:00.000Z",
+      "end_time": "2026-01-19T16:00:00.000Z",
+      "category": "work",
+      "energy_level": "low",
+      "immutable": true,
+      "location": "To be determined",
+      "metadata": {
+        "calendar_source": "work",
+        "description": "JJ invited you to a scheduled meeting.\nTime doesn't fit with your schedule? Reschedule it here<https://xbo.pipedrive.com/scheduler/pK242LiM/ice-barcelona-xbo-meeting/reschedule/xVDen>.\nCan't attend? Cancel here<https://xbo.pipedrive.com/scheduler/pK242LiM/ice-barcelona-xbo-meeting/cancel/xVDen>.\nSchedule meetings quickly with Pipedrive\npipedrive.com/schedule-meeting<https://www.pipedrive.com/schedule-meeting>\n",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E008000000001D27028CEE87DC0100000000000000001000000064121431CF8E904BAE41F3D583ECAEC1",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Galin Mihaylov / JJ - ICE Barcelona XBO meeting",
+      "start_time": "2026-01-20T11:00:00.000Z",
+      "end_time": "2026-01-20T11:30:00.000Z",
+      "category": "work",
+      "energy_level": "low",
+      "immutable": true,
+      "location": "To be determined",
+      "metadata": {
+        "calendar_source": "work",
+        "description": "JJ пригласил(а) вас на запланированную встречу.\nВам не подходит это время? Перенести встречу можно здесь<https://xbo.pipedrive.com/scheduler/pK242LiM/ice-barcelona-xbo-meeting/reschedule/wVd4V>.\nНе можете присутствовать? Отменить встречу можно здесь<https://xbo.pipedrive.com/scheduler/pK242LiM/ice-barcelona-xbo-meeting/cancel/wVd4V>.\nБыстрое планирование встреч с помощью Pipedrive\npipedrive.com/schedule-meeting<https://www.pipedrive.com/schedule-meeting>\n",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E0080000000018AECD8AEE87DC010000000000000000100000001042A58418303F44A13F8AF41F5F8ABB",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Tsonyo Atanasov / JJ - ICE Barcelona XBO meeting",
+      "start_time": "2026-01-20T11:30:00.000Z",
+      "end_time": "2026-01-20T12:00:00.000Z",
+      "category": "work",
+      "energy_level": "low",
+      "immutable": true,
+      "location": "To be determined",
+      "metadata": {
+        "calendar_source": "work",
+        "description": "JJ invited you to a scheduled meeting.\nTime doesn't fit with your schedule? Reschedule it here<https://xbo.pipedrive.com/scheduler/pK242LiM/ice-barcelona-xbo-meeting/reschedule/KN76n>.\nCan't attend? Cancel here<https://xbo.pipedrive.com/scheduler/pK242LiM/ice-barcelona-xbo-meeting/cancel/KN76n>.\nSchedule meetings quickly with Pipedrive\npipedrive.com/schedule-meeting<https://www.pipedrive.com/schedule-meeting>\n",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E008000000009EDE0F88EE87DC010000000000000000100000002E7D52644C19024781C820D043F6B968",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Andrew Frost / JJ - ICE Barcelona XBO meeting",
+      "start_time": "2026-01-20T12:00:00.000Z",
+      "end_time": "2026-01-20T12:30:00.000Z",
+      "category": "work",
+      "energy_level": "low",
+      "immutable": true,
+      "location": "To be determined",
+      "metadata": {
+        "calendar_source": "work",
+        "description": "JJ invited you to a scheduled meeting.\nTime doesn't fit with your schedule? Reschedule it here<https://xbo.pipedrive.com/scheduler/pK242LiM/ice-barcelona-xbo-meeting/reschedule/xn3lN>.\nCan't attend? Cancel here<https://xbo.pipedrive.com/scheduler/pK242LiM/ice-barcelona-xbo-meeting/cancel/xn3lN>.\nSchedule meetings quickly with Pipedrive\npipedrive.com/schedule-meeting<https://www.pipedrive.com/schedule-meeting>\n",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E00800000000609CD049A984DC01000000000000000010000000BFEC73A1F58E914BAA8EF420DE271447",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Invesus & XBO - ICE ",
+      "start_time": "2026-01-20T12:30:00.000Z",
+      "end_time": "2026-01-20T13:00:00.000Z",
+      "category": "work",
+      "energy_level": "low",
+      "immutable": false,
+      "location": null,
+      "metadata": {
+        "calendar_source": "work",
+        "description": "\n\n\n",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E008000000009123DB8AEE87DC01000000000000000010000000AF12BB6362E5A1409DDC1BB3E17B4242",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Carlos Rivas / JJ - Discovery call",
+      "start_time": "2026-01-20T13:00:00.000Z",
+      "end_time": "2026-01-20T13:30:00.000Z",
+      "category": "work",
+      "energy_level": "low",
+      "immutable": true,
+      "location": "https://teams.microsoft.com/l/meetup-join/19%3ameeting_YWQ5ZDM2MDItNjNjZi00YWQzLTkwZDgtZDdmZDZjOTMzZTAz%40thread.v2/0?context=%7b%22Tid%22%3a%228dfc9b7a-c1f2-44e2-826c-43386be451a7%22%2c%22Oid%22%3a%229f3c5be9-6c63-4633-9c87-d1c3fac890fc%22%7d",
+      "metadata": {
+        "calendar_source": "work",
+        "description": "──────────\n\nJJ is inviting you to a scheduled Microsoft Teams meeting.\n\nJoin Microsoft Teams Meeting\nhttps://teams.microsoft.com/l/meetup-join/19%3ameeting_YWQ5ZDM2MDItNjNjZi00YWQzLTkwZDgtZDdmZDZjOTMzZTAz%40thread.v2/0?context=%7b%22Tid%22%3a%228dfc9b7a-c1f2-44e2-826c-43386be451a7%22%2c%22Oid%22%3a%229f3c5be9-6c63-4633-9c87-d1c3fac890fc%22%7d\n\n──────────\n\nJJ te ha invitado a una reunión programada.\n¿No te viene bien la hora? Reprográmala aquí<https://xbo.pipedrive.com/scheduler/Xq5v5lse/discover",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E0080000000074154387EE87DC01000000000000000010000000B89E0865DBE4694D864696A9C97DF31D",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Igal / JJ - ICE Barcelona XBO meeting",
+      "start_time": "2026-01-20T13:30:00.000Z",
+      "end_time": "2026-01-20T14:00:00.000Z",
+      "category": "work",
+      "energy_level": "low",
+      "immutable": true,
+      "location": "To be determined",
+      "metadata": {
+        "calendar_source": "work",
+        "description": "JJ invited you to a scheduled meeting.\nTime doesn't fit with your schedule? Reschedule it here<https://xbo.pipedrive.com/scheduler/pK242LiM/ice-barcelona-xbo-meeting/reschedule/dVXmn>.\nCan't attend? Cancel here<https://xbo.pipedrive.com/scheduler/pK242LiM/ice-barcelona-xbo-meeting/cancel/dVXmn>.\nSchedule meetings quickly with Pipedrive\npipedrive.com/schedule-meeting<https://www.pipedrive.com/schedule-meeting>\n",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E0080000000094595582EE87DC01000000000000000010000000786C186A390D8F43B1061B5F68247A53",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Sharon Hadad / JJ - ICE Barcelona XBO meeting",
+      "start_time": "2026-01-20T14:00:00.000Z",
+      "end_time": "2026-01-20T14:30:00.000Z",
+      "category": "work",
+      "energy_level": "low",
+      "immutable": true,
+      "location": "To be determined",
+      "metadata": {
+        "calendar_source": "work",
+        "description": "JJ invited you to a scheduled meeting.\nTime doesn't fit with your schedule? Reschedule it here<https://xbo.pipedrive.com/scheduler/pK242LiM/ice-barcelona-xbo-meeting/reschedule/VlWWg>.\nCan't attend? Cancel here<https://xbo.pipedrive.com/scheduler/pK242LiM/ice-barcelona-xbo-meeting/cancel/VlWWg>.\nSchedule meetings quickly with Pipedrive\npipedrive.com/schedule-meeting<https://www.pipedrive.com/schedule-meeting>\n",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E00800000000203DE1966889DC010000000000000000100000003657D2966AB746468BA370AF5F6B62F7",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "XBO & Nubi - ICE ",
+      "start_time": "2026-01-20T14:20:00.000Z",
+      "end_time": "2026-01-20T14:50:00.000Z",
+      "category": "work",
+      "energy_level": "low",
+      "immutable": false,
+      "location": "Bet Construct",
+      "metadata": {
+        "calendar_source": "work",
+        "description": "\n\n\n",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E008000000003F730387EE87DC010000000000000000100000006A69998D8F702E4EBE30FBA714498483",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Isak Nyberg / JJ - ICE Barcelona XBO meeting",
+      "start_time": "2026-01-20T14:30:00.000Z",
+      "end_time": "2026-01-20T15:00:00.000Z",
+      "category": "work",
+      "energy_level": "low",
+      "immutable": true,
+      "location": "To be determined",
+      "metadata": {
+        "calendar_source": "work",
+        "description": "JJ invited you to a scheduled meeting.\nTime doesn't fit with your schedule? Reschedule it here<https://xbo.pipedrive.com/scheduler/pK242LiM/ice-barcelona-xbo-meeting/reschedule/wgwPV>.\nCan't attend? Cancel here<https://xbo.pipedrive.com/scheduler/pK242LiM/ice-barcelona-xbo-meeting/cancel/wgwPV>.\nSchedule meetings quickly with Pipedrive\npipedrive.com/schedule-meeting<https://www.pipedrive.com/schedule-meeting>\n",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E0080000000075D80D88EE87DC01000000000000000010000000F2F8CF66B5216741B582388BB6C54DCE",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Virat Goahit / JJ - ICE Barcelona XBO meeting",
+      "start_time": "2026-01-20T15:15:00.000Z",
+      "end_time": "2026-01-20T15:45:00.000Z",
+      "category": "work",
+      "energy_level": "low",
+      "immutable": true,
+      "location": "To be determined",
+      "metadata": {
+        "calendar_source": "work",
+        "description": "JJ invited you to a scheduled meeting.\nTime doesn't fit with your schedule? Reschedule it here<https://xbo.pipedrive.com/scheduler/pK242LiM/ice-barcelona-xbo-meeting/reschedule/OnvWN>.\nCan't attend? Cancel here<https://xbo.pipedrive.com/scheduler/pK242LiM/ice-barcelona-xbo-meeting/cancel/OnvWN>.\nSchedule meetings quickly with Pipedrive\npipedrive.com/schedule-meeting<https://www.pipedrive.com/schedule-meeting>\n",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E0080000000060511D696A89DC01000000000000000010000000381B0ECAE073A34DB64567DE5F27D9D2",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "S2B PGWay Nidal ",
+      "start_time": "2026-01-20T15:20:00.000Z",
+      "end_time": "2026-01-20T15:40:00.000Z",
+      "category": "work",
+      "energy_level": "low",
+      "immutable": false,
+      "location": "PGWay Booth - Hall 5 - 5D22",
+      "metadata": {
+        "calendar_source": "work",
+        "description": "\n________________________________________________________________________________\n",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E00800000000E50503B2A68ADC01000000000000000010000000F95E393D8CB2C4449BC6CBEF2F2817AA",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Snir 4SQ",
+      "start_time": "2026-01-21T08:00:00.000Z",
+      "end_time": "2026-01-21T08:30:00.000Z",
+      "category": "work",
+      "energy_level": "low",
+      "immutable": false,
+      "location": null,
+      "metadata": {
+        "calendar_source": "work",
+        "description": "\n",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E0080000000076063FBFA28ADC01000000000000000010000000A708A6DCD56F174A848372069AA21003",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "TG Announcements Kick off ",
+      "start_time": "2026-01-21T09:00:00.000Z",
+      "end_time": "2026-01-21T10:00:00.000Z",
+      "category": "work",
+      "energy_level": "low",
+      "immutable": false,
+      "location": "Microsoft Teams Meeting",
+      "metadata": {
+        "calendar_source": "work",
+        "description": "\n________________________________________________________________________________\nMicrosoft Teams meeting\nJoin: https://teams.microsoft.com/meet/34770997582180?p=FUw5J7PeBeiLSKDmA2\nMeeting ID: 347 709 975 821 80\nPasscode: tg74zQ2e\n________________________________\nNeed help?<https://aka.ms/JoinTeamsMeeting?omkt=en-US> | System reference<https://teams.microsoft.com/l/meetup-join/19%3ameeting_NTE2NDk0MzgtNjA0NC00M2RiLTk4NWItZDFkYTBhNTlkNTZi%40thread.v2/0?context=%7b%22Tid%22%3a%228dfc9b7a-c1f2-44e2",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E0080000000030BB842D0287DC0100000000000000001000000056CD37C006D3D7478FD98EF5249B3105",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Exoclick & XBO ",
+      "start_time": "2026-01-21T09:30:00.000Z",
+      "end_time": "2026-01-21T10:15:00.000Z",
+      "category": "work",
+      "energy_level": "low",
+      "immutable": false,
+      "location": "Mapfre Tower",
+      "metadata": {
+        "calendar_source": "work",
+        "description": "Hi Team\n\nAs discussed, looking forward to get introduced f2f.\n\nThanks!\n\n\nRegards,\n\nAleksandra Bardeckaja\nClient Success Manager\n+356 99012672 | Telegram: @AleksandraBarde | aleksandra.b@xbo.com<mailto:aleksandra.b@xbo.com> |  www.xbo.com<https://eur06.safelinks.protection.outlook.com/?url=http%3A%2F%2Fwww.xbo.com%2F&data=05%7C02%7Cdan.m%40xbo.com%7C0dff4c2f290344e3885a08de5779e35f%7C8dfc9b7ac1f244e2826c43386be451a7%7C0%7C0%7C639044378260239081%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYi",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E0080000000015A3CA20A58ADC01000000000000000010000000A6C93C62B701DC42BF7DA0A961B48A9D",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Shai GL | Dan XBO ",
+      "start_time": "2026-01-21T12:30:00.000Z",
+      "end_time": "2026-01-21T13:30:00.000Z",
+      "category": "work",
+      "energy_level": "low",
+      "immutable": false,
+      "location": "Microsoft Teams Meeting",
+      "metadata": {
+        "calendar_source": "work",
+        "description": "\n________________________________________________________________________________\nMicrosoft Teams meeting\nJoin: https://teams.microsoft.com/meet/39220165781114?p=gql4sOXmZ1HQCihxR9\nMeeting ID: 392 201 657 811 14\nPasscode: Qi2g7GZ2\n________________________________\nNeed help?<https://aka.ms/JoinTeamsMeeting?omkt=en-US> | System reference<https://teams.microsoft.com/l/meetup-join/19%3ameeting_ZDRjNzY0N2QtYzhkOS00ZGM1LTg5YTItNWJkZWUwYWIwNTg3%40thread.v2/0?context=%7b%22Tid%22%3a%228dfc9b7a-c1f2-44e2",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E00800000000947591680A8ADC0100000000000000001000000068B6F8B0FCE38546B88AB6B7663372B2",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "XBO.emoney - Status update (Agenda in the body)",
+      "start_time": "2026-01-21T13:30:00.000Z",
+      "end_time": "2026-01-21T14:00:00.000Z",
+      "category": "work",
+      "energy_level": "low",
+      "immutable": false,
+      "location": "Microsoft Teams Meeting",
+      "metadata": {
+        "calendar_source": "work",
+        "description": "Please invite you department personal as you find fit\n\n  1.\nUpdate on the technical implementation - Lior A\n  2.\nUpdate on the WL completion, on-boarding progress, set up for go live - Lior H\n  3.\nHand over of materials and department guidance - Open discussion\n  4.\nDiscuss  phase 2 after Go-Live\n\n________________________________________________________________________________\nMicrosoft Teams meeting\nJoin: https://teams.microsoft.com/meet/33101266268978?p=MbRqn0RX5urOsJ1dC6<https://eur06.safelin",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E00800000000AD876B78F88ADC0100000000000000001000000016BDDE5E3D41B541901CEECDC3C9995A",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Dor’s report ",
+      "start_time": "2026-01-22T10:15:00.000Z",
+      "end_time": "2026-01-22T11:15:00.000Z",
+      "category": "work",
+      "energy_level": "low",
+      "immutable": false,
+      "location": null,
+      "metadata": {
+        "calendar_source": "work",
+        "description": "\n",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E00800000000539FE607EA89DC01000000000000000010000000BEB85EAD69BC9C428FDDB53938311F79",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "FTDs Development ",
+      "start_time": "2026-01-22T13:00:00.000Z",
+      "end_time": "2026-01-22T14:00:00.000Z",
+      "category": "work",
+      "energy_level": "low",
+      "immutable": false,
+      "location": "Microsoft Teams Meeting",
+      "metadata": {
+        "calendar_source": "work",
+        "description": "\n________________________________________________________________________________\nMicrosoft Teams meeting\nJoin: https://teams.microsoft.com/meet/32896598838477?p=CXTV8310cVzR6dSuhY\nMeeting ID: 328 965 988 384 77\nPasscode: Jm2MD9i5\n________________________________\nNeed help?<https://aka.ms/JoinTeamsMeeting?omkt=en-US> | System reference<https://teams.microsoft.com/l/meetup-join/19%3ameeting_M2JiZjEzZTAtMzc1Yy00ZWFlLTk2MzItODhmY2RjODM5Y2Jl%40thread.v2/0?context=%7b%22Tid%22%3a%228dfc9b7a-c1f2-44e2",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E0080000000072D20F5FD18BDC0100000000000000001000000003D17AF59C379F4389C222C7A282433D",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Telegram bot cc ",
+      "start_time": "2026-01-23T08:00:00.000Z",
+      "end_time": "2026-01-23T09:00:00.000Z",
+      "category": "work",
+      "energy_level": "low",
+      "immutable": false,
+      "location": null,
+      "metadata": {
+        "calendar_source": "work",
+        "description": "\n",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E00800000000AC090265D18BDC01000000000000000010000000D2D249A52E343A47884F98E2186D5494",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Rapyd deal ",
+      "start_time": "2026-01-23T09:30:00.000Z",
+      "end_time": "2026-01-23T10:30:00.000Z",
+      "category": "work",
+      "energy_level": "low",
+      "immutable": false,
+      "location": null,
+      "metadata": {
+        "calendar_source": "work",
+        "description": "\n",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E008000000003B36586C198ADC010000000000000000100000004A175C2EE175484DAD5D62BB52C59B02",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "inform Aleksandra ",
+      "start_time": "2026-01-23T10:30:00.000Z",
+      "end_time": "2026-01-23T11:00:00.000Z",
+      "category": "work",
+      "energy_level": "low",
+      "immutable": false,
+      "location": null,
+      "metadata": {
+        "calendar_source": "work",
+        "description": "\n",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E008000000006ED09F70198ADC0100000000000000001000000012A93E38E3D5554283B0ACB0F4F08FEA",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "inform anvar ",
+      "start_time": "2026-01-23T11:00:00.000Z",
+      "end_time": "2026-01-23T11:30:00.000Z",
+      "category": "work",
+      "energy_level": "low",
+      "immutable": false,
+      "location": null,
+      "metadata": {
+        "calendar_source": "work",
+        "description": "\n",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E008000000008A70D56BAC84DC0100000000000000001000000003EE80CC9DD6B44784972801176ADCA0",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "1:1 – Alignment & Priorities",
+      "start_time": "2026-01-26T10:30:00.000Z",
+      "end_time": "2026-01-26T11:30:00.000Z",
+      "category": "work",
+      "energy_level": "low",
+      "immutable": false,
+      "location": "Microsoft Teams Meeting",
+      "metadata": {
+        "calendar_source": "work",
+        "description": "\n________________________________________________________________________________\nMicrosoft Teams meeting\nJoin: https://teams.microsoft.com/meet/35129051431208?p=PNKkla0Xw0TQfNhEDD<https://eur06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fteams.microsoft.com%2Fmeet%2F35129051431208%3Fp%3DPNKkla0Xw0TQfNhEDD&data=05%7C02%7Cdan.m%40xbo.com%7C9418cc4da850413c3ae408de52c3f3bf%7C8dfc9b7ac1f244e2826c43386be451a7%7C0%7C0%7C639039198711115076%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOi",
+        "attendees": 0,
+        "recurrence": true
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E008000000001B4AD6D9808BDC010000000000000000100000007C7C8E7FF242A247A0B6056930B7D327",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Roles and Permissions ",
+      "start_time": "2026-01-26T13:30:00.000Z",
+      "end_time": "2026-01-26T14:30:00.000Z",
+      "category": "work",
+      "energy_level": "low",
+      "immutable": false,
+      "location": "Microsoft Teams Meeting",
+      "metadata": {
+        "calendar_source": "work",
+        "description": "Agenda:\n\n  1.\nOverview of the CRM general roles and permissions architecture\n\n  1.\nHow to make the changes that each agent sees only its own database and not others\n  2.\nFee visibility and permissions (view vs. edit)\n  3.\nNext steps and ownership of Marcelle and key contacts\n\n\n\n________________________________________________________________________________\nMicrosoft Teams meeting\nJoin: https://teams.microsoft.com/meet/3443768856558?p=e8cMaNaVpMl4iIHGI8\nMeeting ID: 344 376 885 655 8\nPasscode: Ef",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E00800000000D42EE3682673DC0100000000000000001000000076A426FF94444B44B9003385D52B479F",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "TLM TAXES - 24/25 ",
+      "start_time": "2026-01-26T14:30:00.000Z",
+      "end_time": "2026-01-26T16:30:00.000Z",
+      "category": "work",
+      "energy_level": "mid",
+      "immutable": false,
+      "location": null,
+      "metadata": {
+        "calendar_source": "work",
+        "description": "\n",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E00800000000E920C984E48EDC01000000000000000010000000074373E4FFFA8B449E94BAFE5E78587E",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Rapyd Strategy ",
+      "start_time": "2026-01-27T10:00:00.000Z",
+      "end_time": "2026-01-27T10:45:00.000Z",
+      "category": "work",
+      "energy_level": "low",
+      "immutable": false,
+      "location": "Microsoft Teams Meeting",
+      "metadata": {
+        "calendar_source": "work",
+        "description": "\n________________________________________________________________________________\nMicrosoft Teams meeting\nJoin: https://teams.microsoft.com/meet/35056182820805?p=FJSGhiKd1UdipUU1RA\nMeeting ID: 350 561 828 208 05\nPasscode: PS23Uk9K\n________________________________\nNeed help?<https://aka.ms/JoinTeamsMeeting?omkt=en-US> | System reference<https://teams.microsoft.com/l/meetup-join/19%3ameeting_OTQ0ZGZhMGUtZjhhMC00ZGEyLWE1M2YtYjVhOWU0MTE3MDU0%40thread.v2/0?context=%7b%22Tid%22%3a%228dfc9b7a-c1f2-44e2",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E00800000000E97CC4DA848BDC010000000000000000100000000154598FFA5BCC4F832991C5E93A4BA2",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "XBO | EQ - Intro meeting",
+      "start_time": "2026-01-27T12:00:00.000Z",
+      "end_time": "2026-01-27T12:30:00.000Z",
+      "category": "work",
+      "energy_level": "low",
+      "immutable": true,
+      "location": "Microsoft Teams Meeting",
+      "metadata": {
+        "calendar_source": "work",
+        "description": "\n________________________________________________________________________________\nMicrosoft Teams meeting\nJoin: https://teams.microsoft.com/meet/3631646711678?p=OaIkQps4vxdFlVvFOn<https://eur06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fteams.microsoft.com%2Fmeet%2F3631646711678%3Fp%3DOaIkQps4vxdFlVvFOn&data=05%7C02%7Cdan.m%40xbo.com%7Cbf932ca4e0bd400f9a4308de599bff43%7C8dfc9b7ac1f244e2826c43386be451a7%7C0%7C0%7C639046723700922475%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIw",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E00800000000FA9BB9B1B98EDC010000000000000000100000000D65A0ECF0224A44A4D069C70150E5E5",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Xglobal - XBO ",
+      "start_time": "2026-01-28T12:30:00.000Z",
+      "end_time": "2026-01-28T13:30:00.000Z",
+      "category": "work",
+      "energy_level": "low",
+      "immutable": false,
+      "location": "Kyriakou Matsi 5, Mesa Geitonia, 4002, Limassol ",
+      "metadata": {
+        "calendar_source": "work",
+        "description": "https://maps.app.goo.gl/mTwXrTavVsT1DM2Y6\n\n\n\n________________________________________________________________________________\nMicrosoft Teams meeting\nJoin: https://teams.microsoft.com/meet/35038683477855?p=ig2jvHAkt39VD39fAV\nMeeting ID: 350 386 834 778 55\nPasscode: wk3V7Rx2\n________________________________\nNeed help?<https://aka.ms/JoinTeamsMeeting?omkt=en-US> | System reference<https://teams.microsoft.com/l/meetup-join/19%3ameeting_NWM5YzQ2N2MtODI0MS00MDY4LWFlZmYtZjQ2OGEwOGI5NmI2%40thread.v2/0?",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E0080000000050710222508CDC01000000000000000010000000AAB2F9A03E85FF4882FDC874AEEC3544",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Crypto Regulations 2026 - GTM Team Discussion",
+      "start_time": "2026-01-28T13:30:00.000Z",
+      "end_time": "2026-01-28T14:00:00.000Z",
+      "category": "travel",
+      "energy_level": "high",
+      "immutable": false,
+      "location": "Microsoft Teams Meeting",
+      "metadata": {
+        "calendar_source": "work",
+        "description": "Hi Team\n\nA few new crypto regulations have kicked off in January 2026 such as:\n\n\n  *   MiCA deadlines approaching\n  *   DAC8 (EU) & CARF (Crypto-Asset Reporting Framework, global): The End of Tax Anonymity\n\nWhat it is: This is the crypto equivalent of the Common Reporting Standard (CRS). Collect and report transaction data directly to tax authorities.\n                Over 75 jurisdictions (including major hubs like the Cayman Islands and BVI) have committed to CARF.\n\n\n  *   Travel Rule - The Tra",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E00800000000D949F88FC28EDC01000000000000000010000000F7F9A5D9C257204DA10BE55E3CBACD3D",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Ben OffBoarding  ",
+      "start_time": "2026-01-28T14:30:00.000Z",
+      "end_time": "2026-01-28T15:00:00.000Z",
+      "category": "work",
+      "energy_level": "low",
+      "immutable": false,
+      "location": "Microsoft Teams Meeting",
+      "metadata": {
+        "calendar_source": "work",
+        "description": "\n________________________________________________________________________________\nMicrosoft Teams meeting\nJoin: https://teams.microsoft.com/meet/37112667026998?p=YGhHt1yGLWCTYVK2YF\nMeeting ID: 371 126 670 269 98\nPasscode: 57Kr3at9\n________________________________\nNeed help?<https://aka.ms/JoinTeamsMeeting?omkt=en-US> | System reference<https://teams.microsoft.com/l/meetup-join/19%3ameeting_M2I4NDljNTMtNDEyNC00YmFkLWI4NzItYzdiMTY5NjcxMmMw%40thread.v2/0?context=%7b%22Tid%22%3a%228dfc9b7a-c1f2-44e2",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E00800000000A7A681EF6A8FDC01000000000000000010000000A1634DDDEA6E5D45B6950DB54B3CD662",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Healthy / Unhealthy Happy Hour ",
+      "start_time": "2026-01-29T14:00:00.000Z",
+      "end_time": "2026-01-29T15:00:00.000Z",
+      "category": "health",
+      "energy_level": "low",
+      "immutable": false,
+      "location": null,
+      "metadata": {
+        "calendar_source": "work",
+        "description": "You’re Invited!\nHealthy / Unhealthy Sweet Happy Hour\nWhich side will you treat yourself to?\nFresh fruit & dark chocolate 🫐🍫\nor cookies, candy & all the sugar? 🍪🍭\nJoin us for a sweet showdown - no judgment, just desserts.\n📅 Thursday 29/01/2026\n🕓 16:00\n📍Kitchen Area\n",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E00800000000AEF2106ECE8FDC0100000000000000001000000029B65D889838E645A1583A332C254E4C",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Nicosia for Libby ",
+      "start_time": "2026-01-30T07:00:00.000Z",
+      "end_time": "2026-01-30T11:00:00.000Z",
+      "category": "work",
+      "energy_level": "high",
+      "immutable": false,
+      "location": null,
+      "metadata": {
+        "calendar_source": "work",
+        "description": "\n",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E008000000009AC67A82A88FDC01000000000000000010000000F666EEB3143D2644AC01435C607427C4",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Mark/Lior/Dan :: Integrations Scope",
+      "start_time": "2026-01-30T15:00:00.000Z",
+      "end_time": "2026-01-30T15:30:00.000Z",
+      "category": "work",
+      "energy_level": "low",
+      "immutable": false,
+      "location": "Microsoft Teams Meeting",
+      "metadata": {
+        "calendar_source": "work",
+        "description": "\n________________________________________________________________________________\nMicrosoft Teams meeting\nJoin: https://teams.microsoft.com/meet/38904534549397?p=amRyl0M0RdGqPYbK4Q<https://eur06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fteams.microsoft.com%2Fmeet%2F38904534549397%3Fp%3DamRyl0M0RdGqPYbK4Q&data=05%7C02%7Cdan.m%40xbo.com%7Cbd2e700410c344b4304308de5dbfb68e%7C8dfc9b7ac1f244e2826c43386be451a7%7C0%7C0%7C639051275149500736%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOi",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E00800000000DF4B0186A378DC01000000000000000010000000D0DFE14B4075DB439FFFD2481145E284",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Rapyd Referral Gathering - Limassol",
+      "start_time": "2026-01-31T22:00:00.000Z",
+      "end_time": "2026-02-04T22:00:00.000Z",
+      "category": "work",
+      "energy_level": "high",
+      "immutable": false,
+      "location": null,
+      "metadata": {
+        "calendar_source": "work",
+        "description": "\n",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E00800000000AA344D17B98EDC010000000000000000100000000EB91EB725B7E845905D2CE62A18E684",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "2026 Expo Budget Discussion ",
+      "start_time": "2026-02-03T08:00:00.000Z",
+      "end_time": "2026-02-03T09:00:00.000Z",
+      "category": "work",
+      "energy_level": "low",
+      "immutable": false,
+      "location": "Microsoft Teams Meeting",
+      "metadata": {
+        "calendar_source": "work",
+        "description": "\n________________________________________________________________________________\nMicrosoft Teams meeting\nJoin: https://teams.microsoft.com/meet/34564967556479?p=n3vESfnw2B9gIJtEKe<https://eur06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fteams.microsoft.com%2Fmeet%2F34564967556479%3Fp%3Dn3vESfnw2B9gIJtEKe&data=05%7C02%7Cdan.m%40xbo.com%7C2534f2e5dfba4a96559f08de5cd055c8%7C8dfc9b7ac1f244e2826c43386be451a7%7C0%7C0%7C639050247045689628%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOi",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "37orvduvhqco4rrgiefadcc74g@google.com",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "xbo - payabl.CY call",
+      "start_time": "2026-02-05T09:00:00.000Z",
+      "end_time": "2026-02-05T09:30:00.000Z",
+      "category": "work",
+      "energy_level": "low",
+      "immutable": true,
+      "location": "https://meet.google.com/iog-cxku-owr",
+      "metadata": {
+        "calendar_source": "work",
+        "description": "You don't often get email from eleni.kaizer@payabl.com. Learn why this is important<https://aka.ms/LearnAboutSenderIdentification>\nxbo - payabl.CY call\nJoin with Google Meet – You have been invited by Eleni Kaizer to attend an event named xbo - payabl.CY call on Thursday Feb 5, 2026 ⋅ 11:00 – 11:30 (Eastern European Time - Nicosia).\n\n<https://eur06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fmeet.google.com%2Fiog-cxku-owr%3Fhs%3D224&data=05%7C02%7Cdan.m%40xbo.com%7C3f0f71d6e0f44027a50f08",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E0080000000056894631A478DC0100000000000000001000000033F2930672EB8343BAC21C7BEDB85517",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "IFX Dubai ",
+      "start_time": "2026-02-09T22:00:00.000Z",
+      "end_time": "2026-02-12T22:00:00.000Z",
+      "category": "work",
+      "energy_level": "high",
+      "immutable": false,
+      "location": "Dubai World Trade Centre, UAE",
+      "metadata": {
+        "calendar_source": "work",
+        "description": "\n",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E0080000000006DC4C86EE87DC010000000000000000100000007B104D4D3ED3AF46B77567C0D1EF5852",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Winter Olympic Games ???",
+      "start_time": "2026-02-09T22:00:00.000Z",
+      "end_time": "2026-02-12T22:00:00.000Z",
+      "category": "work",
+      "energy_level": "high",
+      "immutable": false,
+      "location": null,
+      "metadata": {
+        "calendar_source": "work",
+        "description": "\n",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E008000000007C77BB86EE87DC0100000000000000001000000037AAA2E7B0D74D46B1CB20D326CEB8F2",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Reminder",
+      "start_time": "2026-02-09T22:00:00.000Z",
+      "end_time": "2026-02-10T22:00:00.000Z",
+      "category": "work",
+      "energy_level": "high",
+      "immutable": false,
+      "location": null,
+      "metadata": {
+        "calendar_source": "work",
+        "description": "\n",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E00800000000D33F6D87EE87DC01000000000000000010000000913413AA11D106429D8773348FDC43C8",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "HOLIDAY",
+      "start_time": "2026-02-15T22:00:00.000Z",
+      "end_time": "2026-02-27T22:00:00.000Z",
+      "category": "work",
+      "energy_level": "high",
+      "immutable": false,
+      "location": null,
+      "metadata": {
+        "calendar_source": "work",
+        "description": "\n",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E008000000007C3B4D81EE87DC0100000000000000001000000031874C30E6EDF74281A160329DE4DCD7",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Reminder",
+      "start_time": "2026-02-22T22:00:00.000Z",
+      "end_time": "2026-02-23T22:00:00.000Z",
+      "category": "work",
+      "energy_level": "high",
+      "immutable": false,
+      "location": null,
+      "metadata": {
+        "calendar_source": "work",
+        "description": "\n",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E008000000004FB0D782EE87DC01000000000000000010000000F1ED5C008F33A842904AF75D44DECB4C",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Follow up: Georgia Tyrimou, Nexxie Group Limited",
+      "start_time": "2026-02-25T22:00:00.000Z",
+      "end_time": "2026-02-26T22:00:00.000Z",
+      "category": "work",
+      "energy_level": "high",
+      "immutable": false,
+      "location": null,
+      "metadata": {
+        "calendar_source": "work",
+        "description": "\n",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E0080000000077FE1F62A478DC01000000000000000010000000082384703A9BC343B042E6D9A2666C0E",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "TES Marbella, Spain",
+      "start_time": "2026-03-08T22:00:00.000Z",
+      "end_time": "2026-03-12T22:00:00.000Z",
+      "category": "work",
+      "energy_level": "high",
+      "immutable": false,
+      "location": "Hard Rock Hotel",
+      "metadata": {
+        "calendar_source": "work",
+        "description": "\n",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E0080000000056B7BB82EE87DC010000000000000000100000009F35B1917F97AF4DB10AA1D32EC3B739",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Reminder",
+      "start_time": "2026-03-16T22:00:00.000Z",
+      "end_time": "2026-03-17T22:00:00.000Z",
+      "category": "work",
+      "energy_level": "high",
+      "immutable": false,
+      "location": null,
+      "metadata": {
+        "calendar_source": "work",
+        "description": "\n",
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "704bvnf7il06kt9mo2j3f9cp19@google.com",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Padel Match",
+      "start_time": "2026-01-28T18:00:00.000Z",
+      "end_time": "2026-01-28T20:00:00.000Z",
+      "category": "sport",
+      "energy_level": "high",
+      "immutable": true,
+      "location": "GN Sporting Club Alassa, 34.76460375269143, 32.91417217449537, Άλασσα 4712, Cyprus",
+      "metadata": {
+        "calendar_source": "personal",
+        "description": null,
+        "attendees": 2,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "4a4ejopam06vdgof3de4r6ndet@google.com",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Lenny & Dan Hair",
+      "start_time": "2026-01-07T17:00:00.000Z",
+      "end_time": "2026-01-07T18:00:00.000Z",
+      "category": "personal",
+      "energy_level": "low",
+      "immutable": true,
+      "location": "M3WQ+GF9, Germasogeia",
+      "metadata": {
+        "calendar_source": "personal",
+        "description": null,
+        "attendees": 2,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "3db83k72vjprp4vqg0h80t1akf@google.com",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Libby Birth Certificate ",
+      "start_time": "2026-01-13T06:30:00.000Z",
+      "end_time": "2026-01-13T07:30:00.000Z",
+      "category": "personal",
+      "energy_level": "low",
+      "immutable": true,
+      "location": "https://maps.app.goo.gl/h6VczLHvV5tjs82z9",
+      "metadata": {
+        "calendar_source": "personal",
+        "description": "Συμμετοχή με το Google Meet: https://meet.google.com/zwi-tfxa-wao\nΉ καλέστε: (GB) +44 20 3956 3102 PIN: 300664804#\nΠερισσότεροι αριθμοί τηλεφώνου: https://tel.meet/zwi-tfxa-wao?pin=4677588103974&hs=7\n\nΜάθετε περισσότερα σχετικά με το Meet στη διεύθυνση: https://support.google.com/a/users/answer/9282720",
+        "attendees": 2,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "3d1h92580hojgrshvbimt84e4f@google.com",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Heritage Holiday",
+      "start_time": "2026-03-31T21:00:00.000Z",
+      "end_time": "2026-04-01T21:00:00.000Z",
+      "category": "personal",
+      "energy_level": "high",
+      "immutable": true,
+      "location": null,
+      "metadata": {
+        "calendar_source": "personal",
+        "description": null,
+        "attendees": 2,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "4fbvh36d54d9josq48lt7tdd8l@google.com",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Novikov Dinner",
+      "start_time": "2026-01-12T18:00:00.000Z",
+      "end_time": "2026-01-12T20:00:00.000Z",
+      "category": "personal",
+      "energy_level": "mid",
+      "immutable": true,
+      "location": "https://maps.app.goo.gl/gfmp1LgvG9fsZdQw8",
+      "metadata": {
+        "calendar_source": "personal",
+        "description": null,
+        "attendees": 2,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "64kmat2t216q6q71n7nkqkv7ag@google.com",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Please Print/Sign (for you and Leah) and give to HR",
+      "start_time": "2026-01-26T09:00:00.000Z",
+      "end_time": "2026-01-26T09:15:00.000Z",
+      "category": "personal",
+      "energy_level": "low",
+      "immutable": true,
+      "location": null,
+      "metadata": {
+        "calendar_source": "personal",
+        "description": null,
+        "attendees": 2,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E00800000000F0F742C72373DC01000000000000000010000000FE74C24835BFC14CAF08C85CEA32835D",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Yo-yo house plan ",
+      "start_time": "2025-12-29T22:00:00.000Z",
+      "end_time": "2025-12-30T22:00:00.000Z",
+      "category": "personal",
+      "energy_level": "high",
+      "immutable": false,
+      "location": null,
+      "metadata": {
+        "calendar_source": "personal",
+        "description": null,
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "0mnr0md7au7852om27lncp2bpa@google.com",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Landmark Hotel Confirmation",
+      "start_time": "2025-12-31T22:00:00.000Z",
+      "end_time": "2026-01-01T22:00:00.000Z",
+      "category": "travel",
+      "energy_level": "high",
+      "immutable": true,
+      "location": null,
+      "metadata": {
+        "calendar_source": "personal",
+        "description": null,
+        "attendees": 2,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "0ac54q68pklpqsv804vp2g26sq@google.com",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Libby Birth Certificate",
+      "start_time": "2026-01-09T08:00:00.000Z",
+      "end_time": "2026-01-09T10:00:00.000Z",
+      "category": "personal",
+      "energy_level": "mid",
+      "immutable": true,
+      "location": "M2HV+GGR, Bragadinou, Limassol 3041",
+      "metadata": {
+        "calendar_source": "personal",
+        "description": "Passports/ID of Leah & Dan - Take actual passports\nUtility Bill (Electric) - Attached\nMarriage Certificate - LA must have hard copy.\nYellow slips incase - attached.",
+        "attendees": 3,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "7rlhjhh2tksrbp589rm6uptj00@google.com",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "ICE ",
+      "start_time": "2026-01-19T22:00:00.000Z",
+      "end_time": "2026-01-22T22:00:00.000Z",
+      "category": "personal",
+      "energy_level": "high",
+      "immutable": true,
+      "location": null,
+      "metadata": {
+        "calendar_source": "personal",
+        "description": null,
+        "attendees": 2,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "4qcm9a93eji4cmr6i5amc9jn5g@google.com",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Dan&RH Meeting",
+      "start_time": "2026-01-28T09:00:00.000Z",
+      "end_time": "2026-01-28T11:00:00.000Z",
+      "category": "personal",
+      "energy_level": "mid",
+      "immutable": true,
+      "location": null,
+      "metadata": {
+        "calendar_source": "personal",
+        "description": "Συμμετοχή με το Google Meet: https://meet.google.com/dmd-jyyt-tch\nΉ καλέστε: (GB) +44 20 3957 2925 PIN: 369932000#\nΠερισσότεροι αριθμοί τηλεφώνου: https://tel.meet/dmd-jyyt-tch?pin=8041972775255&hs=7\n\nΜάθετε περισσότερα σχετικά με το Meet στη διεύθυνση: https://support.google.com/a/users/answer/9282720",
+        "attendees": 2,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "4leo8471gm9f4nlnukif6ht3j6@google.com",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Nadine flight to TLV CY110",
+      "start_time": "2026-01-11T11:30:00.000Z",
+      "end_time": "2026-01-11T12:30:00.000Z",
+      "category": "travel",
+      "energy_level": "high",
+      "immutable": true,
+      "location": null,
+      "metadata": {
+        "calendar_source": "personal",
+        "description": "Booking Ref <b>9338OK</b>",
+        "attendees": 3,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "r0q20sjtikk80jf3p6tbg52qgg@google.com",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Stay at The Landmark Nicosia, Autograph Collection",
+      "start_time": "2025-12-31T22:00:00.000Z",
+      "end_time": "2026-01-02T22:00:00.000Z",
+      "category": "personal",
+      "energy_level": "high",
+      "immutable": false,
+      "location": "The Landmark Nicosia, Autograph Collection, Λευκωσία",
+      "metadata": {
+        "calendar_source": "personal",
+        "description": "Για να δείτε λεπτομερείς πληροφορίες για τα συμβάντα που δημιουργούνται αυτόματα, όπως σε αυτή την περίπτωση, χρησιμοποιήστε την επίσημη εφαρμογή του Ημερολογίου Google. https://g.co/calendar\n\nΗ εκδήλωση αυτή δημιουργήθηκε από ένα μήνυμα που λάβατε στο Gmail. https://mail.google.com/mail?extsrc=cal&plid=ACUX6DM3hpgjq9p3Ju5cJSQ0IAO3pqnQRithEkw\n",
+        "attendees": 1,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "78j00hrab3l760ob8ckegtl850@google.com",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Stay at The Landmark Nicosia, Autograph Collection",
+      "start_time": "2025-12-31T22:00:00.000Z",
+      "end_time": "2026-01-02T22:00:00.000Z",
+      "category": "personal",
+      "energy_level": "high",
+      "immutable": false,
+      "location": "The Landmark Nicosia, Autograph Collection, Λευκωσία",
+      "metadata": {
+        "calendar_source": "personal",
+        "description": "Για να δείτε λεπτομερείς πληροφορίες για τα συμβάντα που δημιουργούνται αυτόματα, όπως σε αυτή την περίπτωση, χρησιμοποιήστε την επίσημη εφαρμογή του Ημερολογίου Google. https://g.co/calendar\n\nΗ εκδήλωση αυτή δημιουργήθηκε από ένα μήνυμα που λάβατε στο Gmail. https://mail.google.com/mail?extsrc=cal&plid=ACUX6DOR9DLFzbm-EmHgVvEKgoAQDgz_uSxFmL8\n",
+        "attendees": 1,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E0080000000096376A00487FDC01000000000000000010000000F63FFC2D948ADE47A54CABB424728345",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Lenny school ",
+      "start_time": "2026-01-07T06:00:00.000Z",
+      "end_time": "2026-01-07T06:45:00.000Z",
+      "category": "personal",
+      "energy_level": "low",
+      "immutable": false,
+      "location": null,
+      "metadata": {
+        "calendar_source": "personal",
+        "description": null,
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "bvm9nme4scd541o4am84a7q2b4@google.com",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Libby Doctor",
+      "start_time": "2026-01-28T06:30:00.000Z",
+      "end_time": "2026-01-28T07:30:00.000Z",
+      "category": "health",
+      "energy_level": "low",
+      "immutable": true,
+      "location": null,
+      "metadata": {
+        "calendar_source": "personal",
+        "description": null,
+        "attendees": 2,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "2rpg35i7tbcik16js8vquh78kf@google.com",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Israeli Consulate Appointment",
+      "start_time": "2026-01-30T08:50:00.000Z",
+      "end_time": "2026-01-30T09:50:00.000Z",
+      "category": "personal",
+      "energy_level": "low",
+      "immutable": true,
+      "location": "Embassy of Israel, Ioanni Grypari 4, Nicosia 1090, Cyprus",
+      "metadata": {
+        "calendar_source": "personal",
+        "description": null,
+        "attendees": 3,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "3fqqn37lmi0qk36ns90rp6249n@google.com",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Barbers",
+      "start_time": "2026-01-19T15:30:00.000Z",
+      "end_time": "2026-01-19T16:00:00.000Z",
+      "category": "personal",
+      "energy_level": "low",
+      "immutable": true,
+      "location": null,
+      "metadata": {
+        "calendar_source": "personal",
+        "description": null,
+        "attendees": 2,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "0p32foeshebgm9ckpg6hetkkel@google.com",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Heritage Holiday",
+      "start_time": "2026-03-24T22:00:00.000Z",
+      "end_time": "2026-03-25T22:00:00.000Z",
+      "category": "personal",
+      "energy_level": "high",
+      "immutable": true,
+      "location": null,
+      "metadata": {
+        "calendar_source": "personal",
+        "description": null,
+        "attendees": 2,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "4pbvg241pgam0h1pdpp7avlcgi@google.com",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Half Term Break - Heritage",
+      "start_time": "2026-02-18T22:00:00.000Z",
+      "end_time": "2026-02-24T22:00:00.000Z",
+      "category": "personal",
+      "energy_level": "high",
+      "immutable": true,
+      "location": null,
+      "metadata": {
+        "calendar_source": "personal",
+        "description": null,
+        "attendees": 2,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "39mja5vkg90o79rm7cdp2ak1eo@google.com",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Car Road tax deadline",
+      "start_time": "2026-03-10T22:00:00.000Z",
+      "end_time": "2026-03-11T22:00:00.000Z",
+      "category": "personal",
+      "energy_level": "high",
+      "immutable": true,
+      "location": null,
+      "metadata": {
+        "calendar_source": "personal",
+        "description": "After this date there will be 10 fine plus 10% of the road tax yearly value",
+        "attendees": 2,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "0acgfasde7m0tmgmqboc7fpkvs@google.com",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Payments",
+      "start_time": "2026-01-19T22:00:00.000Z",
+      "end_time": "2026-01-20T22:00:00.000Z",
+      "category": "personal",
+      "energy_level": "high",
+      "immutable": true,
+      "location": null,
+      "metadata": {
+        "calendar_source": "personal",
+        "description": "Marios Sewerage Man X2\nSocial Insurance for Shanti - 380.95, payment via credit card to Costas\nCurtain Man - 285.00\nTLM Taxes\nWater\n\nΣυμμετοχή με το Google Meet: https://meet.google.com/ukn-jxsj-acp\nΉ καλέστε: (GB) +44 20 3956 4065 PIN: 967021121#\nΠερισσότεροι αριθμοί τηλεφώνου: https://tel.meet/ukn-jxsj-acp?pin=5511321436960&hs=7\n\nΜάθετε περισσότερα σχετικά με το Meet στη διεύθυνση: https://support.google.com/a/users/answer/9282720",
+        "attendees": 2,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "4nrlvuf89itdtss104hiltg5al@google.com",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Heritage Half Term",
+      "start_time": "2026-04-05T21:00:00.000Z",
+      "end_time": "2026-04-17T21:00:00.000Z",
+      "category": "personal",
+      "energy_level": "high",
+      "immutable": true,
+      "location": null,
+      "metadata": {
+        "calendar_source": "personal",
+        "description": null,
+        "attendees": 2,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "5rdha71ils048g0gv0ohvrb7a4@google.com",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Lenny School Starts",
+      "start_time": "2026-01-07T22:00:00.000Z",
+      "end_time": "2026-01-08T22:00:00.000Z",
+      "category": "personal",
+      "energy_level": "high",
+      "immutable": true,
+      "location": null,
+      "metadata": {
+        "calendar_source": "personal",
+        "description": null,
+        "attendees": 2,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E00800000000AA348DA02B78DC01000000000000000010000000AB12C9D45112FD4AB169AA714DD4845A",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Dr Kirimis ",
+      "start_time": "2025-12-29T08:45:00.000Z",
+      "end_time": "2025-12-29T10:00:00.000Z",
+      "category": "personal",
+      "energy_level": "mid",
+      "immutable": false,
+      "location": null,
+      "metadata": {
+        "calendar_source": "personal",
+        "description": null,
+        "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "6pgf4cj8re661jafh1lna25blt@google.com",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Nadine collection for Larnaca",
+      "start_time": "2026-01-11T08:45:00.000Z",
+      "end_time": "2026-01-11T09:30:00.000Z",
+      "category": "personal",
+      "energy_level": "low",
+      "immutable": true,
+      "location": null,
+      "metadata": {
+        "calendar_source": "personal",
+        "description": null,
+        "attendees": 3,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "55bco373m2keflf2b9mpbun77u@google.com",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Heritage School Holiday",
+      "start_time": "2026-01-29T22:00:00.000Z",
+      "end_time": "2026-01-30T22:00:00.000Z",
+      "category": "personal",
+      "energy_level": "high",
+      "immutable": true,
+      "location": null,
+      "metadata": {
+        "calendar_source": "personal",
+        "description": null,
+        "attendees": 2,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "2nqu5mb62658mom42l3o0eadad@google.com",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "BYD - Antonis",
+      "start_time": "2026-01-12T10:00:00.000Z",
+      "end_time": "2026-01-12T10:30:00.000Z",
+      "category": "personal",
+      "energy_level": "low",
+      "immutable": true,
+      "location": "Agiou Athanasiou 58, 4102 Agios Athanasios, Limassol",
+      "metadata": {
+        "calendar_source": "personal",
+        "description": "Contact Number - 22322005\nTest drive requested for SUV's and to look at Dolphin.",
+        "attendees": 2,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "5ho3cddvpn3qrbkcgvlc39109t@google.com",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Mikka/Dan",
+      "start_time": "2026-01-28T07:30:00.000Z",
+      "end_time": "2026-01-28T08:30:00.000Z",
+      "category": "personal",
+      "energy_level": "low",
+      "immutable": true,
+      "location": null,
+      "metadata": {
+        "calendar_source": "personal",
+        "description": "Συμμετοχή με το Google Meet: https://meet.google.com/ugp-yjqp-koq\nΉ καλέστε: (GB) +44 20 3937 2479 PIN: 643050929#\nΠερισσότεροι αριθμοί τηλεφώνου: https://tel.meet/ugp-yjqp-koq?pin=8219754382015&hs=7\n\nΜάθετε περισσότερα σχετικά με το Meet στη διεύθυνση: https://support.google.com/a/users/answer/9282720",
+        "attendees": 2,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "28a49ieghk0sd9pok7jboeni39@google.com",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Epiphany - BH",
+      "start_time": "2026-01-05T22:00:00.000Z",
+      "end_time": "2026-01-06T22:00:00.000Z",
+      "category": "personal",
+      "energy_level": "high",
+      "immutable": true,
+      "location": null,
+      "metadata": {
+        "calendar_source": "personal",
+        "description": null,
+        "attendees": 3,
+        "recurrence": false
+      }
+    }
+  ]
+}
