@@ -174,11 +174,11 @@ function parseDateValue(value, tzName) {
 
   if (!hour) {
     // All-day event
-    return { date: new Date(Date.UTC(y, m, d)), allDay: true };
+    return { date: new Date(Date.UTC(y, m, d)), allDay: true, localTime: null, tzName };
   }
 
   if (isUTC) {
-    return { date: new Date(Date.UTC(y, m, d, h, min, s)), allDay: false };
+    return { date: new Date(Date.UTC(y, m, d, h, min, s)), allDay: false, localTime: null, tzName: null };
   }
 
   // Local time in the given timezone → convert to UTC
@@ -186,7 +186,8 @@ function parseDateValue(value, tzName) {
   const asUTC = new Date(Date.UTC(y, m, d, h, min, s));
   const offset = getTimezoneOffset(tzName, asUTC);
   const utcDate = new Date(asUTC.getTime() - offset * 60000);
-  return { date: utcDate, allDay: false };
+  // Store local time components for recurring event expansion
+  return { date: utcDate, allDay: false, localTime: { h, min, s }, tzName };
 }
 
 function parseICSDateTimeLine(line) {
@@ -234,8 +235,17 @@ function parseRRule(rruleStr) {
 
 const DAY_MAP = { SU: 0, MO: 1, TU: 2, WE: 3, TH: 4, FR: 5, SA: 6 };
 
-function expandRRule(rrule, dtstart, rangeStart, rangeEnd) {
-  // Returns array of Date objects for occurrences within range
+// Convert local time on a given date to UTC, accounting for DST at that date
+function localToUTC(year, month, day, hour, min, sec, tzName) {
+  const asUTC = new Date(Date.UTC(year, month, day, hour, min, sec));
+  const offset = getTimezoneOffset(tzName, asUTC);
+  return new Date(asUTC.getTime() - offset * 60000);
+}
+
+function expandRRule(rrule, dtstart, rangeStart, rangeEnd, localTime, tzName) {
+  // Returns array of Date objects (UTC) for occurrences within range.
+  // If localTime is provided, each occurrence preserves the local wall-clock time
+  // across DST changes by re-computing UTC from local time + date + timezone.
   const occurrences = [];
   const freq = rrule.FREQ;
   const interval = parseInt(rrule.INTERVAL || '1');
@@ -248,82 +258,102 @@ function expandRRule(rrule, dtstart, rangeStart, rangeEnd) {
 
   const byDay = rrule.BYDAY ? rrule.BYDAY.split(',').map(d => DAY_MAP[d.trim()]).filter(d => d !== undefined) : null;
 
+  // Helper: create occurrence date preserving local time
+  function makeOccurrence(year, month, day) {
+    if (localTime && tzName) {
+      return localToUTC(year, month, day, localTime.h, localTime.min, localTime.s, tzName);
+    }
+    // Fallback: use same UTC hour/min/sec as dtstart
+    return new Date(Date.UTC(year, month, day,
+      dtstart.getUTCHours(), dtstart.getUTCMinutes(), dtstart.getUTCSeconds()));
+  }
+
+  // Get the initial date in UTC for stepping
+  // We use a "reference date" that steps by calendar days, separate from time
+  const startYear = dtstart.getUTCFullYear();
+  const startMonth = dtstart.getUTCMonth();
+  const startDay = dtstart.getUTCDate();
+  // If we have local time, compute the actual local date of dtstart
+  let refYear = startYear, refMonth = startMonth, refDay = startDay;
+  if (localTime && tzName) {
+    // The dtstart in UTC might be on a different calendar day than local
+    const offset = getTimezoneOffset(tzName, dtstart);
+    const localDt = new Date(dtstart.getTime() + offset * 60000);
+    refYear = localDt.getUTCFullYear();
+    refMonth = localDt.getUTCMonth();
+    refDay = localDt.getUTCDate();
+  }
+
   if (freq === 'WEEKLY') {
-    // Start from dtstart, step by interval weeks
-    const msPerWeek = 7 * 86400000;
-    let current = new Date(dtstart.getTime());
     let generated = 0;
-    const maxOccurrences = count || 520; // ~10 years of weekly
+    const maxOccurrences = count || 520;
+    // Step week by week from refDate
+    let weekDate = new Date(Date.UTC(refYear, refMonth, refDay));
 
     while (generated < maxOccurrences) {
-      if (until && current > until) break;
-      if (current > rangeEnd) break;
+      // Check if we're past the end
+      const checkEnd = makeOccurrence(weekDate.getUTCFullYear(), weekDate.getUTCMonth(), weekDate.getUTCDate());
+      if (until && checkEnd > until) break;
+      if (checkEnd > new Date(rangeEnd.getTime() + 7 * 86400000)) break; // generous bound
 
       if (byDay) {
-        // Generate for each day of week in the current week
-        const weekStart = new Date(current.getTime());
-        const startDow = weekStart.getUTCDay();
-
+        const wdow = weekDate.getUTCDay();
         for (const dow of byDay) {
-          const diff = (dow - startDow + 7) % 7;
-          const candidate = new Date(weekStart.getTime() + diff * 86400000);
-          // Preserve the time from dtstart
-          candidate.setUTCHours(dtstart.getUTCHours(), dtstart.getUTCMinutes(), dtstart.getUTCSeconds());
+          const diff = (dow - wdow + 7) % 7;
+          const candDate = new Date(weekDate.getTime() + diff * 86400000);
+          const candidate = makeOccurrence(candDate.getUTCFullYear(), candDate.getUTCMonth(), candDate.getUTCDate());
 
           if (candidate >= dtstart && candidate >= rangeStart && candidate <= rangeEnd) {
             if (!until || candidate <= until) {
-              occurrences.push(new Date(candidate.getTime()));
+              occurrences.push(candidate);
             }
           }
           generated++;
         }
       } else {
-        if (current >= rangeStart && current <= rangeEnd) {
-          occurrences.push(new Date(current.getTime()));
+        const candidate = makeOccurrence(weekDate.getUTCFullYear(), weekDate.getUTCMonth(), weekDate.getUTCDate());
+        if (candidate >= rangeStart && candidate <= rangeEnd) {
+          if (!until || candidate <= until) {
+            occurrences.push(candidate);
+          }
         }
         generated++;
       }
 
-      current = new Date(current.getTime() + interval * msPerWeek);
+      weekDate = new Date(weekDate.getTime() + interval * 7 * 86400000);
     }
   } else if (freq === 'DAILY') {
-    const msPerDay = 86400000;
-    let current = new Date(dtstart.getTime());
     let generated = 0;
     const maxOccurrences = count || 3650;
+    let dayDate = new Date(Date.UTC(refYear, refMonth, refDay));
 
     while (generated < maxOccurrences) {
-      if (until && current > until) break;
-      if (current > rangeEnd) break;
+      const candidate = makeOccurrence(dayDate.getUTCFullYear(), dayDate.getUTCMonth(), dayDate.getUTCDate());
+      if (until && candidate > until) break;
+      if (candidate > rangeEnd) break;
 
-      if (current >= rangeStart) {
-        occurrences.push(new Date(current.getTime()));
+      if (candidate >= rangeStart) {
+        occurrences.push(candidate);
       }
       generated++;
-      current = new Date(current.getTime() + interval * msPerDay);
+      dayDate = new Date(dayDate.getTime() + interval * 86400000);
     }
   } else if (freq === 'MONTHLY') {
-    let current = new Date(dtstart.getTime());
     let generated = 0;
     const maxOccurrences = count || 120;
+    let curYear = refYear, curMonth = refMonth;
 
     while (generated < maxOccurrences) {
-      if (until && current > until) break;
-      if (current > rangeEnd) break;
+      const candidate = makeOccurrence(curYear, curMonth, refDay);
+      if (until && candidate > until) break;
+      if (candidate > rangeEnd) break;
 
-      if (current >= rangeStart) {
-        occurrences.push(new Date(current.getTime()));
+      if (candidate >= rangeStart) {
+        occurrences.push(candidate);
       }
       generated++;
-      const nextMonth = current.getUTCMonth() + interval;
-      current = new Date(Date.UTC(
-        current.getUTCFullYear() + Math.floor(nextMonth / 12),
-        nextMonth % 12,
-        current.getUTCDate(),
-        current.getUTCHours(),
-        current.getUTCMinutes(),
-        current.getUTCSeconds()
-      ));
+      curMonth += interval;
+      while (curMonth > 11) { curMonth -= 12; curYear++; }
     }
   }
 
@@ -370,6 +400,8 @@ function parseICS(icsData) {
         if (parsed) {
           ev.startDate = parsed.date;
           ev.allDay = parsed.allDay;
+          ev.startLocalTime = parsed.localTime;
+          ev.startTzName = parsed.tzName;
         }
       } else if (line.startsWith('DTEND')) {
         const parsed = parseICSDateTimeLine(line);
@@ -426,7 +458,9 @@ function parseICS(icsData) {
       recurringEvents.push({
         ...ev,
         rrule: parseRRule(rruleStr),
-        excludedDates
+        excludedDates,
+        startLocalTime: ev.startLocalTime,
+        startTzName: ev.startTzName
       });
     } else {
       singleEvents.push(ev);
@@ -456,8 +490,10 @@ function getEventsInRange(parsedICS, rangeStart, rangeEnd) {
 
   // Expand recurring events
   for (const ev of recurringEvents) {
-    const occurrences = expandRRule(ev.rrule, ev.startDate, rangeStart, rangeEnd);
+    const occurrences = expandRRule(ev.rrule, ev.startDate, rangeStart, rangeEnd, ev.startLocalTime, ev.startTzName);
+    // Duration in milliseconds (wall-clock time, DST-invariant)
     const duration = ev.endDate ? (ev.endDate.getTime() - ev.startDate.getTime()) : 3600000;
+    // For recurring events with local time, the duration stays fixed regardless of DST
 
     for (const occ of occurrences) {
       // Check if excluded
