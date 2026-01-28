@@ -677,7 +677,7 @@ async function main() {
       endTime: e.end_time
     })),
     ...doing.map(t => ({
-      text: t.title || t.name || t.description || 'Unknown task',
+      text: t.text || t.title || t.name || t.description || 'Unknown task',
       timeStatus: 'task',
       startTime: null,
       endTime: null

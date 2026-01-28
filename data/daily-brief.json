@@ -2,15 +2,13 @@
   "user_id": "dan",
   "date": "2026-01-28",
   "doing_today": [
-    "11:00 Dan&RH Meeting",
-    "13:00 ארוחת צהריים",
     "14:30 Xglobal - XBO ",
     "15:30 Crypto Regulations 2026 - GTM Team Discussion",
     "16:30 Ben OffBoarding  ",
     "18:00 זמן ילדים",
     "20:00 Padel Match",
-    "Unknown task",
-    "Unknown task"
+    "Ben OffBoarding",
+    "לקבל מאנדריאס טופס הצהרת עובד ולהחזיר ל-XBO"
   ],
   "not_doing_today": [
     "Deferred task",
@@ -18,23 +16,11 @@
     "Deferred task"
   ],
   "warning": "שינה ירודה 3+ ימים — מצב שימור. רק משימות הכרחיות.",
-  "small_action": "ב-14:00: 20 דקות מנוחה. טלפון במצב טיסה. לא נדחה.",
+  "small_action": "ב-16:00: 20 דקות מנוחה. טלפון במצב טיסה. לא נדחה.",
   "load_score": 85,
   "sleep_trend": "conservation",
   "metadata": {
     "doing_today_structured": [
-      {
-        "text": "11:00 Dan&RH Meeting",
-        "timeStatus": "ongoing",
-        "startTime": "2026-01-28T09:00:00+00:00",
-        "endTime": "2026-01-28T11:00:00+00:00"
-      },
-      {
-        "text": "13:00 ארוחת צהריים",
-        "timeStatus": "upcoming",
-        "startTime": "2026-01-28T11:00:00+00:00",
-        "endTime": "2026-01-28T12:00:00+00:00"
-      },
       {
         "text": "14:30 Xglobal - XBO ",
         "timeStatus": "upcoming",
@@ -66,13 +52,13 @@
         "endTime": "2026-01-28T20:00:00+00:00"
       },
       {
-        "text": "Unknown task",
+        "text": "Ben OffBoarding",
         "timeStatus": "task",
         "startTime": null,
         "endTime": null
       },
       {
-        "text": "Unknown task",
+        "text": "לקבל מאנדריאס טופס הצהרת עובד ולהחזיר ל-XBO",
         "timeStatus": "task",
         "startTime": null,
         "endTime": null
@@ -90,6 +76,18 @@
         "timeStatus": "past",
         "startTime": "2026-01-28T07:30:00+00:00",
         "endTime": "2026-01-28T08:30:00+00:00"
+      },
+      {
+        "text": "11:00 Dan&RH Meeting",
+        "timeStatus": "past",
+        "startTime": "2026-01-28T09:00:00+00:00",
+        "endTime": "2026-01-28T11:00:00+00:00"
+      },
+      {
+        "text": "13:00 ארוחת צהריים",
+        "timeStatus": "past",
+        "startTime": "2026-01-28T11:00:00+00:00",
+        "endTime": "2026-01-28T12:00:00+00:00"
       }
     ],
     "no_active_focus": false,
@@ -112,6 +110,28 @@
       "שינה ירודה 3+ ימים — מצב שימור. רק משימות הכרחיות.",
       "יומן צפוף: 11.0 שעות, 9 אירועים."
     ],
+    "goal_confidence": {
+      "goal-1769577910356": "unknown",
+      "goal-1769579039925": "unknown"
+    },
+    "active_goals": [
+      {
+        "id": "goal-1769577910356",
+        "title": "לרוץ 10K באפריל 2026",
+        "domain": "health",
+        "priority": 5,
+        "confidence": "unknown"
+      },
+      {
+        "id": "goal-1769579039925",
+        "title": "שינה 7+ שעות בלילה",
+        "domain": "health",
+        "priority": 5,
+        "confidence": "unknown"
+      }
+    ],
+    "horizon_alerts": [],
+    "closures_count": 8,
     "active_projects": [
       "Life OS",
       "XBO × BLUFF Partnership"
@@ -150,9 +170,9 @@
         "for": "ביקשו פרטי חברה — צריך לשלוח"
       }
     ],
-    "generated_at": "2026-01-28T10:15:14.269Z",
-    "completed_event_count": 2,
-    "ongoing_event_count": 1,
-    "upcoming_event_count": 6
+    "generated_at": "2026-01-28T12:15:22.261Z",
+    "completed_event_count": 4,
+    "ongoing_event_count": 0,
+    "upcoming_event_count": 5
   }
 }
