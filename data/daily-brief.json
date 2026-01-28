@@ -1,26 +1,158 @@
 {
   "user_id": "dan",
-  "date": "2026-01-27",
+  "date": "2026-01-28",
   "doing_today": [
-    "14:00 XBO | EQ - Intro meeting"
+    "11:00 Dan&RH Meeting",
+    "13:00 ארוחת צהריים",
+    "14:30 Xglobal - XBO ",
+    "15:30 Crypto Regulations 2026 - GTM Team Discussion",
+    "16:30 Ben OffBoarding  ",
+    "18:00 זמן ילדים",
+    "20:00 Padel Match",
+    "Unknown task",
+    "Unknown task"
   ],
-  "not_doing_today": [],
-  "warning": null,
-  "small_action": "10 דקות הליכה בחוץ. אוויר צח עוזר לריכוז.",
-  "load_score": 20,
-  "sleep_trend": "unknown",
+  "not_doing_today": [
+    "Deferred task",
+    "Deferred task",
+    "Deferred task"
+  ],
+  "warning": "שינה ירודה 3+ ימים — מצב שימור. רק משימות הכרחיות.",
+  "small_action": "ב-14:00: 20 דקות מנוחה. טלפון במצב טיסה. לא נדחה.",
+  "load_score": 85,
+  "sleep_trend": "conservation",
   "metadata": {
-    "calendar_hours": 1.25,
-    "event_count": 2,
-    "energy_budget": 10,
-    "energy_used": 0,
+    "doing_today_structured": [
+      {
+        "text": "11:00 Dan&RH Meeting",
+        "timeStatus": "ongoing",
+        "startTime": "2026-01-28T09:00:00+00:00",
+        "endTime": "2026-01-28T11:00:00+00:00"
+      },
+      {
+        "text": "13:00 ארוחת צהריים",
+        "timeStatus": "upcoming",
+        "startTime": "2026-01-28T11:00:00+00:00",
+        "endTime": "2026-01-28T12:00:00+00:00"
+      },
+      {
+        "text": "14:30 Xglobal - XBO ",
+        "timeStatus": "upcoming",
+        "startTime": "2026-01-28T12:30:00+00:00",
+        "endTime": "2026-01-28T13:30:00+00:00"
+      },
+      {
+        "text": "15:30 Crypto Regulations 2026 - GTM Team Discussion",
+        "timeStatus": "upcoming",
+        "startTime": "2026-01-28T13:30:00+00:00",
+        "endTime": "2026-01-28T14:00:00+00:00"
+      },
+      {
+        "text": "16:30 Ben OffBoarding  ",
+        "timeStatus": "upcoming",
+        "startTime": "2026-01-28T14:30:00+00:00",
+        "endTime": "2026-01-28T15:00:00+00:00"
+      },
+      {
+        "text": "18:00 זמן ילדים",
+        "timeStatus": "upcoming",
+        "startTime": "2026-01-28T16:00:00+00:00",
+        "endTime": "2026-01-28T18:00:00+00:00"
+      },
+      {
+        "text": "20:00 Padel Match",
+        "timeStatus": "upcoming",
+        "startTime": "2026-01-28T18:00:00+00:00",
+        "endTime": "2026-01-28T20:00:00+00:00"
+      },
+      {
+        "text": "Unknown task",
+        "timeStatus": "task",
+        "startTime": null,
+        "endTime": null
+      },
+      {
+        "text": "Unknown task",
+        "timeStatus": "task",
+        "startTime": null,
+        "endTime": null
+      }
+    ],
+    "completed_events": [
+      {
+        "text": "08:30 Libby Doctor",
+        "timeStatus": "past",
+        "startTime": "2026-01-28T06:30:00+00:00",
+        "endTime": "2026-01-28T07:30:00+00:00"
+      },
+      {
+        "text": "09:30 Mikka/Dan",
+        "timeStatus": "past",
+        "startTime": "2026-01-28T07:30:00+00:00",
+        "endTime": "2026-01-28T08:30:00+00:00"
+      }
+    ],
+    "no_active_focus": false,
+    "sleep_confidence": "medium",
+    "sleep_missing_days": [
+      "2026-01-28",
+      "2026-01-25"
+    ],
+    "calendar_hours": 11,
+    "event_count": 9,
+    "energy_budget": 3,
+    "energy_used": 3,
     "body_battery": null,
     "stress": null,
-    "sleep_avg": null,
-    "sleep_deficit": 0,
-    "all_warnings": [],
-    "active_projects": [],
-    "pending_dependencies": [],
-    "generated_at": "2026-01-27T21:39:18.728Z"
+    "sleep_avg": 4.6,
+    "sleep_deficit": 2.4,
+    "sleep_data_points": 3,
+    "sleep_total_days": 5,
+    "all_warnings": [
+      "שינה ירודה 3+ ימים — מצב שימור. רק משימות הכרחיות.",
+      "יומן צפוף: 11.0 שעות, 9 אירועים."
+    ],
+    "active_projects": [
+      "Life OS",
+      "XBO × BLUFF Partnership"
+    ],
+    "pending_dependencies": [
+      {
+        "person": "Ben Ditkovsky",
+        "for": "XBO materials + onboarding docs"
+      },
+      {
+        "person": "אסי 2000",
+        "for": "follow-up conversation"
+      },
+      {
+        "person": "Andreas",
+        "for": "Employees declaration form (at Padel tonight)"
+      },
+      {
+        "person": "Shanti",
+        "for": "Social Insurance — לבדוק אם העסקה הושלמה"
+      },
+      {
+        "person": "Andreas Demetriou",
+        "for": "TLM taxes discussion + Tax form (at Padel)"
+      },
+      {
+        "person": "Range Rover",
+        "for": "תשובה על רכב — Mikka ממתינה"
+      },
+      {
+        "person": "Takis Michael",
+        "for": "תוכניות לבית"
+      },
+      {
+        "person": "רואה חשבון",
+        "for": "ביקשו פרטי חברה — צריך לשלוח"
+      }
+    ],
+    "generated_at": "2026-01-28T10:15:14.269Z",
+    "completed_event_count": 2,
+    "ongoing_event_count": 1,
+    "upcoming_event_count": 6
   }
 }

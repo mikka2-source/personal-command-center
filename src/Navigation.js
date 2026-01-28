@@ -2,13 +2,10 @@ import React, { useState } from 'react';
 import './Navigation.css';
 
 const NAV_ITEMS = [
-  { id: 'home', icon: '🏠', label: 'Home' },
-  { id: 'engine', icon: '🧠', label: 'Engine' },
+  { id: 'home', icon: '🏠', label: 'פיד' },
   { id: 'tasks', icon: '📋', label: 'Tasks' },
   { id: 'mikka', icon: '🤖', label: 'Mikka' },
-  { id: 'people', icon: '👥', label: 'People' },
-  { id: 'areas', icon: '📊', label: 'Areas' },
-  { id: 'settings', icon: '⚙️', label: 'Settings' },
+  { id: 'engine', icon: '🧠', label: 'Engine' },
 ];
 
 function Navigation({ currentView, onNavigate }) {

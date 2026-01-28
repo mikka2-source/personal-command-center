@@ -1,70 +1,76 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import Navigation from './Navigation';
-import LifeDashboard from './LifeDashboard';
-import LifeOSEngine from './LifeOSEngine';
-import Dashboard from './Dashboard';
-import MikkaPage from './MikkaPage';
-import PlaceholderPage from './PlaceholderPage';
+import CommandMode from './modes/CommandMode';
+import TransparencyMode from './modes/TransparencyMode';
+import WorkbenchMode from './modes/WorkbenchMode';
+
+const MODES = {
+  command: { label: 'Command', icon: '⚡' },
+  transparency: { label: 'Brain', icon: '🧠' },
+  workbench: { label: 'Workbench', icon: '🔧' },
+};
 
 function App() {
-  const [view, setView] = useState(() => {
+  const [mode, setMode] = useState(() => {
     const params = new URLSearchParams(window.location.search);
-    return params.get('view') || 'home';
+    return params.get('mode') || 'command';
   });
 
   useEffect(() => {
-    // Always dark mode
-    document.body.classList.add('dark-mode');
+    // Remove old dark mode
+    document.body.classList.remove('dark-mode');
+    document.body.classList.add('light-mode');
   }, []);
 
-  // Update URL when view changes
-  const handleNavigate = (newView) => {
-    setView(newView);
+  const handleModeChange = (newMode) => {
+    setMode(newMode);
     const url = new URL(window.location);
-    if (newView === 'home') {
-      url.searchParams.delete('view');
+    if (newMode === 'command') {
+      url.searchParams.delete('mode');
     } else {
-      url.searchParams.set('view', newView);
+      url.searchParams.set('mode', newMode);
     }
     window.history.pushState({}, '', url);
   };
 
-  // Handle browser back/forward
   useEffect(() => {
     const handlePop = () => {
       const params = new URLSearchParams(window.location.search);
-      setView(params.get('view') || 'home');
+      setMode(params.get('mode') || 'command');
     };
     window.addEventListener('popstate', handlePop);
     return () => window.removeEventListener('popstate', handlePop);
   }, []);
 
-  const renderView = () => {
-    switch (view) {
-      case 'home':
-        return <LifeDashboard onNavigate={handleNavigate} />;
-      case 'engine':
-        return <LifeOSEngine />;
-      case 'tasks':
-        return <Dashboard />;
-      case 'mikka':
-        return <MikkaPage />;
-      case 'people':
-      case 'areas':
-      case 'settings':
-        return <PlaceholderPage page={view} />;
+  const renderMode = () => {
+    switch (mode) {
+      case 'transparency':
+        return <TransparencyMode />;
+      case 'workbench':
+        return <WorkbenchMode />;
+      case 'command':
       default:
-        return <LifeDashboard onNavigate={handleNavigate} />;
+        return <CommandMode />;
     }
   };
 
   return (
-    <div className="App">
-      <Navigation currentView={view} onNavigate={handleNavigate} />
-      <div className="app-content">
-        {renderView()}
-      </div>
+    <div className="app">
+      {renderMode()}
+
+      {/* Mode Switcher — bottom pill */}
+      <nav className="mode-switcher">
+        {Object.entries(MODES).map(([key, { label, icon }]) => (
+          <button
+            key={key}
+            className={`mode-btn ${mode === key ? 'mode-active' : ''}`}
+            onClick={() => handleModeChange(key)}
+          >
+            <span className="mode-icon">{icon}</span>
+            <span className="mode-label">{label}</span>
+          </button>
+        ))}
+      </nav>
     </div>
   );
 }

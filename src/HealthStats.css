@@ -121,6 +121,24 @@ body.dark-mode .steps-progress-ring-background {
   color: #94a3b8;
 }
 
+/* Missing data state */
+.health-value-muted {
+  opacity: 0.5;
+}
+
+.health-value-muted .health-number {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #94a3b8;
+}
+
+.health-date {
+  text-align: center;
+  font-size: 0.75rem;
+  color: #94a3b8;
+  margin-top: 1rem;
+}
+
 @media (max-width: 768px) {
   .health-grid {
     grid-template-columns: repeat(2, 1fr);

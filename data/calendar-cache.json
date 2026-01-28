@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-01-27T21:39:02.650Z",
-  "eventCount": 127,
+  "lastUpdated": "2026-01-28T05:09:12.224Z",
+  "eventCount": 126,
   "events": [
     {
       "id": "040000008200E00074C5B7101A82E0080000000012A260B3FF77DC01000000000000000010000000603744CB4ECC6E4AB92B98B605F0E7C0",
@@ -1749,66 +1749,48 @@
       }
     },
     {
-      "id": "704bvnf7il06kt9mo2j3f9cp19@google.com",
+      "id": "bvm9nme4scd541o4am84a7q2b4@google.com",
       "user_id": "dan",
       "source": "calendar",
-      "title": "Padel Match",
-      "start_time": "2026-01-28T18:00:00.000Z",
-      "end_time": "2026-01-28T20:00:00.000Z",
-      "category": "sport",
+      "title": "Libby Doctor",
+      "start_time": "2026-01-28T06:30:00.000Z",
+      "end_time": "2026-01-28T07:30:00.000Z",
+      "category": "health",
+      "energy_level": "low",
+      "immutable": true,
+      "location": null,
+      "metadata": {
+        "calendar_source": "personal",
+        "description": null,
+        "attendees": 2,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "28a49ieghk0sd9pok7jboeni39@google.com",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Epiphany - BH",
+      "start_time": "2026-01-05T22:00:00.000Z",
+      "end_time": "2026-01-06T22:00:00.000Z",
+      "category": "personal",
       "energy_level": "high",
       "immutable": true,
-      "location": "GN Sporting Club Alassa, 34.76460375269143, 32.91417217449537, Άλασσα 4712, Cyprus",
+      "location": null,
       "metadata": {
         "calendar_source": "personal",
         "description": null,
-        "attendees": 2,
+        "attendees": 3,
         "recurrence": false
       }
     },
     {
-      "id": "4a4ejopam06vdgof3de4r6ndet@google.com",
+      "id": "4nrlvuf89itdtss104hiltg5al@google.com",
       "user_id": "dan",
       "source": "calendar",
-      "title": "Lenny & Dan Hair",
-      "start_time": "2026-01-07T17:00:00.000Z",
-      "end_time": "2026-01-07T18:00:00.000Z",
-      "category": "personal",
-      "energy_level": "low",
-      "immutable": true,
-      "location": "M3WQ+GF9, Germasogeia",
-      "metadata": {
-        "calendar_source": "personal",
-        "description": null,
-        "attendees": 2,
-        "recurrence": false
-      }
-    },
-    {
-      "id": "3db83k72vjprp4vqg0h80t1akf@google.com",
-      "user_id": "dan",
-      "source": "calendar",
-      "title": "Libby Birth Certificate ",
-      "start_time": "2026-01-13T06:30:00.000Z",
-      "end_time": "2026-01-13T07:30:00.000Z",
-      "category": "personal",
-      "energy_level": "low",
-      "immutable": true,
-      "location": "https://maps.app.goo.gl/h6VczLHvV5tjs82z9",
-      "metadata": {
-        "calendar_source": "personal",
-        "description": "Συμμετοχή με το Google Meet: https://meet.google.com/zwi-tfxa-wao\nΉ καλέστε: (GB) +44 20 3956 3102 PIN: 300664804#\nΠερισσότεροι αριθμοί τηλεφώνου: https://tel.meet/zwi-tfxa-wao?pin=4677588103974&hs=7\n\nΜάθετε περισσότερα σχετικά με το Meet στη διεύθυνση: https://support.google.com/a/users/answer/9282720",
-        "attendees": 2,
-        "recurrence": false
-      }
-    },
-    {
-      "id": "3d1h92580hojgrshvbimt84e4f@google.com",
-      "user_id": "dan",
-      "source": "calendar",
-      "title": "Heritage Holiday",
-      "start_time": "2026-03-31T21:00:00.000Z",
-      "end_time": "2026-04-01T21:00:00.000Z",
+      "title": "Heritage Half Term",
+      "start_time": "2026-04-05T21:00:00.000Z",
+      "end_time": "2026-04-17T21:00:00.000Z",
       "category": "personal",
       "energy_level": "high",
       "immutable": true,
@@ -1821,32 +1803,14 @@
       }
     },
     {
-      "id": "4fbvh36d54d9josq48lt7tdd8l@google.com",
+      "id": "4pbvg241pgam0h1pdpp7avlcgi@google.com",
       "user_id": "dan",
       "source": "calendar",
-      "title": "Novikov Dinner",
-      "start_time": "2026-01-12T18:00:00.000Z",
-      "end_time": "2026-01-12T20:00:00.000Z",
+      "title": "Half Term Break - Heritage",
+      "start_time": "2026-02-18T22:00:00.000Z",
+      "end_time": "2026-02-24T22:00:00.000Z",
       "category": "personal",
-      "energy_level": "mid",
-      "immutable": true,
-      "location": "https://maps.app.goo.gl/gfmp1LgvG9fsZdQw8",
-      "metadata": {
-        "calendar_source": "personal",
-        "description": null,
-        "attendees": 2,
-        "recurrence": false
-      }
-    },
-    {
-      "id": "64kmat2t216q6q71n7nkqkv7ag@google.com",
-      "user_id": "dan",
-      "source": "calendar",
-      "title": "Please Print/Sign (for you and Leah) and give to HR",
-      "start_time": "2026-01-26T09:00:00.000Z",
-      "end_time": "2026-01-26T09:15:00.000Z",
-      "category": "personal",
-      "energy_level": "low",
+      "energy_level": "high",
       "immutable": true,
       "location": null,
       "metadata": {
@@ -1857,20 +1821,56 @@
       }
     },
     {
-      "id": "040000008200E00074C5B7101A82E00800000000F0F742C72373DC01000000000000000010000000FE74C24835BFC14CAF08C85CEA32835D",
+      "id": "040000008200E00074C5B7101A82E0080000000096376A00487FDC01000000000000000010000000F63FFC2D948ADE47A54CABB424728345",
       "user_id": "dan",
       "source": "calendar",
-      "title": "Yo-yo house plan ",
-      "start_time": "2025-12-29T22:00:00.000Z",
-      "end_time": "2025-12-30T22:00:00.000Z",
+      "title": "Lenny school ",
+      "start_time": "2026-01-07T06:00:00.000Z",
+      "end_time": "2026-01-07T06:45:00.000Z",
       "category": "personal",
-      "energy_level": "high",
+      "energy_level": "low",
       "immutable": false,
       "location": null,
       "metadata": {
         "calendar_source": "personal",
         "description": null,
         "attendees": 0,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "6pgf4cj8re661jafh1lna25blt@google.com",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Nadine collection for Larnaca",
+      "start_time": "2026-01-11T08:45:00.000Z",
+      "end_time": "2026-01-11T09:30:00.000Z",
+      "category": "personal",
+      "energy_level": "low",
+      "immutable": true,
+      "location": null,
+      "metadata": {
+        "calendar_source": "personal",
+        "description": null,
+        "attendees": 3,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "3fqqn37lmi0qk36ns90rp6249n@google.com",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Barbers",
+      "start_time": "2026-01-19T15:30:00.000Z",
+      "end_time": "2026-01-19T16:00:00.000Z",
+      "category": "personal",
+      "energy_level": "low",
+      "immutable": true,
+      "location": null,
+      "metadata": {
+        "calendar_source": "personal",
+        "description": null,
+        "attendees": 2,
         "recurrence": false
       }
     },
@@ -1911,78 +1911,6 @@
       }
     },
     {
-      "id": "7rlhjhh2tksrbp589rm6uptj00@google.com",
-      "user_id": "dan",
-      "source": "calendar",
-      "title": "ICE ",
-      "start_time": "2026-01-19T22:00:00.000Z",
-      "end_time": "2026-01-22T22:00:00.000Z",
-      "category": "personal",
-      "energy_level": "high",
-      "immutable": true,
-      "location": null,
-      "metadata": {
-        "calendar_source": "personal",
-        "description": null,
-        "attendees": 2,
-        "recurrence": false
-      }
-    },
-    {
-      "id": "4qcm9a93eji4cmr6i5amc9jn5g@google.com",
-      "user_id": "dan",
-      "source": "calendar",
-      "title": "Dan&RH Meeting",
-      "start_time": "2026-01-28T09:00:00.000Z",
-      "end_time": "2026-01-28T11:00:00.000Z",
-      "category": "personal",
-      "energy_level": "mid",
-      "immutable": true,
-      "location": null,
-      "metadata": {
-        "calendar_source": "personal",
-        "description": "Συμμετοχή με το Google Meet: https://meet.google.com/dmd-jyyt-tch\nΉ καλέστε: (GB) +44 20 3957 2925 PIN: 369932000#\nΠερισσότεροι αριθμοί τηλεφώνου: https://tel.meet/dmd-jyyt-tch?pin=8041972775255&hs=7\n\nΜάθετε περισσότερα σχετικά με το Meet στη διεύθυνση: https://support.google.com/a/users/answer/9282720",
-        "attendees": 2,
-        "recurrence": false
-      }
-    },
-    {
-      "id": "4leo8471gm9f4nlnukif6ht3j6@google.com",
-      "user_id": "dan",
-      "source": "calendar",
-      "title": "Nadine flight to TLV CY110",
-      "start_time": "2026-01-11T11:30:00.000Z",
-      "end_time": "2026-01-11T12:30:00.000Z",
-      "category": "travel",
-      "energy_level": "high",
-      "immutable": true,
-      "location": null,
-      "metadata": {
-        "calendar_source": "personal",
-        "description": "Booking Ref <b>9338OK</b>",
-        "attendees": 3,
-        "recurrence": false
-      }
-    },
-    {
-      "id": "r0q20sjtikk80jf3p6tbg52qgg@google.com",
-      "user_id": "dan",
-      "source": "calendar",
-      "title": "Stay at The Landmark Nicosia, Autograph Collection",
-      "start_time": "2025-12-31T22:00:00.000Z",
-      "end_time": "2026-01-02T22:00:00.000Z",
-      "category": "personal",
-      "energy_level": "high",
-      "immutable": false,
-      "location": "The Landmark Nicosia, Autograph Collection, Λευκωσία",
-      "metadata": {
-        "calendar_source": "personal",
-        "description": "Για να δείτε λεπτομερείς πληροφορίες για τα συμβάντα που δημιουργούνται αυτόματα, όπως σε αυτή την περίπτωση, χρησιμοποιήστε την επίσημη εφαρμογή του Ημερολογίου Google. https://g.co/calendar\n\nΗ εκδήλωση αυτή δημιουργήθηκε από ένα μήνυμα που λάβατε στο Gmail. https://mail.google.com/mail?extsrc=cal&plid=ACUX6DM3hpgjq9p3Ju5cJSQ0IAO3pqnQRithEkw\n",
-        "attendees": 1,
-        "recurrence": false
-      }
-    },
-    {
       "id": "78j00hrab3l760ob8ckegtl850@google.com",
       "user_id": "dan",
       "source": "calendar",
@@ -2001,182 +1929,74 @@
       }
     },
     {
-      "id": "040000008200E00074C5B7101A82E0080000000096376A00487FDC01000000000000000010000000F63FFC2D948ADE47A54CABB424728345",
+      "id": "3d1h92580hojgrshvbimt84e4f@google.com",
       "user_id": "dan",
       "source": "calendar",
-      "title": "Lenny school ",
-      "start_time": "2026-01-07T06:00:00.000Z",
-      "end_time": "2026-01-07T06:45:00.000Z",
+      "title": "Heritage Holiday",
+      "start_time": "2026-03-31T21:00:00.000Z",
+      "end_time": "2026-04-01T21:00:00.000Z",
       "category": "personal",
-      "energy_level": "low",
+      "energy_level": "high",
+      "immutable": true,
+      "location": null,
+      "metadata": {
+        "calendar_source": "personal",
+        "description": null,
+        "attendees": 2,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "55bco373m2keflf2b9mpbun77u@google.com",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Heritage School Holiday",
+      "start_time": "2026-01-29T22:00:00.000Z",
+      "end_time": "2026-01-30T22:00:00.000Z",
+      "category": "personal",
+      "energy_level": "high",
+      "immutable": true,
+      "location": null,
+      "metadata": {
+        "calendar_source": "personal",
+        "description": null,
+        "attendees": 2,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "704bvnf7il06kt9mo2j3f9cp19@google.com",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Padel Match",
+      "start_time": "2026-01-28T18:00:00.000Z",
+      "end_time": "2026-01-28T20:00:00.000Z",
+      "category": "sport",
+      "energy_level": "high",
+      "immutable": true,
+      "location": "GN Sporting Club Alassa, 34.76460375269143, 32.91417217449537, Άλασσα 4712, Cyprus",
+      "metadata": {
+        "calendar_source": "personal",
+        "description": null,
+        "attendees": 2,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "040000008200E00074C5B7101A82E00800000000F0F742C72373DC01000000000000000010000000FE74C24835BFC14CAF08C85CEA32835D",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Yo-yo house plan ",
+      "start_time": "2025-12-29T22:00:00.000Z",
+      "end_time": "2025-12-30T22:00:00.000Z",
+      "category": "personal",
+      "energy_level": "high",
       "immutable": false,
       "location": null,
       "metadata": {
         "calendar_source": "personal",
         "description": null,
         "attendees": 0,
-        "recurrence": false
-      }
-    },
-    {
-      "id": "bvm9nme4scd541o4am84a7q2b4@google.com",
-      "user_id": "dan",
-      "source": "calendar",
-      "title": "Libby Doctor",
-      "start_time": "2026-01-28T06:30:00.000Z",
-      "end_time": "2026-01-28T07:30:00.000Z",
-      "category": "health",
-      "energy_level": "low",
-      "immutable": true,
-      "location": null,
-      "metadata": {
-        "calendar_source": "personal",
-        "description": null,
-        "attendees": 2,
-        "recurrence": false
-      }
-    },
-    {
-      "id": "2rpg35i7tbcik16js8vquh78kf@google.com",
-      "user_id": "dan",
-      "source": "calendar",
-      "title": "Israeli Consulate Appointment",
-      "start_time": "2026-01-30T08:50:00.000Z",
-      "end_time": "2026-01-30T09:50:00.000Z",
-      "category": "personal",
-      "energy_level": "low",
-      "immutable": true,
-      "location": "Embassy of Israel, Ioanni Grypari 4, Nicosia 1090, Cyprus",
-      "metadata": {
-        "calendar_source": "personal",
-        "description": null,
-        "attendees": 3,
-        "recurrence": false
-      }
-    },
-    {
-      "id": "3fqqn37lmi0qk36ns90rp6249n@google.com",
-      "user_id": "dan",
-      "source": "calendar",
-      "title": "Barbers",
-      "start_time": "2026-01-19T15:30:00.000Z",
-      "end_time": "2026-01-19T16:00:00.000Z",
-      "category": "personal",
-      "energy_level": "low",
-      "immutable": true,
-      "location": null,
-      "metadata": {
-        "calendar_source": "personal",
-        "description": null,
-        "attendees": 2,
-        "recurrence": false
-      }
-    },
-    {
-      "id": "0p32foeshebgm9ckpg6hetkkel@google.com",
-      "user_id": "dan",
-      "source": "calendar",
-      "title": "Heritage Holiday",
-      "start_time": "2026-03-24T22:00:00.000Z",
-      "end_time": "2026-03-25T22:00:00.000Z",
-      "category": "personal",
-      "energy_level": "high",
-      "immutable": true,
-      "location": null,
-      "metadata": {
-        "calendar_source": "personal",
-        "description": null,
-        "attendees": 2,
-        "recurrence": false
-      }
-    },
-    {
-      "id": "4pbvg241pgam0h1pdpp7avlcgi@google.com",
-      "user_id": "dan",
-      "source": "calendar",
-      "title": "Half Term Break - Heritage",
-      "start_time": "2026-02-18T22:00:00.000Z",
-      "end_time": "2026-02-24T22:00:00.000Z",
-      "category": "personal",
-      "energy_level": "high",
-      "immutable": true,
-      "location": null,
-      "metadata": {
-        "calendar_source": "personal",
-        "description": null,
-        "attendees": 2,
-        "recurrence": false
-      }
-    },
-    {
-      "id": "39mja5vkg90o79rm7cdp2ak1eo@google.com",
-      "user_id": "dan",
-      "source": "calendar",
-      "title": "Car Road tax deadline",
-      "start_time": "2026-03-10T22:00:00.000Z",
-      "end_time": "2026-03-11T22:00:00.000Z",
-      "category": "personal",
-      "energy_level": "high",
-      "immutable": true,
-      "location": null,
-      "metadata": {
-        "calendar_source": "personal",
-        "description": "After this date there will be 10 fine plus 10% of the road tax yearly value",
-        "attendees": 2,
-        "recurrence": false
-      }
-    },
-    {
-      "id": "0acgfasde7m0tmgmqboc7fpkvs@google.com",
-      "user_id": "dan",
-      "source": "calendar",
-      "title": "Payments",
-      "start_time": "2026-01-19T22:00:00.000Z",
-      "end_time": "2026-01-20T22:00:00.000Z",
-      "category": "personal",
-      "energy_level": "high",
-      "immutable": true,
-      "location": null,
-      "metadata": {
-        "calendar_source": "personal",
-        "description": "Marios Sewerage Man X2\nSocial Insurance for Shanti - 380.95, payment via credit card to Costas\nCurtain Man - 285.00\nTLM Taxes\nWater\n\nΣυμμετοχή με το Google Meet: https://meet.google.com/ukn-jxsj-acp\nΉ καλέστε: (GB) +44 20 3956 4065 PIN: 967021121#\nΠερισσότεροι αριθμοί τηλεφώνου: https://tel.meet/ukn-jxsj-acp?pin=5511321436960&hs=7\n\nΜάθετε περισσότερα σχετικά με το Meet στη διεύθυνση: https://support.google.com/a/users/answer/9282720",
-        "attendees": 2,
-        "recurrence": false
-      }
-    },
-    {
-      "id": "4nrlvuf89itdtss104hiltg5al@google.com",
-      "user_id": "dan",
-      "source": "calendar",
-      "title": "Heritage Half Term",
-      "start_time": "2026-04-05T21:00:00.000Z",
-      "end_time": "2026-04-17T21:00:00.000Z",
-      "category": "personal",
-      "energy_level": "high",
-      "immutable": true,
-      "location": null,
-      "metadata": {
-        "calendar_source": "personal",
-        "description": null,
-        "attendees": 2,
-        "recurrence": false
-      }
-    },
-    {
-      "id": "5rdha71ils048g0gv0ohvrb7a4@google.com",
-      "user_id": "dan",
-      "source": "calendar",
-      "title": "Lenny School Starts",
-      "start_time": "2026-01-07T22:00:00.000Z",
-      "end_time": "2026-01-08T22:00:00.000Z",
-      "category": "personal",
-      "energy_level": "high",
-      "immutable": true,
-      "location": null,
-      "metadata": {
-        "calendar_source": "personal",
-        "description": null,
-        "attendees": 2,
         "recurrence": false
       }
     },
@@ -2199,30 +2019,48 @@
       }
     },
     {
-      "id": "6pgf4cj8re661jafh1lna25blt@google.com",
+      "id": "5rdha71ils048g0gv0ohvrb7a4@google.com",
       "user_id": "dan",
       "source": "calendar",
-      "title": "Nadine collection for Larnaca",
-      "start_time": "2026-01-11T08:45:00.000Z",
-      "end_time": "2026-01-11T09:30:00.000Z",
+      "title": "Lenny School Starts",
+      "start_time": "2026-01-07T22:00:00.000Z",
+      "end_time": "2026-01-08T22:00:00.000Z",
+      "category": "personal",
+      "energy_level": "high",
+      "immutable": true,
+      "location": null,
+      "metadata": {
+        "calendar_source": "personal",
+        "description": null,
+        "attendees": 2,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "5ho3cddvpn3qrbkcgvlc39109t@google.com",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Mikka/Dan",
+      "start_time": "2026-01-28T07:30:00.000Z",
+      "end_time": "2026-01-28T08:30:00.000Z",
       "category": "personal",
       "energy_level": "low",
       "immutable": true,
       "location": null,
       "metadata": {
         "calendar_source": "personal",
-        "description": null,
-        "attendees": 3,
+        "description": "Συμμετοχή με το Google Meet: https://meet.google.com/ugp-yjqp-koq\nΉ καλέστε: (GB) +44 20 3937 2479 PIN: 643050929#\nΠερισσότεροι αριθμοί τηλεφώνου: https://tel.meet/ugp-yjqp-koq?pin=8219754382015&hs=7\n\nΜάθετε περισσότερα σχετικά με το Meet στη διεύθυνση: https://support.google.com/a/users/answer/9282720",
+        "attendees": 2,
         "recurrence": false
       }
     },
     {
-      "id": "55bco373m2keflf2b9mpbun77u@google.com",
+      "id": "0p32foeshebgm9ckpg6hetkkel@google.com",
       "user_id": "dan",
       "source": "calendar",
-      "title": "Heritage School Holiday",
-      "start_time": "2026-01-29T22:00:00.000Z",
-      "end_time": "2026-01-30T22:00:00.000Z",
+      "title": "Heritage Holiday",
+      "start_time": "2026-03-24T22:00:00.000Z",
+      "end_time": "2026-03-25T22:00:00.000Z",
       "category": "personal",
       "energy_level": "high",
       "immutable": true,
@@ -2253,30 +2091,66 @@
       }
     },
     {
-      "id": "5ho3cddvpn3qrbkcgvlc39109t@google.com",
+      "id": "4fbvh36d54d9josq48lt7tdd8l@google.com",
       "user_id": "dan",
       "source": "calendar",
-      "title": "Mikka/Dan",
-      "start_time": "2026-01-28T07:30:00.000Z",
-      "end_time": "2026-01-28T08:30:00.000Z",
+      "title": "Novikov Dinner",
+      "start_time": "2026-01-12T18:00:00.000Z",
+      "end_time": "2026-01-12T20:00:00.000Z",
       "category": "personal",
-      "energy_level": "low",
+      "energy_level": "mid",
       "immutable": true,
-      "location": null,
+      "location": "https://maps.app.goo.gl/gfmp1LgvG9fsZdQw8",
       "metadata": {
         "calendar_source": "personal",
-        "description": "Συμμετοχή με το Google Meet: https://meet.google.com/ugp-yjqp-koq\nΉ καλέστε: (GB) +44 20 3937 2479 PIN: 643050929#\nΠερισσότεροι αριθμοί τηλεφώνου: https://tel.meet/ugp-yjqp-koq?pin=8219754382015&hs=7\n\nΜάθετε περισσότερα σχετικά με το Meet στη διεύθυνση: https://support.google.com/a/users/answer/9282720",
+        "description": null,
         "attendees": 2,
         "recurrence": false
       }
     },
     {
-      "id": "28a49ieghk0sd9pok7jboeni39@google.com",
+      "id": "4leo8471gm9f4nlnukif6ht3j6@google.com",
       "user_id": "dan",
       "source": "calendar",
-      "title": "Epiphany - BH",
-      "start_time": "2026-01-05T22:00:00.000Z",
-      "end_time": "2026-01-06T22:00:00.000Z",
+      "title": "Nadine flight to TLV CY110",
+      "start_time": "2026-01-11T11:30:00.000Z",
+      "end_time": "2026-01-11T12:30:00.000Z",
+      "category": "travel",
+      "energy_level": "high",
+      "immutable": true,
+      "location": null,
+      "metadata": {
+        "calendar_source": "personal",
+        "description": "Booking Ref <b>9338OK</b>",
+        "attendees": 3,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "3db83k72vjprp4vqg0h80t1akf@google.com",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Libby Birth Certificate ",
+      "start_time": "2026-01-13T06:30:00.000Z",
+      "end_time": "2026-01-13T07:30:00.000Z",
+      "category": "personal",
+      "energy_level": "low",
+      "immutable": true,
+      "location": "https://maps.app.goo.gl/h6VczLHvV5tjs82z9",
+      "metadata": {
+        "calendar_source": "personal",
+        "description": "Συμμετοχή με το Google Meet: https://meet.google.com/zwi-tfxa-wao\nΉ καλέστε: (GB) +44 20 3956 3102 PIN: 300664804#\nΠερισσότεροι αριθμοί τηλεφώνου: https://tel.meet/zwi-tfxa-wao?pin=4677588103974&hs=7\n\nΜάθετε περισσότερα σχετικά με το Meet στη διεύθυνση: https://support.google.com/a/users/answer/9282720",
+        "attendees": 2,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "7rlhjhh2tksrbp589rm6uptj00@google.com",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "ICE ",
+      "start_time": "2026-01-19T22:00:00.000Z",
+      "end_time": "2026-01-22T22:00:00.000Z",
       "category": "personal",
       "energy_level": "high",
       "immutable": true,
@@ -2284,7 +2158,115 @@
       "metadata": {
         "calendar_source": "personal",
         "description": null,
+        "attendees": 2,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "39mja5vkg90o79rm7cdp2ak1eo@google.com",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Car Road tax deadline",
+      "start_time": "2026-03-10T22:00:00.000Z",
+      "end_time": "2026-03-11T22:00:00.000Z",
+      "category": "personal",
+      "energy_level": "high",
+      "immutable": true,
+      "location": null,
+      "metadata": {
+        "calendar_source": "personal",
+        "description": "After this date there will be 10 fine plus 10% of the road tax yearly value",
+        "attendees": 2,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "4a4ejopam06vdgof3de4r6ndet@google.com",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Lenny & Dan Hair",
+      "start_time": "2026-01-07T17:00:00.000Z",
+      "end_time": "2026-01-07T18:00:00.000Z",
+      "category": "personal",
+      "energy_level": "low",
+      "immutable": true,
+      "location": "M3WQ+GF9, Germasogeia",
+      "metadata": {
+        "calendar_source": "personal",
+        "description": null,
+        "attendees": 2,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "64kmat2t216q6q71n7nkqkv7ag@google.com",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Please Print/Sign (for you and Leah) and give to HR",
+      "start_time": "2026-01-26T09:00:00.000Z",
+      "end_time": "2026-01-26T09:15:00.000Z",
+      "category": "personal",
+      "energy_level": "low",
+      "immutable": true,
+      "location": null,
+      "metadata": {
+        "calendar_source": "personal",
+        "description": null,
+        "attendees": 2,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "4qcm9a93eji4cmr6i5amc9jn5g@google.com",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Dan&RH Meeting",
+      "start_time": "2026-01-28T09:00:00.000Z",
+      "end_time": "2026-01-28T11:00:00.000Z",
+      "category": "personal",
+      "energy_level": "mid",
+      "immutable": true,
+      "location": null,
+      "metadata": {
+        "calendar_source": "personal",
+        "description": "Συμμετοχή με το Google Meet: https://meet.google.com/dmd-jyyt-tch\nΉ καλέστε: (GB) +44 20 3957 2925 PIN: 369932000#\nΠερισσότεροι αριθμοί τηλεφώνου: https://tel.meet/dmd-jyyt-tch?pin=8041972775255&hs=7\n\nΜάθετε περισσότερα σχετικά με το Meet στη διεύθυνση: https://support.google.com/a/users/answer/9282720",
+        "attendees": 2,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "2rpg35i7tbcik16js8vquh78kf@google.com",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Israeli Consulate Appointment",
+      "start_time": "2026-01-30T08:50:00.000Z",
+      "end_time": "2026-01-30T09:50:00.000Z",
+      "category": "personal",
+      "energy_level": "low",
+      "immutable": true,
+      "location": "Embassy of Israel, Ioanni Grypari 4, Nicosia 1090, Cyprus",
+      "metadata": {
+        "calendar_source": "personal",
+        "description": null,
         "attendees": 3,
+        "recurrence": false
+      }
+    },
+    {
+      "id": "r0q20sjtikk80jf3p6tbg52qgg@google.com",
+      "user_id": "dan",
+      "source": "calendar",
+      "title": "Stay at The Landmark Nicosia, Autograph Collection",
+      "start_time": "2025-12-31T22:00:00.000Z",
+      "end_time": "2026-01-02T22:00:00.000Z",
+      "category": "personal",
+      "energy_level": "high",
+      "immutable": false,
+      "location": "The Landmark Nicosia, Autograph Collection, Λευκωσία",
+      "metadata": {
+        "calendar_source": "personal",
+        "description": "Για να δείτε λεπτομερείς πληροφορίες για τα συμβάντα που δημιουργούνται αυτόματα, όπως σε αυτή την περίπτωση, χρησιμοποιήστε την επίσημη εφαρμογή του Ημερολογίου Google. https://g.co/calendar\n\nΗ εκδήλωση αυτή δημιουργήθηκε από ένα μήνυμα που λάβατε στο Gmail. https://mail.google.com/mail?extsrc=cal&plid=ACUX6DM3hpgjq9p3Ju5cJSQ0IAO3pqnQRithEkw\n",
+        "attendees": 1,
         "recurrence": false
       }
     }

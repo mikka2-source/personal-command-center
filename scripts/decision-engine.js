@@ -17,8 +17,10 @@ const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZ
 
 const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 
-const TODAY = new Date().toISOString().split('T')[0];
+// Use Asia/Nicosia timezone for all time calculations
 const NOW = new Date();
+const TODAY = NOW.toLocaleDateString('en-CA', { timeZone: 'Asia/Nicosia' }); // YYYY-MM-DD format
+const NOW_NICOSIA = new Date(NOW.toLocaleString('en-US', { timeZone: 'Asia/Nicosia' }));
 
 // === CONSTANTS ===
 const MAX_ACTIVE_PROJECTS = 3;
@@ -131,27 +133,55 @@ function computeCalendarLoad(events) {
 }
 
 function computeSleepTrend(healthData) {
-  const sleepRecords = healthData
-    .filter(r => r.sleep_hours !== null)
+  // Separate days with data from days with missing data
+  const last5Days = healthData
     .sort((a, b) => b.date.localeCompare(a.date))
     .slice(0, 5);
   
-  if (sleepRecords.length < 3) return { trend: 'unknown', avgSleep: null, deficit: 0 };
+  const withData = last5Days.filter(r => r.sleep_hours !== null && r.sleep_hours !== undefined && parseFloat(r.sleep_hours) > 0);
+  const missingDays = last5Days.filter(r => r.sleep_hours === null || r.sleep_hours === undefined || parseFloat(r.sleep_hours) === 0);
+  const totalDays = last5Days.length;
   
-  const avgSleep = sleepRecords.reduce((sum, r) => sum + parseFloat(r.sleep_hours), 0) / sleepRecords.length;
-  const belowBaseline = sleepRecords.filter(r => parseFloat(r.sleep_hours) < SLEEP_BASELINE).length;
+  // Confidence: how many of the last 5 days have actual sleep data
+  const confidence = totalDays > 0 ? withData.length / totalDays : 0;
+  const confidenceLevel = confidence >= 0.8 ? 'high' : confidence >= 0.5 ? 'medium' : 'low';
+  
+  // Not enough real data to determine trend
+  if (withData.length < 2) {
+    return { 
+      trend: 'unknown', 
+      avgSleep: null, 
+      deficit: 0, 
+      confidence: confidenceLevel,
+      missingDays: missingDays.map(r => r.date),
+      dataPoints: withData.length,
+      totalDays
+    };
+  }
+  
+  const avgSleep = withData.reduce((sum, r) => sum + parseFloat(r.sleep_hours), 0) / withData.length;
+  const belowBaseline = withData.filter(r => parseFloat(r.sleep_hours) < SLEEP_BASELINE).length;
   const deficit = Math.max(0, SLEEP_BASELINE - avgSleep);
   
   let trend = 'good';
+  // Only declare conservation/declining based on ACTUAL data, not missing days
   if (belowBaseline >= 3) trend = 'conservation';
   else if (belowBaseline >= 2) trend = 'declining';
   
-  return { trend, avgSleep: parseFloat(avgSleep.toFixed(1)), deficit: parseFloat(deficit.toFixed(1)) };
+  return { 
+    trend, 
+    avgSleep: parseFloat(avgSleep.toFixed(1)), 
+    deficit: parseFloat(deficit.toFixed(1)),
+    confidence: confidenceLevel,
+    missingDays: missingDays.map(r => r.date),
+    dataPoints: withData.length,
+    totalDays
+  };
 }
 
 function computeBodyLoad(healthData) {
   const today = healthData.find(r => r.date === TODAY);
-  if (!today) return { score: 15, bodyBattery: null, stress: null }; // default moderate
+  if (!today) return { score: 15, bodyBattery: null, stress: null, dataAvailable: false }; // default moderate, but flag as missing
   
   let score = 0;
   
@@ -169,13 +199,19 @@ function computeBodyLoad(healthData) {
     score += 7; // default
   }
   
+  // Check if sleep data is actually present vs missing (watch not worn)
+  const hasSleepData = today.sleep_hours !== null && today.sleep_hours !== undefined && parseFloat(today.sleep_hours) > 0;
+  const sleepQuality = hasSleepData ? today.sleep_quality : 'no_data';
+
   return {
     score: Math.min(30, score),
     bodyBattery: today.body_battery,
     stress: today.stress_level,
     steps: today.steps,
-    sleepHours: today.sleep_hours ? parseFloat(today.sleep_hours) : null,
-    sleepQuality: today.sleep_quality
+    sleepHours: hasSleepData ? parseFloat(today.sleep_hours) : null,
+    sleepQuality,
+    dataAvailable: true,
+    sleepDataMissing: !hasSleepData
   };
 }
 
@@ -263,11 +299,14 @@ function selectTodayTasks(tasks, sleepTrend, calendarLoad, bodyLoad) {
 function generateWarnings(sleepData, calendarLoad, projects, dependencies, habits) {
   const warnings = [];
   
-  // Sleep warnings
-  if (sleepData.trend === 'conservation') {
+  // Sleep warnings — distinguish missing data from bad data
+  if (sleepData.missingDays && sleepData.missingDays.length > 0 && sleepData.confidence === 'low') {
+    warnings.push(`נתוני שינה חלקיים (${sleepData.dataPoints}/${sleepData.totalDays} ימים). אין מספיק מידע להתראה.`);
+  } else if (sleepData.trend === 'conservation' && sleepData.confidence !== 'low') {
     warnings.push('שינה ירודה 3+ ימים — מצב שימור. רק משימות הכרחיות.');
-  } else if (sleepData.trend === 'declining') {
-    warnings.push(`שינה יורדת — ממוצע ${sleepData.avgSleep}h. תעדוף שינה הלילה.`);
+  } else if (sleepData.trend === 'declining' && sleepData.confidence !== 'low') {
+    const qualifier = sleepData.confidence === 'medium' ? ' (נתונים חלקיים)' : '';
+    warnings.push(`שינה יורדת — ממוצע ${sleepData.avgSleep}h. תעדוף שינה הלילה.${qualifier}`);
   }
   
   // Overload warning
@@ -306,28 +345,60 @@ function generateWarnings(sleepData, calendarLoad, projects, dependencies, habit
   return warnings;
 }
 
-function generateSmallAction(sleepData, bodyLoad, calendarLoad) {
-  if (sleepData.trend === 'conservation') {
-    return '20 דקות מנוחה אחרי הצהריים. בלי מסכים.';
+function generateSmallAction(sleepData, bodyLoad, calendarLoad, events) {
+  // Generate time-anchored DECISIONS, not suggestions
+  const hour = NOW_NICOSIA.getHours();
+  const minute = NOW_NICOSIA.getMinutes();
+  
+  // Find the next gap in the calendar (at least 30 min between events)
+  const upcomingEvents = events
+    .filter(e => e.start_time && new Date(e.start_time) > NOW)
+    .sort((a, b) => new Date(a.start_time) - new Date(b.start_time));
+  
+  let nextGapTime = null;
+  let nextGapLabel = '';
+  
+  if (upcomingEvents.length >= 2) {
+    for (let i = 0; i < upcomingEvents.length - 1; i++) {
+      const endCurrent = new Date(upcomingEvents[i].end_time || upcomingEvents[i].start_time);
+      const startNext = new Date(upcomingEvents[i + 1].start_time);
+      const gapMinutes = (startNext - endCurrent) / (1000 * 60);
+      if (gapMinutes >= 30) {
+        nextGapTime = endCurrent;
+        nextGapLabel = nextGapTime.toLocaleTimeString('he-IL', { hour: '2-digit', minute: '2-digit', timeZone: 'Asia/Nicosia' });
+        break;
+      }
+    }
+  }
+  
+  // If no gap found, use a reasonable default time slot
+  if (!nextGapLabel) {
+    if (hour < 13) nextGapLabel = '13:00';
+    else if (hour < 16) nextGapLabel = '16:00';
+    else nextGapLabel = `${String(hour + 1).padStart(2, '0')}:00`;
+  }
+  
+  if (sleepData.trend === 'conservation' && sleepData.confidence !== 'low') {
+    return `ב-${nextGapLabel}: 20 דקות מנוחה. טלפון במצב טיסה. לא נדחה.`;
   }
   
   if (bodyLoad.stress && bodyLoad.stress > 50) {
-    return '10 דקות נשימות עמוקות בין פגישות.';
+    return `ב-${nextGapLabel}: 10 דקות נשימות. חסום ביומן עכשיו.`;
   }
   
-  if (bodyLoad.steps && bodyLoad.steps < 3000 && new Date().getHours() > 14) {
-    return '15 דקות הליכה אחרי הצהריים.';
+  if (bodyLoad.steps && bodyLoad.steps < 3000 && hour > 14) {
+    return `ב-${nextGapLabel}: 15 דקות הליכה בחוץ. שים תזכורת.`;
   }
   
   if (calendarLoad.totalHours > 5) {
-    return '5 דקות שקט בין פגישות. תנתק מסכים.';
+    return `ב-${nextGapLabel}: 10 דקות בלי מסכים. סגור לפטופ וצא מהחדר.`;
   }
   
   if (bodyLoad.bodyBattery && bodyLoad.bodyBattery > 70) {
-    return 'אנרגיה גבוהה — תנצל לפרויקט מרכזי.';
+    return `עד ${nextGapLabel}: שעה אחת על הפרויקט הכי חשוב. בלי הפרעות.`;
   }
   
-  return '10 דקות הליכה בחוץ. אוויר צח עוזר לריכוז.';
+  return `ב-${nextGapLabel}: 10 דקות הליכה בחוץ. שים טיימר.`;
 }
 
 // === MAIN ===
@@ -390,28 +461,81 @@ async function main() {
   const warnings = generateWarnings(sleepData, calendarLoad, projects, dependencies, habits);
   const topWarning = warnings[0] || null;
   
-  // Generate small action
-  const smallAction = generateSmallAction(sleepData, bodyLoad, calendarLoad);
+  // Generate small action (now time-anchored)
+  const smallAction = generateSmallAction(sleepData, bodyLoad, calendarLoad, events);
   
-  // Build brief
+  // Classify events by time status (past / ongoing / upcoming)
+  const classifiedEvents = events.map(e => {
+    const start = e.start_time ? new Date(e.start_time) : null;
+    const end = e.end_time ? new Date(e.end_time) : null;
+    let timeStatus = 'upcoming';
+    if (end && end < NOW) timeStatus = 'past';
+    else if (start && start <= NOW && (!end || end >= NOW)) timeStatus = 'ongoing';
+    else if (start && start > NOW) timeStatus = 'upcoming';
+    else if (start && start < NOW) timeStatus = 'past';
+    
+    const time = start
+      ? start.toLocaleTimeString('he-IL', { hour: '2-digit', minute: '2-digit', timeZone: 'Asia/Nicosia' })
+      : '';
+    return { ...e, timeStatus, formattedTime: time };
+  });
+  
+  // Focus items: ALL ongoing and upcoming events (not just immutable), never past
+  const ongoingEvents = classifiedEvents.filter(e => e.timeStatus === 'ongoing');
+  const upcomingEvents = classifiedEvents.filter(e => e.timeStatus === 'upcoming');
+  const pastEvents = classifiedEvents.filter(e => e.timeStatus === 'past');
+  
+  // Build doing_today: ongoing first, then upcoming, then tasks
+  const doingToday = [
+    ...ongoingEvents.map(e => ({
+      text: `${e.formattedTime} ${e.title}`,
+      timeStatus: 'ongoing',
+      startTime: e.start_time,
+      endTime: e.end_time
+    })),
+    ...upcomingEvents.map(e => ({
+      text: `${e.formattedTime} ${e.title}`,
+      timeStatus: 'upcoming',
+      startTime: e.start_time,
+      endTime: e.end_time
+    })),
+    ...doing.map(t => ({
+      text: t.title || t.name || t.description || 'Unknown task',
+      timeStatus: 'task',
+      startTime: null,
+      endTime: null
+    }))
+  ];
+  
+  // Past events stored separately for reference (greyed out in UI)
+  const completedEvents = pastEvents.map(e => ({
+    text: `${e.formattedTime} ${e.title}`,
+    timeStatus: 'past',
+    startTime: e.start_time,
+    endTime: e.end_time
+  }));
+  
+  // If no ongoing/upcoming events and no tasks, show "rest of day" focus
+  const hasActiveFocus = doingToday.length > 0;
+  
+  // Build brief — store structured data in metadata (DB only has core columns)
   const brief = {
     user_id: 'dan',
     date: TODAY,
-    doing_today: [
-      ...events.filter(e => e.immutable).map(e => {
-        const time = e.start_time 
-          ? new Date(e.start_time).toLocaleTimeString('he-IL', { hour: '2-digit', minute: '2-digit' })
-          : '';
-        return `${time} ${e.title}`;
-      }),
-      ...doing.map(t => t.title || t.name || t.description || 'Unknown task')
-    ],
+    doing_today: doingToday.map(d => d.text),
     not_doing_today: notDoing.slice(0, 3).map(t => t.title || t.name || t.description || 'Deferred task'),
     warning: topWarning,
     small_action: smallAction,
     load_score: loadScore,
     sleep_trend: sleepData.trend,
     metadata: {
+      // Structured fields (read by frontend from metadata)
+      doing_today_structured: doingToday,
+      completed_events: completedEvents,
+      no_active_focus: !hasActiveFocus,
+      sleep_confidence: sleepData.confidence,
+      sleep_missing_days: sleepData.missingDays || [],
+      // Analytics
       calendar_hours: calendarLoad.totalHours,
       event_count: events.length,
       energy_budget: energyBudget,
@@ -420,10 +544,15 @@ async function main() {
       stress: bodyLoad.stress,
       sleep_avg: sleepData.avgSleep,
       sleep_deficit: sleepData.deficit,
+      sleep_data_points: sleepData.dataPoints,
+      sleep_total_days: sleepData.totalDays,
       all_warnings: warnings,
       active_projects: projects.map(p => p.title),
       pending_dependencies: dependencies.map(d => ({ person: d.waiting_on, for: d.waiting_for })),
-      generated_at: new Date().toISOString()
+      generated_at: new Date().toISOString(),
+      completed_event_count: completedEvents.length,
+      ongoing_event_count: ongoingEvents.length,
+      upcoming_event_count: upcomingEvents.length
     }
   };
   

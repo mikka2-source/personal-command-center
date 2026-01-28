@@ -1,139 +1,202 @@
 {
-  "lastUpdated": "2026-01-27T21:39:15.194Z",
-  "sleepTrend": "unknown",
-  "recordCount": 7,
   "records": [
     {
       "user_id": "dan",
-      "date": "2026-01-27",
-      "sleep_hours": null,
-      "sleep_quality": null,
+      "date": "2026-01-28",
+      "sleep_hours": 0,
+      "sleep_quality": "unknown",
       "body_battery": null,
       "stress_level": null,
-      "steps": null,
+      "steps": 21,
       "active_minutes": null,
       "calories_burned": null,
+      "resting_hr": 54,
+      "workout_type": null,
+      "workout_duration": null,
+      "metadata": {
+        "deep_sleep_min": 0,
+        "light_sleep_min": 0,
+        "rem_sleep_min": 0,
+        "awake_min": 0,
+        "max_hr": 80,
+        "min_hr": 55
+      }
+    },
+    {
+      "user_id": "dan",
+      "date": "2026-01-27",
+      "sleep_hours": 4.28,
+      "sleep_quality": "poor",
+      "body_battery": null,
+      "stress_level": null,
+      "steps": 18494,
+      "active_minutes": null,
+      "calories_burned": 882,
       "resting_hr": 50,
-      "workout_type": "paddelball",
+      "workout_type": "Padel",
       "workout_duration": 86,
       "metadata": {
-        "max_hr": 166,
-        "avg_hr": null,
-        "workout_calories": 882,
-        "workout_distance": 583.9199829101562
+        "deep_sleep_min": 58,
+        "light_sleep_min": 151,
+        "rem_sleep_min": 48,
+        "awake_min": 77,
+        "avg_sleep_stress": 15,
+        "avg_respiration": 15,
+        "max_hr": 173,
+        "min_hr": 48,
+        "activities": [
+          {
+            "name": "Padel",
+            "type": "paddelball",
+            "duration_min": 86,
+            "calories": 882,
+            "distance": 584
+          },
+          {
+            "name": "Drill Workout",
+            "type": "treadmill_running",
+            "duration_min": 134,
+            "calories": 415,
+            "distance": 5807
+          }
+        ]
       }
     },
     {
       "user_id": "dan",
       "date": "2026-01-26",
-      "sleep_hours": null,
-      "sleep_quality": null,
+      "sleep_hours": 5.67,
+      "sleep_quality": "fair",
       "body_battery": null,
       "stress_level": null,
-      "steps": null,
+      "steps": 15922,
       "active_minutes": null,
-      "calories_burned": null,
+      "calories_burned": 374,
       "resting_hr": 49,
-      "workout_type": "treadmill_running",
+      "workout_type": "Threshold",
       "workout_duration": 39,
       "metadata": {
+        "deep_sleep_min": 74,
+        "light_sleep_min": 230,
+        "rem_sleep_min": 36,
+        "awake_min": 34,
+        "avg_sleep_stress": 15,
+        "avg_respiration": 15,
         "max_hr": 143,
-        "avg_hr": null,
-        "workout_calories": 374,
-        "workout_distance": 5196.91015625
+        "min_hr": 45,
+        "activities": [
+          {
+            "name": "Threshold",
+            "type": "treadmill_running",
+            "duration_min": 39,
+            "calories": 374,
+            "distance": 5197
+          }
+        ]
       }
     },
     {
       "user_id": "dan",
       "date": "2026-01-25",
-      "sleep_hours": null,
-      "sleep_quality": null,
+      "sleep_hours": 0,
+      "sleep_quality": "unknown",
       "body_battery": null,
       "stress_level": null,
-      "steps": null,
+      "steps": 4979,
       "active_minutes": null,
       "calories_burned": null,
       "resting_hr": 53,
       "workout_type": null,
       "workout_duration": null,
       "metadata": {
+        "deep_sleep_min": 0,
+        "light_sleep_min": 0,
+        "rem_sleep_min": 0,
+        "awake_min": 0,
         "max_hr": 108,
-        "avg_hr": null
+        "min_hr": 51
       }
     },
     {
       "user_id": "dan",
       "date": "2026-01-24",
-      "sleep_hours": null,
-      "sleep_quality": null,
+      "sleep_hours": 4,
+      "sleep_quality": "poor",
       "body_battery": null,
       "stress_level": null,
-      "steps": null,
+      "steps": 4999,
       "active_minutes": null,
       "calories_burned": null,
       "resting_hr": 50,
       "workout_type": null,
       "workout_duration": null,
       "metadata": {
+        "deep_sleep_min": 72,
+        "light_sleep_min": 138,
+        "rem_sleep_min": 30,
+        "awake_min": 20,
+        "avg_sleep_stress": 16,
+        "avg_respiration": 16,
         "max_hr": 97,
-        "avg_hr": null
+        "min_hr": 47
       }
     },
     {
       "user_id": "dan",
       "date": "2026-01-23",
-      "sleep_hours": null,
-      "sleep_quality": null,
+      "sleep_hours": 0,
+      "sleep_quality": "unknown",
       "body_battery": null,
       "stress_level": null,
-      "steps": null,
+      "steps": 5620,
       "active_minutes": null,
       "calories_burned": null,
       "resting_hr": 52,
       "workout_type": null,
       "workout_duration": null,
       "metadata": {
+        "deep_sleep_min": 0,
+        "light_sleep_min": 0,
+        "rem_sleep_min": 0,
+        "awake_min": 0,
         "max_hr": 97,
-        "avg_hr": null
+        "min_hr": 48
       }
     },
     {
       "user_id": "dan",
       "date": "2026-01-22",
-      "sleep_hours": null,
-      "sleep_quality": null,
+      "sleep_hours": 7.05,
+      "sleep_quality": "good",
       "body_battery": null,
       "stress_level": null,
-      "steps": null,
+      "steps": 11530,
       "active_minutes": null,
-      "calories_burned": null,
+      "calories_burned": 320,
       "resting_hr": 46,
-      "workout_type": "treadmill_running",
+      "workout_type": "Drill Workout",
       "workout_duration": 45,
       "metadata": {
+        "deep_sleep_min": 99,
+        "light_sleep_min": 247,
+        "rem_sleep_min": 77,
+        "awake_min": 39,
+        "avg_sleep_stress": 14,
+        "avg_respiration": 14,
         "max_hr": 140,
-        "avg_hr": null,
-        "workout_calories": 320,
-        "workout_distance": 5447.7099609375
-      }
-    },
-    {
-      "user_id": "dan",
-      "date": "2026-01-21",
-      "sleep_hours": null,
-      "sleep_quality": null,
-      "body_battery": null,
-      "stress_level": null,
-      "steps": null,
-      "active_minutes": null,
-      "calories_burned": null,
-      "resting_hr": 48,
-      "workout_type": null,
-      "workout_duration": null,
-      "metadata": {
-        "max_hr": 101,
-        "avg_hr": null
+        "min_hr": 45,
+        "activities": [
+          {
+            "name": "Drill Workout",
+            "type": "treadmill_running",
+            "duration_min": 45,
+            "calories": 320,
+            "distance": 5448
+          }
+        ]
       }
     }
-  ]
+  ],
+  "sleepTrend": "conservation",
+  "fetchedAt": "2026-01-28T05:19:26.306Z"
 }

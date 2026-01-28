@@ -1,0 +1,307 @@
+/* ═══════════════════════════════════════════
+   Command Mode — Intentionally Sparse
+   ═══════════════════════════════════════════ */
+
+.cmd {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px;
+}
+
+.cmd-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cmd-pulse {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--text-muted);
+  animation: pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.2; transform: scale(0.9); }
+  50% { opacity: 0.6; transform: scale(1.1); }
+}
+
+.cmd-container {
+  width: 100%;
+  max-width: 560px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+/* ─── Header ─── */
+
+.cmd-header {
+  text-align: center;
+}
+
+.cmd-greeting {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.cmd-date {
+  font-size: 15px;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.cmd-load {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 5px 14px;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.cmd-load-light {
+  background: var(--green-soft);
+  color: var(--green);
+}
+
+.cmd-load-medium {
+  background: var(--amber-soft);
+  color: var(--amber);
+}
+
+.cmd-load-heavy {
+  background: var(--red-soft);
+  color: var(--red);
+}
+
+/* ─── Cards ─── */
+
+.cmd-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cmd-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 24px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.2s ease;
+}
+
+.cmd-card:hover {
+  box-shadow: var(--shadow);
+}
+
+.cmd-card-icon {
+  font-size: 22px;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.cmd-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cmd-card-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+.cmd-card-value {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--text-primary);
+}
+
+/* Focus card — slightly emphasized */
+.cmd-card-focus {
+  border-left: 3px solid var(--accent);
+}
+
+/* Ongoing focus — pulsing accent border */
+.cmd-card-ongoing {
+  border-left: 3px solid #3b82f6;
+  background: rgba(59, 130, 246, 0.04);
+}
+
+/* Clear day focus — all events done */
+.cmd-card-clear {
+  border-left: 3px solid var(--green, #22c55e);
+  background: var(--green-soft);
+}
+
+/* Live badge */
+.cmd-card-badge {
+  display: inline-block;
+  margin-top: 4px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.cmd-badge-live {
+  color: #3b82f6;
+  animation: livePulse 2s ease-in-out infinite;
+}
+
+@keyframes livePulse {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+
+/* Upcoming items card */
+.cmd-card-upcoming {
+  border-left: 3px solid var(--text-muted);
+  opacity: 0.85;
+}
+
+.cmd-card-upcoming-item {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text-secondary);
+}
+
+/* Not today — strikethrough style */
+.cmd-card-not-today .cmd-card-strike {
+  color: var(--text-muted);
+  text-decoration: line-through;
+  text-decoration-color: var(--text-muted);
+  font-weight: 400;
+}
+
+/* Warning card */
+.cmd-card-warning {
+  background: var(--amber-soft);
+  border-color: #fde68a;
+}
+
+.cmd-card-warning .cmd-card-value {
+  color: #92400e;
+}
+
+/* Confidence tag for partial data */
+.cmd-confidence-tag {
+  font-weight: 400;
+  font-size: 10px;
+  color: #b45309;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+/* Action/Decision card */
+.cmd-card-action {
+  background: var(--green-soft);
+  border-color: #bbf7d0;
+}
+
+.cmd-card-action .cmd-card-value {
+  color: #166534;
+}
+
+/* ─── Completed/Past Events ─── */
+
+.cmd-completed {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 16px 20px;
+  opacity: 0.45;
+  transition: opacity 0.2s ease;
+}
+
+.cmd-completed:hover {
+  opacity: 0.7;
+}
+
+.cmd-completed-label {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+.cmd-completed-items {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.cmd-completed-item {
+  font-size: 13px;
+  color: var(--text-muted);
+  text-decoration: line-through;
+  text-decoration-color: var(--text-muted);
+  font-weight: 400;
+}
+
+/* ─── Heavy Day Message ─── */
+
+.cmd-heavy-msg {
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* ─── Empty State ─── */
+
+.cmd-empty {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.cmd-empty-text {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.cmd-empty-sub {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+/* ─── Responsive ─── */
+
+@media (max-width: 640px) {
+  .cmd {
+    padding: 32px 16px;
+    align-items: flex-start;
+    padding-top: 60px;
+  }
+
+  .cmd-greeting {
+    font-size: 26px;
+  }
+
+  .cmd-card {
+    padding: 18px;
+  }
+
+  .cmd-container {
+    gap: 36px;
+  }
+}

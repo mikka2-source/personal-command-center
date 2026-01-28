@@ -38,8 +38,16 @@ function HealthStats() {
   const workoutType = health?.workout_type || null;
   const workoutDuration = health?.workout_duration || null;
 
+  // Determine if sleep data is missing vs actually bad
+  const hasSleepData = sleepHours !== null && sleepHours !== undefined && parseFloat(sleepHours) > 0;
+
   const stats = [];
-  if (sleepHours) stats.push({ icon: '😴', label: 'שינה', value: `${sleepHours}h` });
+  if (hasSleepData) {
+    stats.push({ icon: '😴', label: 'שינה', value: `${sleepHours}h` });
+  } else if (health && !hasSleepData) {
+    // Explicitly show "no data" instead of hiding or implying bad sleep
+    stats.push({ icon: '😴', label: 'שינה', value: 'אין נתונים', muted: true });
+  }
   if (bodyBattery) stats.push({ icon: '🔋', label: 'סוללת גוף', value: bodyBattery });
   if (restingHr) stats.push({ icon: '❤️', label: 'דופק מנוחה', value: restingHr });
   if (stressLevel) stats.push({ icon: '😰', label: 'סטרס', value: stressLevel });
@@ -58,7 +66,7 @@ function HealthStats() {
       <h2>💪 בריאות</h2>
       <div className="health-grid">
         {stats.map((stat, index) => (
-          <div key={index} className="health-value">
+          <div key={index} className={`health-value${stat.muted ? ' health-value-muted' : ''}`}>
             <div className="health-icon">{stat.icon}</div>
             <div className="health-number">{stat.value}</div>
             <div className="health-label">{stat.label}</div>

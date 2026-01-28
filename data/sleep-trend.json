@@ -1,0 +1,40 @@
+{
+  "trend": "conservation",
+  "records": [
+    {
+      "date": "2026-01-28",
+      "sleep_hours": 0,
+      "sleep_quality": "unknown"
+    },
+    {
+      "date": "2026-01-27",
+      "sleep_hours": 4.28,
+      "sleep_quality": "poor"
+    },
+    {
+      "date": "2026-01-26",
+      "sleep_hours": 5.67,
+      "sleep_quality": "fair"
+    },
+    {
+      "date": "2026-01-25",
+      "sleep_hours": 0,
+      "sleep_quality": "unknown"
+    },
+    {
+      "date": "2026-01-24",
+      "sleep_hours": 4,
+      "sleep_quality": "poor"
+    },
+    {
+      "date": "2026-01-23",
+      "sleep_hours": 0,
+      "sleep_quality": "unknown"
+    },
+    {
+      "date": "2026-01-22",
+      "sleep_hours": 7.05,
+      "sleep_quality": "good"
+    }
+  ]
+}
