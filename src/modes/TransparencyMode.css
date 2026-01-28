@@ -407,6 +407,121 @@
   color: var(--text-muted);
 }
 
+/* ─── Goals ─── */
+
+.brain-goals {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.brain-goal {
+  padding: 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.brain-goal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.brain-goal-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.4;
+}
+
+.brain-goal-confidence {
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+  padding: 2px 8px;
+  border-radius: 50px;
+  flex-shrink: 0;
+}
+
+.brain-goal-confidence.confidence-on_track {
+  background: var(--green-soft);
+  color: var(--green);
+}
+
+.brain-goal-confidence.confidence-behind {
+  background: var(--amber-soft);
+  color: var(--amber);
+}
+
+.brain-goal-confidence.confidence-ahead {
+  background: var(--blue-soft);
+  color: var(--blue);
+}
+
+.brain-goal-confidence.confidence-unknown {
+  background: var(--bg-muted);
+  color: var(--text-muted);
+}
+
+.brain-goal-meta {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.brain-goal-domain {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.brain-goal-priority {
+  font-size: 11px;
+  color: var(--text-muted);
+  padding: 1px 8px;
+  background: var(--bg-muted);
+  border-radius: 50px;
+}
+
+.brain-goal-rules {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-top: 6px;
+  border-top: 1px solid var(--border-light);
+}
+
+.brain-goal-rule {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* ─── Data Confidence ─── */
+
+.brain-confidence-tag {
+  font-size: 11px;
+  font-weight: 500;
+  margin-right: 8px;
+  padding: 2px 8px;
+  border-radius: 50px;
+  vertical-align: middle;
+}
+
+.brain-confidence-tag.partial {
+  background: var(--amber-soft);
+  color: var(--amber);
+}
+
+.brain-confidence-inline {
+  font-size: 11px;
+  color: var(--amber);
+  font-weight: 500;
+}
+
 /* ─── Responsive ─── */
 
 @media (max-width: 640px) {

@@ -9,6 +9,7 @@ function TransparencyMode() {
   const [health, setHealth] = useState([]);
   const [events, setEvents] = useState([]);
   const [habits, setHabits] = useState([]);
+  const [goals, setGoals] = useState([]);
   const [loading, setLoading] = useState(true);
 
   const fetchAll = useCallback(async () => {
@@ -17,17 +18,19 @@ function TransparencyMode() {
       const startOfDay = `${TODAY}T00:00:00Z`;
       const endOfDay = `${TODAY}T23:59:59Z`;
 
-      const [briefRes, healthRes, eventsRes, habitsRes] = await Promise.all([
+      const [briefRes, healthRes, eventsRes, habitsRes, goalsRes] = await Promise.all([
         supabase.from('daily_briefs').select('*').eq('user_id', 'dan').eq('date', TODAY).single(),
         supabase.from('health_data').select('*').eq('user_id', 'dan').order('date', { ascending: false }).limit(7),
         supabase.from('events').select('*').gte('start_time', startOfDay).lte('start_time', endOfDay).eq('user_id', 'dan').order('start_time'),
         supabase.from('habits').select('*').eq('user_id', 'dan'),
+        supabase.from('goals').select('*').eq('user_id', 'dan').eq('status', 'active'),
       ]);
 
       if (briefRes.data) setBrief(briefRes.data);
       if (healthRes.data) setHealth(healthRes.data);
       if (eventsRes.data) setEvents(eventsRes.data);
       if (habitsRes.data) setHabits(habitsRes.data);
+      if (goalsRes.data) setGoals(goalsRes.data);
     } catch (err) {
       console.error('Transparency fetch error:', err);
     }
@@ -104,6 +107,9 @@ function TransparencyMode() {
                 <span className="brain-load-detail" style={{ color: sleep.color }}>
                   {sleep.text} {meta.sleep_avg ? `• ממוצע ${meta.sleep_avg}h` : ''}
                   {meta.sleep_deficit > 0 ? ` • חסר ${meta.sleep_deficit}h` : ''}
+                  {meta.sleep_confidence === 'low' && (
+                    <span className="brain-confidence-inline"> · נתונים חלקיים</span>
+                  )}
                 </span>
               </div>
               <div className="brain-load-item">
@@ -210,24 +216,73 @@ function TransparencyMode() {
         </section>
 
         {/* Sleep Trend — 7 days */}
-        {health.length > 0 && (
-          <section className="brain-section">
-            <h2 className="brain-section-title">שינה — 7 ימים</h2>
-            <div className="brain-sleep-chart">
-              {health.slice().reverse().map(h => {
-                const hours = parseFloat(h.sleep_hours) || 0;
-                const pct = Math.min(100, (hours / 9) * 100);
-                const isLow = hours < 7;
-                return (
-                  <div key={h.date} className="brain-sleep-col">
-                    <span className="brain-sleep-value">{hours > 0 ? hours.toFixed(1) : '—'}</span>
-                    <div className="brain-sleep-bar-bg">
-                      <div
-                        className={`brain-sleep-bar ${isLow ? 'low' : 'good'}`}
-                        style={{ height: `${pct}%` }}
-                      />
+        {health.length > 0 && (() => {
+          const sleepDaysWithData = health.filter(h => h.sleep_hours && parseFloat(h.sleep_hours) > 0).length;
+          const isPartialSleep = sleepDaysWithData < 4;
+          return (
+            <section className="brain-section">
+              <h2 className="brain-section-title">
+                שינה — 7 ימים
+                {isPartialSleep && (
+                  <span className="brain-confidence-tag partial">נתונים חלקיים ({sleepDaysWithData}/7 ימים)</span>
+                )}
+              </h2>
+              <div className="brain-sleep-chart">
+                {health.slice().reverse().map(h => {
+                  const hours = parseFloat(h.sleep_hours) || 0;
+                  const pct = Math.min(100, (hours / 9) * 100);
+                  const isLow = hours < 7;
+                  return (
+                    <div key={h.date} className="brain-sleep-col">
+                      <span className="brain-sleep-value">{hours > 0 ? hours.toFixed(1) : '—'}</span>
+                      <div className="brain-sleep-bar-bg">
+                        <div
+                          className={`brain-sleep-bar ${isLow ? 'low' : 'good'}`}
+                          style={{ height: `${pct}%` }}
+                        />
+                      </div>
+                      <span className="brain-sleep-date">{h.date?.slice(5)}</span>
                     </div>
-                    <span className="brain-sleep-date">{h.date?.slice(5)}</span>
+                  );
+                })}
+              </div>
+            </section>
+          );
+        })()}
+
+        {/* Goals Status */}
+        {goals.length > 0 && (
+          <section className="brain-section">
+            <h2 className="brain-section-title">מטרות פעילות</h2>
+            <div className="brain-goals">
+              {goals.map(goal => {
+                const confidence = goal.metrics?.confidence || meta.goal_confidence?.[goal.id] || 'unknown';
+                const domain = goal.domain || 'personal';
+                const domainLabels = { health: '🏃 בריאות', work: '💼 עבודה', personal: '🌱 אישי' };
+                return (
+                  <div key={goal.id} className="brain-goal">
+                    <div className="brain-goal-header">
+                      <span className="brain-goal-title">{goal.title}</span>
+                      <span className={`brain-goal-confidence confidence-${confidence}`}>
+                        {confidence === 'on_track' ? '✅ במסלול' :
+                         confidence === 'behind' ? '⚠️ מאחור' :
+                         confidence === 'ahead' ? '🚀 מקדים' :
+                         '❓ לא ידוע'}
+                      </span>
+                    </div>
+                    <div className="brain-goal-meta">
+                      <span className="brain-goal-domain">{domainLabels[domain] || domain}</span>
+                      {goal.priority && (
+                        <span className="brain-goal-priority">עדיפות {goal.priority}/5</span>
+                      )}
+                    </div>
+                    {goal.protection_rules && goal.protection_rules.length > 0 && (
+                      <div className="brain-goal-rules">
+                        {goal.protection_rules.map((rule, i) => (
+                          <span key={i} className="brain-goal-rule">🛡️ {rule}</span>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 );
               })}

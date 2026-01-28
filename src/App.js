@@ -3,11 +3,13 @@ import './App.css';
 import CommandMode from './modes/CommandMode';
 import TransparencyMode from './modes/TransparencyMode';
 import WorkbenchMode from './modes/WorkbenchMode';
+import HorizonMode from './modes/HorizonMode';
 
 const MODES = {
   command: { label: 'Command', icon: '⚡' },
   transparency: { label: 'Brain', icon: '🧠' },
   workbench: { label: 'Workbench', icon: '🔧' },
+  horizon: { label: 'Horizon', icon: '🔭' },
 };
 
 function App() {
@@ -48,6 +50,8 @@ function App() {
         return <TransparencyMode />;
       case 'workbench':
         return <WorkbenchMode />;
+      case 'horizon':
+        return <HorizonMode />;
       case 'command':
       default:
         return <CommandMode />;

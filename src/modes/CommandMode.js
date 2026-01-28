@@ -9,6 +9,109 @@ function getNicosiaTime() {
   return new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Nicosia' }));
 }
 
+// Morning Anchor Component
+function MorningAnchor({ onComplete }) {
+  const [status, setStatus] = useState(null); // null | 'done' | 'skipped'
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Check if already completed today
+    async function checkStatus() {
+      if (!isSupabaseConfigured()) { setLoading(false); return; }
+      try {
+        const { data } = await supabase
+          .from('daily_briefs')
+          .select('metadata')
+          .eq('user_id', 'dan')
+          .eq('date', TODAY)
+          .single();
+        if (data?.metadata?.morning_anchor) {
+          setStatus(data.metadata.morning_anchor);
+        }
+      } catch (err) { /* no brief yet */ }
+      setLoading(false);
+    }
+    checkStatus();
+  }, []);
+
+  const handleAction = async (action) => {
+    setStatus(action);
+    if (onComplete) onComplete(action);
+    if (!isSupabaseConfigured()) return;
+
+    try {
+      // Try to update existing brief's metadata
+      const { data: existing } = await supabase
+        .from('daily_briefs')
+        .select('metadata')
+        .eq('user_id', 'dan')
+        .eq('date', TODAY)
+        .single();
+
+      const currentMeta = existing?.metadata || {};
+      const updatedMeta = { ...currentMeta, morning_anchor: action, morning_anchor_time: new Date().toISOString() };
+
+      if (existing) {
+        await supabase
+          .from('daily_briefs')
+          .update({ metadata: updatedMeta })
+          .eq('user_id', 'dan')
+          .eq('date', TODAY);
+      } else {
+        await supabase
+          .from('daily_briefs')
+          .insert({
+            user_id: 'dan',
+            date: TODAY,
+            doing_today: [],
+            not_doing_today: [],
+            load_score: 0,
+            metadata: updatedMeta
+          });
+      }
+    } catch (err) {
+      console.error('Morning anchor save error:', err);
+    }
+  };
+
+  const hour = getNicosiaTime().getHours();
+  // Only show before 11:00 AM
+  if (hour >= 11) return null;
+  if (loading) return null;
+
+  if (status === 'done') {
+    return (
+      <div className="cmd-card cmd-card-anchor cmd-card-anchor-done">
+        <div className="cmd-card-icon">✅</div>
+        <div className="cmd-card-content">
+          <span className="cmd-card-label">עוגן בוקר</span>
+          <span className="cmd-card-value cmd-anchor-done-text">הושלם — יום טוב מתחיל</span>
+        </div>
+      </div>
+    );
+  }
+
+  if (status === 'skipped') return null;
+
+  return (
+    <div className="cmd-card cmd-card-anchor">
+      <div className="cmd-card-icon">☀️</div>
+      <div className="cmd-card-content">
+        <span className="cmd-card-label">עוגן בוקר</span>
+        <span className="cmd-card-value">סקירה / קפה / תנועה קלה</span>
+        <div className="cmd-anchor-actions">
+          <button className="cmd-anchor-btn cmd-anchor-done" onClick={() => handleAction('done')}>
+            ✅ בוצע
+          </button>
+          <button className="cmd-anchor-btn cmd-anchor-skip" onClick={() => handleAction('skipped')}>
+            ⏭️ דילוג
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 // Classify an event's time status relative to NOW
 function classifyEventTime(text, startTime, endTime) {
   const now = getNicosiaTime();
@@ -26,6 +129,9 @@ function CommandMode() {
   const [brief, setBrief] = useState(null);
   const [loading, setLoading] = useState(true);
   const [currentTime, setCurrentTime] = useState(getNicosiaTime());
+  const [closures, setClosures] = useState({ total: 0, breakdown: [] });
+  const [showClosureBreakdown, setShowClosureBreakdown] = useState(false);
+  const [anchorDone, setAnchorDone] = useState(false);
 
   const fetchBrief = useCallback(async () => {
     if (!isSupabaseConfigured()) { setLoading(false); return; }
@@ -42,6 +148,78 @@ function CommandMode() {
     }
     setLoading(false);
   }, []);
+
+  // Calculate closures in real-time
+  const calculateClosures = useCallback(async () => {
+    if (!isSupabaseConfigured()) return;
+    const breakdown = [];
+    let total = 0;
+
+    try {
+      // 1. Tasks completed today
+      const { data: doneTasks } = await supabase
+        .from('tasks')
+        .select('id')
+        .eq('user_id', 'dan')
+        .eq('completed', true)
+        .gte('completed_at', `${TODAY}T00:00:00Z`)
+        .lte('completed_at', `${TODAY}T23:59:59Z`);
+      const taskCount = doneTasks?.length || 0;
+      if (taskCount > 0) {
+        breakdown.push({ label: 'משימות', count: taskCount });
+        total += taskCount;
+      }
+
+      // 2. Events that passed (end_time < now)
+      const nowISO = new Date().toISOString();
+      const { data: pastEvents } = await supabase
+        .from('events')
+        .select('id')
+        .eq('user_id', 'dan')
+        .gte('start_time', `${TODAY}T00:00:00Z`)
+        .lte('start_time', `${TODAY}T23:59:59Z`)
+        .lt('end_time', nowISO);
+      const eventCount = pastEvents?.length || 0;
+      if (eventCount > 0) {
+        breakdown.push({ label: 'אירועים', count: eventCount });
+        total += eventCount;
+      }
+
+      // 3. Morning anchor
+      const { data: briefData } = await supabase
+        .from('daily_briefs')
+        .select('metadata')
+        .eq('user_id', 'dan')
+        .eq('date', TODAY)
+        .single();
+      if (briefData?.metadata?.morning_anchor === 'done') {
+        breakdown.push({ label: 'עוגן בוקר', count: 1 });
+        total += 1;
+      }
+
+      // 4. Workouts from health_data
+      const { data: healthToday } = await supabase
+        .from('health_data')
+        .select('*')
+        .eq('user_id', 'dan')
+        .eq('date', TODAY)
+        .single();
+      if (healthToday?.steps && healthToday.steps > 5000) {
+        breakdown.push({ label: 'פעילות גופנית', count: 1 });
+        total += 1;
+      }
+    } catch (err) {
+      console.error('Closures calc error:', err);
+    }
+
+    setClosures({ total, breakdown });
+  }, []);
+
+  useEffect(() => {
+    calculateClosures();
+    const interval = setInterval(calculateClosures, 120000); // refresh every 2 min
+    return () => clearInterval(interval);
+  }, [calculateClosures, anchorDone]);
 
   useEffect(() => { fetchBrief(); }, [fetchBrief]);
 
@@ -197,6 +375,11 @@ function CommandMode() {
           )}
         </header>
 
+        {/* Morning Anchor — before 11 AM only */}
+        <MorningAnchor onComplete={(action) => {
+          if (action === 'done') setAnchorDone(true);
+        }} />
+
         {/* The Command Cards */}
         <div className="cmd-cards">
           {/* 🎯 Main Focus — always ongoing or upcoming, never past */}
@@ -303,6 +486,25 @@ function CommandMode() {
           <div className="cmd-empty">
             <p className="cmd-empty-text">אין תדריך להיום.</p>
             <p className="cmd-empty-sub">הפעל את Decision Engine כדי ליצור אחד.</p>
+          </div>
+        )}
+
+        {/* Closures Counter */}
+        {closures.total > 0 && (
+          <div
+            className="cmd-closures"
+            onClick={() => setShowClosureBreakdown(!showClosureBreakdown)}
+          >
+            <span className="cmd-closures-label">היום נסגרו: {closures.total}</span>
+            {showClosureBreakdown && closures.breakdown.length > 0 && (
+              <div className="cmd-closures-breakdown">
+                {closures.breakdown.map((item, i) => (
+                  <span key={i} className="cmd-closures-item">
+                    {item.label}: {item.count}
+                  </span>
+                ))}
+              </div>
+            )}
           </div>
         )}
       </div>

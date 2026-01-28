@@ -284,6 +284,99 @@
   color: var(--text-muted);
 }
 
+/* ─── Morning Anchor ─── */
+
+.cmd-card-anchor {
+  border-left: 3px solid #f59e0b;
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+  border-color: #fde68a;
+}
+
+.cmd-card-anchor-done {
+  background: var(--green-soft);
+  border-left: 3px solid var(--green);
+  border-color: #bbf7d0;
+  opacity: 0.7;
+}
+
+.cmd-anchor-done-text {
+  color: var(--green) !important;
+  font-weight: 400 !important;
+  font-size: 14px !important;
+}
+
+.cmd-anchor-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.cmd-anchor-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: var(--font);
+  transition: all 0.15s ease;
+}
+
+.cmd-anchor-done {
+  background: var(--green);
+  color: white;
+}
+
+.cmd-anchor-done:hover {
+  background: #15803d;
+}
+
+.cmd-anchor-skip {
+  background: var(--bg-muted);
+  color: var(--text-muted);
+}
+
+.cmd-anchor-skip:hover {
+  background: var(--border);
+  color: var(--text-secondary);
+}
+
+/* ─── Closures Counter ─── */
+
+.cmd-closures {
+  text-align: center;
+  padding: 16px;
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  transition: background 0.15s ease;
+}
+
+.cmd-closures:hover {
+  background: var(--bg-muted);
+}
+
+.cmd-closures-label {
+  font-size: 13px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.cmd-closures-breakdown {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.cmd-closures-item {
+  font-size: 12px;
+  color: var(--text-muted);
+  padding: 2px 8px;
+  background: var(--bg-muted);
+  border-radius: 50px;
+}
+
 /* ─── Responsive ─── */
 
 @media (max-width: 640px) {

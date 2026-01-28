@@ -1,0 +1,226 @@
+/* ═══════════════════════════════════════════
+   Horizon Mode — Calm, Read-Only Future View
+   ═══════════════════════════════════════════ */
+
+.horizon {
+  min-height: 100vh;
+  padding: 48px 24px 120px;
+}
+
+.horizon-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  gap: 12px;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.horizon-pulse {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--text-muted);
+  animation: pulse 1.2s ease-in-out infinite;
+}
+
+.horizon-container {
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+/* ─── Header ─── */
+
+.horizon-header {
+  text-align: center;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.horizon-header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.horizon-sub {
+  color: var(--text-muted);
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+/* ─── Sections (Time Buckets) ─── */
+
+.horizon-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.horizon-section-title {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+/* ─── Cards ─── */
+
+.horizon-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.horizon-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 18px 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  transition: box-shadow 0.2s ease;
+}
+
+.horizon-card:hover {
+  box-shadow: var(--shadow-sm);
+}
+
+.horizon-card-icon {
+  font-size: 22px;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.horizon-card-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.horizon-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.horizon-card-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.4;
+}
+
+.horizon-card-days {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  white-space: nowrap;
+  padding: 2px 8px;
+  background: var(--bg-muted);
+  border-radius: 50px;
+  flex-shrink: 0;
+}
+
+.horizon-card-date {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.horizon-card-prep {
+  font-size: 12px;
+  color: var(--amber);
+  font-weight: 500;
+}
+
+.horizon-card-confidence {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.horizon-card-confidence.goal-on_track {
+  color: var(--green);
+}
+
+.horizon-card-confidence.goal-behind {
+  color: var(--amber);
+}
+
+.horizon-card-confidence.goal-ahead {
+  color: var(--blue);
+}
+
+.horizon-card-deps {
+  font-size: 12px;
+  color: var(--red);
+  font-weight: 500;
+}
+
+.horizon-card-partial {
+  font-size: 11px;
+  color: var(--amber);
+  font-weight: 500;
+  font-style: italic;
+  padding: 2px 8px;
+  background: var(--amber-soft);
+  border-radius: 50px;
+  display: inline-block;
+  width: fit-content;
+  margin-top: 4px;
+}
+
+/* ─── Empty State ─── */
+
+.horizon-empty {
+  text-align: center;
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.horizon-empty-icon {
+  font-size: 48px;
+  margin-bottom: 12px;
+}
+
+.horizon-empty p {
+  font-size: 16px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.horizon-empty-sub {
+  font-size: 14px !important;
+  color: var(--text-muted) !important;
+  font-weight: 400 !important;
+}
+
+/* ─── Responsive ─── */
+
+@media (max-width: 640px) {
+  .horizon {
+    padding: 32px 16px 120px;
+  }
+
+  .horizon-header h1 {
+    font-size: 20px;
+  }
+
+  .horizon-card {
+    padding: 14px 16px;
+  }
+}

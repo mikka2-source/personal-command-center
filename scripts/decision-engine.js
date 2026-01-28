@@ -102,6 +102,125 @@ async function fetchHabits() {
   return data || [];
 }
 
+async function fetchGoals() {
+  const { data, error } = await supabase
+    .from('goals')
+    .select('*')
+    .eq('user_id', 'dan')
+    .eq('status', 'active');
+  
+  if (error) console.error('Goals fetch error:', error.message);
+  return data || [];
+}
+
+async function fetchTrips() {
+  const { data, error } = await supabase
+    .from('trips')
+    .select('*')
+    .gte('end_date', TODAY);
+  
+  if (error) console.error('Trips fetch error:', error.message);
+  return data || [];
+}
+
+async function fetchCompletedTasksToday() {
+  const { data, error } = await supabase
+    .from('tasks')
+    .select('id')
+    .eq('user_id', 'dan')
+    .eq('completed', true)
+    .gte('completed_at', `${TODAY}T00:00:00Z`)
+    .lte('completed_at', `${TODAY}T23:59:59Z`);
+  
+  if (error) console.error('Completed tasks fetch error:', error.message);
+  return data || [];
+}
+
+// === GOAL CONFIDENCE INFERENCE ===
+
+function inferGoalConfidence(goal, habits, healthData) {
+  const domain = goal.domain || 'personal';
+  const protectionRules = goal.protection_rules || [];
+  
+  // Health goals — check recent activity
+  if (domain === 'health') {
+    const relevantHabits = habits.filter(h => {
+      const title = (h.title || '').toLowerCase();
+      return title.includes('run') || title.includes('ריצה') || title.includes('sport') || title.includes('ספורט') || title.includes('workout');
+    });
+    
+    // Check if health habits are being maintained
+    const missedCount = relevantHabits.filter(h => {
+      if (!h.last_seen) return true;
+      const daysSince = (NOW - new Date(h.last_seen)) / (1000 * 60 * 60 * 24);
+      return daysSince > 4;
+    }).length;
+    
+    if (relevantHabits.length > 0 && missedCount === 0) return 'on_track';
+    if (missedCount > 0) return 'behind';
+  }
+  
+  // Check deadline proximity
+  const deadline = goal.deadline || goal.metrics?.deadline || goal.metrics?.event;
+  if (deadline) {
+    try {
+      const deadlineDate = new Date(deadline);
+      const daysLeft = (deadlineDate - NOW) / (1000 * 60 * 60 * 24);
+      if (daysLeft > 90) return 'on_track'; // plenty of time
+      if (daysLeft < 30) return 'behind'; // getting close
+    } catch { /* ignore parse errors */ }
+  }
+  
+  return 'unknown';
+}
+
+// === HORIZON SURFACING ===
+
+function getHorizonAlerts(trips, events, goals) {
+  const alerts = [];
+  
+  // Trips approaching at T-14, T-7, T-3
+  trips.forEach(trip => {
+    const startDate = trip.start_date || trip.metadata?.start_date;
+    if (!startDate) return;
+    const daysUntil = Math.ceil((new Date(startDate) - NOW) / (1000 * 60 * 60 * 24));
+    
+    if (daysUntil === 14 || daysUntil === 7 || daysUntil === 3) {
+      const title = trip.title || trip.destination || 'טיול';
+      alerts.push(`✈️ ${title} עוד ${daysUntil} ימים — הכנות?`);
+    }
+  });
+  
+  // Big events approaching
+  events.forEach(event => {
+    const cat = (event.category || '').toLowerCase();
+    if (!cat.includes('birthday') && !cat.includes('holiday') && !cat.includes('יום הולדת')) return;
+    
+    const startDate = event.start_time?.split('T')[0];
+    if (!startDate) return;
+    const daysUntil = Math.ceil((new Date(startDate) - NOW) / (1000 * 60 * 60 * 24));
+    
+    if (daysUntil === 7 || daysUntil === 3) {
+      alerts.push(`🎂 ${event.title} עוד ${daysUntil} ימים`);
+    }
+  });
+  
+  // Goals with approaching deadlines
+  goals.forEach(goal => {
+    const deadline = goal.deadline || goal.metrics?.deadline || goal.metrics?.event;
+    if (!deadline) return;
+    try {
+      const deadlineDate = new Date(deadline);
+      const daysUntil = Math.ceil((deadlineDate - NOW) / (1000 * 60 * 60 * 24));
+      if (daysUntil === 30 || daysUntil === 14 || daysUntil === 7) {
+        alerts.push(`🏁 ${goal.title} — דדליין עוד ${daysUntil} ימים`);
+      }
+    } catch { /* ignore */ }
+  });
+  
+  return alerts;
+}
+
 // === COMPUTATION ENGINE ===
 
 function computeCalendarLoad(events) {
@@ -230,7 +349,7 @@ function computeTaskLoad(tasks) {
   };
 }
 
-function deriveTaskPriority(task, sleepTrend, availableEnergy) {
+function deriveTaskPriority(task, sleepTrend, availableEnergy, goals = []) {
   let priority = 5; // base
   
   // Deadline urgency (biggest factor)
@@ -245,6 +364,17 @@ function deriveTaskPriority(task, sleepTrend, availableEnergy) {
   // Dependencies (if someone is waiting on me)
   if (task.dependency) priority += 1;
   
+  // Goal alignment boost — tasks that match a goal's domain get priority
+  const taskArea = (task.area || '').toLowerCase();
+  goals.forEach(goal => {
+    const goalDomain = (goal.domain || '').toLowerCase();
+    if (taskArea === goalDomain || 
+        (goalDomain === 'health' && (taskArea === 'sport' || taskArea === 'health')) ||
+        (goalDomain === 'work' && taskArea === 'work')) {
+      priority += 1; // boost goal-aligned tasks
+    }
+  });
+  
   // Energy match
   const energyCost = ENERGY_COSTS[task.energy_cost || 'mid'];
   if (sleepTrend === 'conservation' && energyCost >= 3) {
@@ -255,7 +385,7 @@ function deriveTaskPriority(task, sleepTrend, availableEnergy) {
   return Math.max(1, Math.min(10, priority));
 }
 
-function selectTodayTasks(tasks, sleepTrend, calendarLoad, bodyLoad) {
+function selectTodayTasks(tasks, sleepTrend, calendarLoad, bodyLoad, goals = []) {
   // Available energy budget
   let energyBudget = MAX_DAILY_ENERGY;
   
@@ -270,11 +400,11 @@ function selectTodayTasks(tasks, sleepTrend, calendarLoad, bodyLoad) {
   
   energyBudget = Math.max(2, energyBudget); // minimum
   
-  // Sort by derived priority
+  // Sort by derived priority (now includes goal alignment)
   const prioritized = tasks
     .map(t => ({
       ...t,
-      derived_priority: deriveTaskPriority(t, sleepTrend, energyBudget)
+      derived_priority: deriveTaskPriority(t, sleepTrend, energyBudget, goals)
     }))
     .sort((a, b) => b.derived_priority - a.derived_priority);
   
@@ -296,7 +426,7 @@ function selectTodayTasks(tasks, sleepTrend, calendarLoad, bodyLoad) {
   return { doing, notDoing, energyBudget, usedEnergy };
 }
 
-function generateWarnings(sleepData, calendarLoad, projects, dependencies, habits) {
+function generateWarnings(sleepData, calendarLoad, projects, dependencies, habits, goals = [], goalConfidenceMap = {}) {
   const warnings = [];
   
   // Sleep warnings — distinguish missing data from bad data
@@ -341,6 +471,24 @@ function generateWarnings(sleepData, calendarLoad, projects, dependencies, habit
   if (missedHabits.length > 0) {
     warnings.push(`הרגלים שנעלמו: ${missedHabits.map(h => h.title).join(', ')}`);
   }
+  
+  // Goal-based warnings
+  goals.forEach(goal => {
+    const confidence = goalConfidenceMap[goal.id] || 'unknown';
+    if (confidence === 'behind') {
+      const domain = goal.domain || 'personal';
+      if (domain === 'health') {
+        // Check if there's a relevant missed habit
+        const hasRunHabit = missedHabits.some(h => {
+          const t = (h.title || '').toLowerCase();
+          return t.includes('run') || t.includes('ריצה') || t.includes('workout');
+        });
+        if (hasRunHabit) {
+          warnings.push(`${goal.title} — לא רצת השבוע`);
+        }
+      }
+    }
+  });
   
   return warnings;
 }
@@ -410,13 +558,16 @@ async function main() {
   
   // Fetch all data
   console.log('📥 Fetching data...');
-  const [events, healthData, tasks, projects, dependencies, habits] = await Promise.all([
+  const [events, healthData, tasks, projects, dependencies, habits, goals, trips, completedToday] = await Promise.all([
     fetchTodayEvents(),
     fetchHealthData(7),
     fetchOpenTasks(),
     fetchActiveProjects(),
     fetchDependencies(),
-    fetchHabits()
+    fetchHabits(),
+    fetchGoals(),
+    fetchTrips(),
+    fetchCompletedTasksToday()
   ]);
   
   console.log(`  Events: ${events.length}`);
@@ -425,6 +576,9 @@ async function main() {
   console.log(`  Active projects: ${projects.length}/${MAX_ACTIVE_PROJECTS}`);
   console.log(`  Pending dependencies: ${dependencies.length}`);
   console.log(`  Habits tracked: ${habits.length}`);
+  console.log(`  Active goals: ${goals.length}`);
+  console.log(`  Upcoming trips: ${trips.length}`);
+  console.log(`  Completed today: ${completedToday.length}`);
   
   // Compute loads
   console.log('\n⚙️ Computing...');
@@ -442,9 +596,16 @@ async function main() {
   console.log(`  TOTAL: ${loadScore}/100`);
   console.log(`  Sleep trend: ${sleepData.trend}`);
   
-  // Select tasks
+  // Infer goal confidence
+  const goalConfidenceMap = {};
+  goals.forEach(goal => {
+    goalConfidenceMap[goal.id] = inferGoalConfidence(goal, habits, healthData);
+  });
+  console.log(`  Goal confidence:`, goalConfidenceMap);
+
+  // Select tasks (now with goal alignment)
   const { doing, notDoing, energyBudget, usedEnergy } = selectTodayTasks(
-    tasks, sleepData.trend, calendarLoad, bodyLoad
+    tasks, sleepData.trend, calendarLoad, bodyLoad, goals
   );
   
   // Update derived priorities in DB
@@ -456,10 +617,26 @@ async function main() {
         .eq('id', task.id);
     }
   }
+
+  // Update goal confidence in DB (stored in metrics JSON)
+  for (const goal of goals) {
+    const confidence = goalConfidenceMap[goal.id];
+    if (confidence) {
+      const currentMetrics = goal.metrics || {};
+      await supabase
+        .from('goals')
+        .update({ metrics: { ...currentMetrics, confidence } })
+        .eq('id', goal.id);
+    }
+  }
   
-  // Generate warnings (pick top one)
-  const warnings = generateWarnings(sleepData, calendarLoad, projects, dependencies, habits);
-  const topWarning = warnings[0] || null;
+  // Generate warnings (pick top one) — now includes goals
+  const warnings = generateWarnings(sleepData, calendarLoad, projects, dependencies, habits, goals, goalConfidenceMap);
+  
+  // Add horizon alerts to warnings
+  const horizonAlerts = getHorizonAlerts(trips, events, goals);
+  const allWarnings = [...warnings, ...horizonAlerts];
+  const topWarning = allWarnings[0] || null;
   
   // Generate small action (now time-anchored)
   const smallAction = generateSmallAction(sleepData, bodyLoad, calendarLoad, events);
@@ -546,7 +723,20 @@ async function main() {
       sleep_deficit: sleepData.deficit,
       sleep_data_points: sleepData.dataPoints,
       sleep_total_days: sleepData.totalDays,
-      all_warnings: warnings,
+      all_warnings: allWarnings,
+      // Goals
+      goal_confidence: goalConfidenceMap,
+      active_goals: goals.map(g => ({
+        id: g.id,
+        title: g.title,
+        domain: g.domain,
+        priority: g.priority,
+        confidence: goalConfidenceMap[g.id] || 'unknown'
+      })),
+      // Horizon alerts
+      horizon_alerts: horizonAlerts,
+      // Closures count
+      closures_count: completedToday.length + completedEvents.length,
       active_projects: projects.map(p => p.title),
       pending_dependencies: dependencies.map(d => ({ person: d.waiting_on, for: d.waiting_for })),
       generated_at: new Date().toISOString(),
