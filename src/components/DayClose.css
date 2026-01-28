@@ -1,0 +1,290 @@
+/* Day Close Overlay */
+
+.day-close-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+  backdrop-filter: blur(8px);
+}
+
+.day-close {
+  background: linear-gradient(160deg, #1a1a2e 0%, #0f0f1a 100%);
+  border-radius: 24px;
+  width: 100%;
+  max-width: 400px;
+  max-height: calc(100vh - 2rem);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 2rem;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+}
+
+/* Subtle gradient glow */
+.day-close::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle at center,
+    rgba(139, 92, 246, 0.1) 0%,
+    transparent 50%
+  );
+  pointer-events: none;
+}
+
+/* Loading */
+.day-close-loading {
+  padding: 2rem 0;
+}
+
+.day-close-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(139, 92, 246, 0.3);
+  border-top-color: #8b5cf6;
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Done state */
+.day-close-done {
+  padding: 3rem 2rem;
+}
+
+.day-close-check {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: #fff;
+  margin: 0 auto 1rem;
+}
+
+/* Header */
+.day-close-header {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.day-close-emoji {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.day-close-header h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 0.25rem;
+}
+
+.day-close-date {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* Summary */
+.day-close-summary {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.day-close-stat-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.day-close-stat-value {
+  font-size: 4rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+}
+
+.day-close-stat-label {
+  color: #94a3b8;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+.day-close-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.day-close-highlight {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.5rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+.day-close-mood {
+  color: #fff;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+/* Actions */
+.day-close-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.day-close-btn {
+  flex: 1;
+  padding: 1rem;
+  min-height: 48px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.day-close-btn-ack {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.day-close-btn-ack:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.day-close-btn-review {
+  background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+  color: #fff;
+}
+
+.day-close-btn-review:hover {
+  opacity: 0.9;
+}
+
+.day-close-btn-confirm {
+  width: 100%;
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+  color: #fff;
+}
+
+.day-close-btn-confirm:hover:not(:disabled) {
+  opacity: 0.9;
+}
+
+.day-close-btn-confirm:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Tomorrow section */
+.day-close-tomorrow {
+  margin-top: 1.5rem;
+  text-align: right;
+}
+
+.day-close-tomorrow h3 {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0 0 0.75rem;
+}
+
+.day-close-tomorrow-input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1rem;
+  color: #fff;
+  font-size: 1rem;
+  font-family: inherit;
+  resize: none;
+  direction: rtl;
+  margin-bottom: 1rem;
+}
+
+.day-close-tomorrow-input:focus {
+  outline: none;
+  border-color: rgba(139, 92, 246, 0.5);
+}
+
+.day-close-tomorrow-input::placeholder {
+  color: #64748b;
+}
+
+/* Auto-close note */
+.day-close-auto-note {
+  color: #64748b;
+  font-size: 0.8rem;
+  margin-top: 1.5rem;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+  .day-close {
+    padding: 1.5rem;
+    max-width: 100%;
+    border-radius: 20px;
+  }
+  
+  .day-close-overlay {
+    padding: 0.75rem;
+    align-items: flex-end;
+  }
+  
+  .day-close-stat-value {
+    font-size: 3rem;
+  }
+  
+  .day-close-header h2 {
+    font-size: 1.25rem;
+  }
+  
+  .day-close-actions {
+    flex-direction: column;
+  }
+  
+  .day-close-tomorrow-input {
+    font-size: 16px; /* Prevents iOS zoom on focus */
+  }
+}

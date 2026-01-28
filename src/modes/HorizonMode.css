@@ -1,10 +1,12 @@
 /* ═══════════════════════════════════════════
    Horizon Mode — Calm, Read-Only Future View
+   Big Events Only: Trips, Birthdays, Milestones
    ═══════════════════════════════════════════ */
 
 .horizon {
   min-height: 100vh;
   padding: 48px 24px 120px;
+  background: linear-gradient(180deg, var(--bg) 0%, var(--bg-muted) 100%);
 }
 
 .horizon-loading {
@@ -26,12 +28,17 @@
   animation: pulse 1.2s ease-in-out infinite;
 }
 
+@keyframes pulse {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+
 .horizon-container {
   max-width: 640px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 36px;
+  gap: 40px;
 }
 
 /* ─── Header ─── */
@@ -43,15 +50,17 @@
 }
 
 .horizon-header h1 {
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 700;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
 }
 
 .horizon-sub {
   color: var(--text-muted);
   font-size: 14px;
-  margin-top: 4px;
+  margin-top: 6px;
+  font-weight: 400;
 }
 
 /* ─── Sections (Time Buckets) ─── */
@@ -59,16 +68,16 @@
 .horizon-section {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
 }
 
 .horizon-section-title {
   font-size: 13px;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
   color: var(--text-muted);
-  padding-bottom: 6px;
+  padding-bottom: 8px;
   border-bottom: 1px solid var(--border-light);
 }
 
@@ -77,26 +86,39 @@
 .horizon-cards {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 12px;
 }
 
 .horizon-card {
   display: flex;
   align-items: flex-start;
   gap: 14px;
-  padding: 18px 20px;
+  padding: 20px 22px;
   background: var(--bg-card);
   border: 1px solid var(--border-light);
   border-radius: var(--radius);
-  transition: box-shadow 0.2s ease;
+  transition: all 0.2s ease;
+  position: relative;
 }
 
 .horizon-card:hover {
   box-shadow: var(--shadow-sm);
+  transform: translateY(-1px);
+}
+
+/* Visual distinction for prep windows */
+.horizon-card--prep-active {
+  border-right: 4px solid var(--amber);
+  background: linear-gradient(90deg, var(--bg-card) 0%, rgba(251, 191, 36, 0.04) 100%);
+}
+
+.horizon-card--prep-future {
+  border-right: 4px solid var(--border-light);
+  opacity: 0.95;
 }
 
 .horizon-card-icon {
-  font-size: 22px;
+  font-size: 24px;
   line-height: 1;
   flex-shrink: 0;
   margin-top: 2px;
@@ -106,7 +128,7 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
 }
 
 .horizon-card-header {
@@ -117,37 +139,83 @@
 }
 
 .horizon-card-title {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 600;
   color: var(--text-primary);
   line-height: 1.4;
 }
 
 .horizon-card-days {
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
   color: var(--text-muted);
   white-space: nowrap;
-  padding: 2px 8px;
+  padding: 3px 10px;
   background: var(--bg-muted);
   border-radius: 50px;
   flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.horizon-card-days--soon {
+  background: var(--amber-soft, rgba(251, 191, 36, 0.15));
+  color: var(--amber);
 }
 
 .horizon-card-date {
   font-size: 13px;
   color: var(--text-secondary);
+  font-weight: 400;
 }
 
-.horizon-card-prep {
-  font-size: 12px;
-  color: var(--amber);
+/* ─── Meaning (Why This Matters) ─── */
+
+.horizon-card-meaning {
+  font-size: 14px;
+  color: var(--text-muted);
+  font-style: italic;
+  line-height: 1.5;
+  padding: 6px 0 2px;
+}
+
+/* ─── Prep Window Indicator ─── */
+
+.horizon-card-prep-window {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  margin-top: 6px;
   font-weight: 500;
 }
+
+.horizon-card-prep-window.prep-active {
+  background: var(--amber-soft, rgba(251, 191, 36, 0.12));
+  color: var(--amber);
+}
+
+.horizon-card-prep-window.prep-future {
+  background: var(--bg-muted);
+  color: var(--text-muted);
+}
+
+.prep-indicator {
+  font-size: 14px;
+}
+
+.prep-status {
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+/* ─── Confidence Badges ─── */
 
 .horizon-card-confidence {
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 500;
+  margin-top: 4px;
 }
 
 .horizon-card-confidence.goal-on_track {
@@ -162,43 +230,29 @@
   color: var(--blue);
 }
 
-.horizon-card-deps {
-  font-size: 12px;
-  color: var(--red);
-  font-weight: 500;
-}
-
-.horizon-card-partial {
-  font-size: 11px;
-  color: var(--amber);
-  font-weight: 500;
-  font-style: italic;
-  padding: 2px 8px;
-  background: var(--amber-soft);
-  border-radius: 50px;
-  display: inline-block;
-  width: fit-content;
-  margin-top: 4px;
+.horizon-card-confidence.goal-unknown {
+  color: var(--text-muted);
 }
 
 /* ─── Empty State ─── */
 
 .horizon-empty {
   text-align: center;
-  padding: 60px 20px;
+  padding: 80px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
 }
 
 .horizon-empty-icon {
-  font-size: 48px;
-  margin-bottom: 12px;
+  font-size: 56px;
+  margin-bottom: 16px;
+  opacity: 0.9;
 }
 
 .horizon-empty p {
-  font-size: 16px;
+  font-size: 17px;
   color: var(--text-secondary);
   font-weight: 500;
 }
@@ -209,18 +263,86 @@
   font-weight: 400 !important;
 }
 
+/* ─── Footer ─── */
+
+.horizon-footer {
+  text-align: center;
+  padding-top: 32px;
+  border-top: 1px solid var(--border-light);
+  margin-top: 20px;
+}
+
+.horizon-footer p {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
 /* ─── Responsive ─── */
 
 @media (max-width: 640px) {
   .horizon {
     padding: 32px 16px 120px;
+    overflow-x: hidden;
   }
 
   .horizon-header h1 {
-    font-size: 20px;
+    font-size: 22px;
   }
 
   .horizon-card {
-    padding: 14px 16px;
+    padding: 16px 18px;
+  }
+
+  .horizon-card-title {
+    font-size: 15px;
+    word-break: break-word;
+  }
+
+  .horizon-card-meaning {
+    font-size: 13px;
+  }
+
+  .horizon-card-prep-window {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+  
+  .horizon-container {
+    max-width: 100%;
+  }
+}
+
+/* Very small screens (iPhone SE/mini at 375px) */
+@media (max-width: 375px) {
+  .horizon {
+    padding: 24px 12px 120px;
+  }
+  
+  .horizon-header h1 {
+    font-size: 20px;
+  }
+  
+  .horizon-card {
+    padding: 14px;
+    gap: 10px;
+  }
+  
+  .horizon-card-header {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .horizon-card-days {
+    align-self: flex-start;
+  }
+}
+
+/* ─── Dark Mode Adjustments ─── */
+
+@media (prefers-color-scheme: dark) {
+  .horizon-card--prep-active {
+    background: linear-gradient(90deg, var(--bg-card) 0%, rgba(251, 191, 36, 0.08) 100%);
   }
 }

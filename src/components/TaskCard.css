@@ -1,0 +1,324 @@
+/* Task Card Modal */
+
+.task-card-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+  backdrop-filter: blur(4px);
+}
+
+.task-card {
+  background: #1a1a2e;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 480px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.task-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: sticky;
+  top: 0;
+  background: #1a1a2e;
+  z-index: 10;
+}
+
+.task-card-header h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #fff;
+  margin: 0;
+}
+
+.task-card-close {
+  background: none;
+  border: none;
+  color: #64748b;
+  font-size: 1.5rem;
+  cursor: pointer;
+  /* 44px minimum touch target */
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.task-card-close:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.task-card-close:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.5);
+}
+
+/* Fields */
+.task-card-field {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.task-card-field label {
+  display: block;
+  color: #94a3b8;
+  font-size: 0.85rem;
+  margin-bottom: 0.75rem;
+}
+
+.task-card-textarea,
+.task-card-input,
+.task-card-select {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  color: #fff;
+  font-size: 1rem;
+  font-family: inherit;
+  resize: vertical;
+  direction: rtl;
+}
+
+.task-card-textarea:focus,
+.task-card-input:focus,
+.task-card-select:focus {
+  outline: none;
+  border-color: rgba(139, 92, 246, 0.5);
+  box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.2);
+}
+
+/* Energy Level */
+.task-card-energy {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.task-card-energy-btn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 0.5rem;
+  min-height: 44px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: #94a3b8;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.task-card-energy-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.task-card-energy-btn.active {
+  border-color: var(--energy-color);
+  background: color-mix(in srgb, var(--energy-color) 15%, transparent);
+  color: #fff;
+}
+
+.task-card-energy-icon {
+  font-size: 1.5rem;
+}
+
+/* Labels */
+.task-card-labels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.task-card-label {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.5rem 1rem;
+  min-height: 44px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  color: #94a3b8;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 0.9rem;
+}
+
+.task-card-label:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.task-card-label.active {
+  background: var(--label-color);
+  border-color: var(--label-color);
+  color: #fff;
+}
+
+.task-card-override-badge {
+  font-size: 0.75rem;
+}
+
+.task-card-override-note {
+  margin-top: 0.75rem;
+  color: #ec4899;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Actions Row */
+.task-card-actions-row {
+  display: flex;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.task-card-action-btn {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  min-height: 44px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: #94a3b8;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 0.9rem;
+}
+
+.task-card-action-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.task-card-action-btn.active {
+  background: rgba(59, 130, 246, 0.2);
+  border-color: #3b82f6;
+  color: #3b82f6;
+}
+
+.task-card-action-btn.danger:hover {
+  background: rgba(239, 68, 68, 0.2);
+  border-color: #ef4444;
+  color: #ef4444;
+}
+
+/* Confirm */
+.task-card-confirm {
+  background: rgba(239, 68, 68, 0.1);
+  padding: 1rem 1.5rem;
+  text-align: center;
+}
+
+.task-card-confirm p {
+  color: #ef4444;
+  margin-bottom: 0.75rem;
+}
+
+.task-card-confirm-actions {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.task-card-confirm-actions button {
+  padding: 0.5rem 1.5rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.task-card-confirm-actions button:first-child {
+  background: #ef4444;
+  color: #fff;
+}
+
+.task-card-confirm-actions button:last-child {
+  background: rgba(255, 255, 255, 0.1);
+  color: #94a3b8;
+}
+
+/* Footer */
+.task-card-footer {
+  display: flex;
+  gap: 0.75rem;
+  padding: 1.25rem 1.5rem;
+  position: sticky;
+  bottom: 0;
+  background: #1a1a2e;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.task-card-cancel,
+.task-card-save {
+  flex: 1;
+  padding: 0.875rem 1rem;
+  min-height: 44px;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.task-card-cancel {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: #94a3b8;
+}
+
+.task-card-cancel:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+.task-card-save {
+  background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+  border: none;
+  color: #fff;
+}
+
+.task-card-save:hover:not(:disabled) {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.task-card-save:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Edit Indicator */
+.task-card-edit-indicator {
+  position: absolute;
+  top: 1rem;
+  left: 4rem;
+  background: rgba(139, 92, 246, 0.2);
+  color: #a78bfa;
+  padding: 0.35rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+}

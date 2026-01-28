@@ -15,7 +15,7 @@
   --bg-muted: #f0f0ee;
   --text-primary: #1c1917;
   --text-secondary: #57534e;
-  --text-muted: #a8a29e;
+  --text-muted: #78716c;
   --border: #e7e5e4;
   --border-light: #f0eeec;
   --accent: #1c1917;
@@ -146,13 +146,75 @@ a {
 @media (max-width: 640px) {
   .mode-switcher {
     bottom: 16px;
+    /* Ensure it doesn't overflow viewport */
+    max-width: calc(100vw - 32px);
+    left: 50%;
   }
 
   .mode-btn {
-    padding: 8px 14px;
+    /* 44px minimum touch target */
+    min-height: 44px;
+    padding: 10px 12px;
   }
 
   .mode-label {
     font-size: 12px;
+  }
+  
+  .mode-icon {
+    font-size: 16px;
+  }
+}
+
+/* Very small screens: hide labels, show only icons */
+@media (max-width: 375px) {
+  .mode-label {
+    display: none;
+  }
+  
+  .mode-btn {
+    padding: 10px 14px;
+  }
+}
+
+/* ═══════════════════════════════════════════
+   Day Close Trigger Button
+   ═══════════════════════════════════════════ */
+
+.day-close-trigger {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1e1b4b, #312e81);
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(30, 27, 75, 0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.day-close-trigger:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 16px rgba(30, 27, 75, 0.4);
+}
+
+.day-close-trigger:active {
+  transform: scale(0.96);
+}
+
+@media (max-width: 640px) {
+  .day-close-trigger {
+    top: 16px;
+    left: 16px;
+    width: 44px;
+    height: 44px;
+    font-size: 20px;
   }
 }

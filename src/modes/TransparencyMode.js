@@ -44,10 +44,10 @@ function TransparencyMode() {
 
   const sleepLabel = (trend) => {
     switch (trend) {
-      case 'good': return { text: 'תקין', color: 'var(--green)', bg: 'var(--green-soft)' };
-      case 'declining': return { text: 'ירידה', color: 'var(--amber)', bg: 'var(--amber-soft)' };
-      case 'conservation': return { text: 'מצב שימור', color: 'var(--red)', bg: 'var(--red-soft)' };
-      default: return { text: 'לא ידוע', color: 'var(--text-muted)', bg: 'var(--bg-muted)' };
+      case 'good': return { text: 'Normal', color: 'var(--green)', bg: 'var(--green-soft)' };
+      case 'declining': return { text: 'Declining', color: 'var(--amber)', bg: 'var(--amber-soft)' };
+      case 'conservation': return { text: 'Conservation mode', color: 'var(--red)', bg: 'var(--red-soft)' };
+      default: return { text: 'Unknown', color: 'var(--text-muted)', bg: 'var(--bg-muted)' };
     }
   };
 
@@ -68,7 +68,7 @@ function TransparencyMode() {
       <div className="brain">
         <div className="brain-loading">
           <div className="brain-pulse" />
-          <span>טוען את המוח...</span>
+          <span>Loading the brain...</span>
         </div>
       </div>
     );
@@ -79,13 +79,13 @@ function TransparencyMode() {
       <div className="brain-container">
         <header className="brain-header">
           <h1>🧠 Show Me The Brain</h1>
-          <p className="brain-sub">למה המערכת החליטה מה שהחליטה</p>
+          <p className="brain-sub">Why the system decided what it decided</p>
         </header>
 
         {/* Load Score Breakdown */}
         {brief && (
           <section className="brain-section">
-            <h2 className="brain-section-title">עומס יומי — {brief.load_score}/100</h2>
+            <h2 className="brain-section-title">Daily Load — {brief.load_score}/100</h2>
             <div className="brain-load-bar">
               <div
                 className="brain-load-fill"
@@ -97,25 +97,25 @@ function TransparencyMode() {
             </div>
             <div className="brain-load-breakdown">
               <div className="brain-load-item">
-                <span className="brain-load-label">📅 יומן</span>
+                <span className="brain-load-label">📅 Calendar</span>
                 <span className="brain-load-detail">
-                  {meta.calendar_hours?.toFixed(1) || 0}h • {meta.event_count || 0} אירועים
+                  {meta.calendar_hours?.toFixed(1) || 0}h • {meta.event_count || 0} events
                 </span>
               </div>
               <div className="brain-load-item">
-                <span className="brain-load-label">💤 שינה</span>
+                <span className="brain-load-label">💤 Sleep</span>
                 <span className="brain-load-detail" style={{ color: sleep.color }}>
-                  {sleep.text} {meta.sleep_avg ? `• ממוצע ${meta.sleep_avg}h` : ''}
-                  {meta.sleep_deficit > 0 ? ` • חסר ${meta.sleep_deficit}h` : ''}
+                  {sleep.text} {meta.sleep_avg ? `• avg ${meta.sleep_avg}h` : ''}
+                  {meta.sleep_deficit > 0 ? ` • deficit ${meta.sleep_deficit}h` : ''}
                   {meta.sleep_confidence === 'low' && (
-                    <span className="brain-confidence-inline"> · נתונים חלקיים</span>
+                    <span className="brain-confidence-inline"> · Partial data</span>
                   )}
                 </span>
               </div>
               <div className="brain-load-item">
-                <span className="brain-load-label">⚡ אנרגיה</span>
+                <span className="brain-load-label">⚡ Energy</span>
                 <span className="brain-load-detail">
-                  תקציב: {meta.energy_budget || '—'} • נוצל: {meta.energy_used || 0}
+                  Budget: {meta.energy_budget || '—'} • Used: {meta.energy_used || 0}
                 </span>
               </div>
             </div>
@@ -125,11 +125,11 @@ function TransparencyMode() {
         {/* AI Reasoning — Why these decisions */}
         {brief && (
           <section className="brain-section">
-            <h2 className="brain-section-title">החלטות היום</h2>
+            <h2 className="brain-section-title">Today's Decisions</h2>
             
             {brief.doing_today?.length > 0 && (
               <div className="brain-decision">
-                <h3>✅ נבחרו לביצוע</h3>
+                <h3>✅ Selected for today</h3>
                 <ul>
                   {brief.doing_today.map((item, i) => (
                     <li key={i}>{item}</li>
@@ -140,7 +140,7 @@ function TransparencyMode() {
 
             {brief.not_doing_today?.length > 0 && (
               <div className="brain-decision">
-                <h3>⛔ נדחו מהיום</h3>
+                <h3>⛔ Deferred from today</h3>
                 <ul className="brain-deferred">
                   {brief.not_doing_today.map((item, i) => (
                     <li key={i}>{item}</li>
@@ -148,17 +148,17 @@ function TransparencyMode() {
                 </ul>
                 <p className="brain-reason">
                   {brief.load_score >= 70
-                    ? 'עומס גבוה — המערכת חתכה בכוונה.'
+                    ? 'High load — system cut intentionally.'
                     : meta.sleep_avg && meta.sleep_avg < 7
-                    ? 'שינה ירודה — אנרגיה מוגבלת.'
-                    : 'תעדוף לפי דדליינים ותלויות.'}
+                    ? 'Poor sleep — limited energy.'
+                    : 'Prioritized by deadlines and dependencies.'}
                 </p>
               </div>
             )}
 
             {meta.all_warnings?.length > 0 && (
               <div className="brain-decision">
-                <h3>⚠️ אותות</h3>
+                <h3>⚠️ Signals</h3>
                 <ul className="brain-warnings-list">
                   {meta.all_warnings.map((w, i) => (
                     <li key={i}>{w}</li>
@@ -171,14 +171,14 @@ function TransparencyMode() {
 
         {/* Health Snapshot */}
         <section className="brain-section">
-          <h2 className="brain-section-title">בריאות — היום</h2>
+          <h2 className="brain-section-title">Health — Today</h2>
           {todayHealth ? (
             <div className="brain-health-grid">
               {todayHealth.sleep_hours && (
                 <div className="brain-stat">
                   <span className="brain-stat-icon">💤</span>
                   <span className="brain-stat-value">{todayHealth.sleep_hours}h</span>
-                  <span className="brain-stat-label">שינה</span>
+                  <span className="brain-stat-label">Sleep</span>
                 </div>
               )}
               {todayHealth.body_battery && (
@@ -192,26 +192,26 @@ function TransparencyMode() {
                 <div className="brain-stat">
                   <span className="brain-stat-icon">😰</span>
                   <span className="brain-stat-value">{todayHealth.stress_level}</span>
-                  <span className="brain-stat-label">לחץ</span>
+                  <span className="brain-stat-label">Stress</span>
                 </div>
               )}
               {todayHealth.steps && (
                 <div className="brain-stat">
                   <span className="brain-stat-icon">👟</span>
                   <span className="brain-stat-value">{todayHealth.steps.toLocaleString()}</span>
-                  <span className="brain-stat-label">צעדים</span>
+                  <span className="brain-stat-label">Steps</span>
                 </div>
               )}
               {todayHealth.resting_hr && (
                 <div className="brain-stat">
                   <span className="brain-stat-icon">❤️</span>
                   <span className="brain-stat-value">{todayHealth.resting_hr}</span>
-                  <span className="brain-stat-label">דופק מנוחה</span>
+                  <span className="brain-stat-label">Resting HR</span>
                 </div>
               )}
             </div>
           ) : (
-            <p className="brain-empty">אין נתוני בריאות להיום</p>
+            <p className="brain-empty">No health data for today</p>
           )}
         </section>
 
@@ -222,9 +222,9 @@ function TransparencyMode() {
           return (
             <section className="brain-section">
               <h2 className="brain-section-title">
-                שינה — 7 ימים
+                Sleep — 7 days
                 {isPartialSleep && (
-                  <span className="brain-confidence-tag partial">נתונים חלקיים ({sleepDaysWithData}/7 ימים)</span>
+                  <span className="brain-confidence-tag partial">Partial data ({sleepDaysWithData}/7 days)</span>
                 )}
               </h2>
               <div className="brain-sleep-chart">
@@ -253,27 +253,27 @@ function TransparencyMode() {
         {/* Goals Status */}
         {goals.length > 0 && (
           <section className="brain-section">
-            <h2 className="brain-section-title">מטרות פעילות</h2>
+            <h2 className="brain-section-title">Active Goals</h2>
             <div className="brain-goals">
               {goals.map(goal => {
                 const confidence = goal.metrics?.confidence || meta.goal_confidence?.[goal.id] || 'unknown';
                 const domain = goal.domain || 'personal';
-                const domainLabels = { health: '🏃 בריאות', work: '💼 עבודה', personal: '🌱 אישי' };
+                const domainLabels = { health: '🏃 Health', work: '💼 Work', personal: '🌱 Personal' };
                 return (
                   <div key={goal.id} className="brain-goal">
                     <div className="brain-goal-header">
                       <span className="brain-goal-title">{goal.title}</span>
                       <span className={`brain-goal-confidence confidence-${confidence}`}>
-                        {confidence === 'on_track' ? '✅ במסלול' :
-                         confidence === 'behind' ? '⚠️ מאחור' :
-                         confidence === 'ahead' ? '🚀 מקדים' :
-                         '❓ לא ידוע'}
+                        {confidence === 'on_track' ? '✅ On track' :
+                         confidence === 'behind' ? '⚠️ Behind' :
+                         confidence === 'ahead' ? '🚀 Ahead' :
+                         '❓ Unknown'}
                       </span>
                     </div>
                     <div className="brain-goal-meta">
                       <span className="brain-goal-domain">{domainLabels[domain] || domain}</span>
                       {goal.priority && (
-                        <span className="brain-goal-priority">עדיפות {goal.priority}/5</span>
+                        <span className="brain-goal-priority">Priority {goal.priority}/5</span>
                       )}
                     </div>
                     {goal.protection_rules && goal.protection_rules.length > 0 && (
@@ -293,14 +293,14 @@ function TransparencyMode() {
         {/* Missed Habits / Patterns */}
         {missedHabits.length > 0 && (
           <section className="brain-section">
-            <h2 className="brain-section-title">הרגלים שנעלמו</h2>
+            <h2 className="brain-section-title">Missed Habits</h2>
             <div className="brain-habits">
               {missedHabits.map(h => {
                 const days = Math.round((Date.now() - new Date(h.last_seen)) / (1000 * 60 * 60 * 24));
                 return (
                   <div key={h.id} className="brain-habit">
                     <span className="brain-habit-name">{h.title}</span>
-                    <span className="brain-habit-days">{days} ימים</span>
+                    <span className="brain-habit-days">{days} days</span>
                   </div>
                 );
               })}
@@ -311,7 +311,7 @@ function TransparencyMode() {
         {/* Today's Schedule */}
         {events.length > 0 && (
           <section className="brain-section">
-            <h2 className="brain-section-title">לוח זמנים — היום</h2>
+            <h2 className="brain-section-title">Schedule — Today</h2>
             <div className="brain-timeline">
               {events.map(e => {
                 const time = e.start_time
@@ -334,14 +334,14 @@ function TransparencyMode() {
         {/* Active Projects Context */}
         {meta.active_projects?.length > 0 && (
           <section className="brain-section">
-            <h2 className="brain-section-title">פרויקטים פעילים — {meta.active_projects.length}/3</h2>
+            <h2 className="brain-section-title">Active Projects — {meta.active_projects.length}/3</h2>
             <div className="brain-projects">
               {meta.active_projects.map((p, i) => (
                 <div key={i} className="brain-project">{p}</div>
               ))}
             </div>
             {meta.active_projects.length > 3 && (
-              <p className="brain-over-limit">⚠️ חריגה מהמגבלה — הקפא פרויקט</p>
+              <p className="brain-over-limit">⚠️ Over limit — freeze a project</p>
             )}
           </section>
         )}
@@ -349,7 +349,7 @@ function TransparencyMode() {
         {/* Dependencies */}
         {meta.pending_dependencies?.length > 0 && (
           <section className="brain-section">
-            <h2 className="brain-section-title">תלויות פתוחות</h2>
+            <h2 className="brain-section-title">Open Dependencies</h2>
             <div className="brain-deps">
               {meta.pending_dependencies.map((d, i) => (
                 <div key={i} className="brain-dep">

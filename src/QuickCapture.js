@@ -7,10 +7,33 @@ function QuickCapture({ onAdd, onClose, areas, hasFocus }) {
   const [priority, setPriority] = useState('today');
   const [owner, setOwner] = useState('me');
   const inputRef = useRef(null);
+  const modalRef = useRef(null);
 
+  // Focus input on mount
   useEffect(() => {
     inputRef.current?.focus();
   }, []);
+
+  // Lock body scroll when modal is open
+  useEffect(() => {
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = originalOverflow;
+    };
+  }, []);
+
+  // Global ESC key handler
+  useEffect(() => {
+    const handleGlobalKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        onClose();
+      }
+    };
+    document.addEventListener('keydown', handleGlobalKeyDown);
+    return () => document.removeEventListener('keydown', handleGlobalKeyDown);
+  }, [onClose]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -24,18 +47,12 @@ function QuickCapture({ onAdd, onClose, areas, hasFocus }) {
     }
   };
 
-  const handleKeyDown = (e) => {
-    if (e.key === 'Escape') {
-      onClose();
-    }
-  };
-
   return (
     <div className="capture-overlay" onClick={onClose}>
-      <div className="capture-modal" onClick={e => e.stopPropagation()}>
+      <div className="capture-modal" ref={modalRef} onClick={e => e.stopPropagation()}>
         <div className="capture-header">
           <h2>➕ הוסף משימה</h2>
-          <button className="close-btn" onClick={onClose}>✕</button>
+          <button className="close-btn" onClick={onClose} aria-label="Close">✕</button>
         </div>
 
         <form onSubmit={handleSubmit}>
@@ -45,7 +62,6 @@ function QuickCapture({ onAdd, onClose, areas, hasFocus }) {
               type="text"
               value={text}
               onChange={(e) => setText(e.target.value)}
-              onKeyDown={handleKeyDown}
               placeholder="מה צריך לעשות?"
               className="capture-input"
             />

@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { supabase, isSupabaseConfigured } from '../supabaseClient';
+import { toast } from '../components/ui/use-toast';
+import TaskCard from '../components/TaskCard';
 import './CommandMode.css';
 
 const TODAY = new Date().toISOString().split('T')[0];
@@ -52,13 +54,14 @@ function MorningAnchor({ onComplete }) {
       const updatedMeta = { ...currentMeta, morning_anchor: action, morning_anchor_time: new Date().toISOString() };
 
       if (existing) {
-        await supabase
+        const { error } = await supabase
           .from('daily_briefs')
           .update({ metadata: updatedMeta })
           .eq('user_id', 'dan')
           .eq('date', TODAY);
+        if (error) throw error;
       } else {
-        await supabase
+        const { error } = await supabase
           .from('daily_briefs')
           .insert({
             user_id: 'dan',
@@ -68,9 +71,12 @@ function MorningAnchor({ onComplete }) {
             load_score: 0,
             metadata: updatedMeta
           });
+        if (error) throw error;
       }
     } catch (err) {
       console.error('Morning anchor save error:', err);
+      setStatus(null); // Rollback optimistic update
+      toast({ title: "Failed to save", description: "Morning anchor wasn't saved. Try again.", variant: "destructive" });
     }
   };
 
@@ -84,8 +90,8 @@ function MorningAnchor({ onComplete }) {
       <div className="cmd-card cmd-card-anchor cmd-card-anchor-done">
         <div className="cmd-card-icon">✅</div>
         <div className="cmd-card-content">
-          <span className="cmd-card-label">עוגן בוקר</span>
-          <span className="cmd-card-value cmd-anchor-done-text">הושלם — יום טוב מתחיל</span>
+          <span className="cmd-card-label">Morning Anchor</span>
+          <span className="cmd-card-value cmd-anchor-done-text">Completed — good day starts here</span>
         </div>
       </div>
     );
@@ -97,14 +103,14 @@ function MorningAnchor({ onComplete }) {
     <div className="cmd-card cmd-card-anchor">
       <div className="cmd-card-icon">☀️</div>
       <div className="cmd-card-content">
-        <span className="cmd-card-label">עוגן בוקר</span>
-        <span className="cmd-card-value">סקירה / קפה / תנועה קלה</span>
+        <span className="cmd-card-label">Morning Anchor</span>
+        <span className="cmd-card-value">Review / Coffee / Light movement</span>
         <div className="cmd-anchor-actions">
           <button className="cmd-anchor-btn cmd-anchor-done" onClick={() => handleAction('done')}>
-            ✅ בוצע
+            ✅ Done
           </button>
           <button className="cmd-anchor-btn cmd-anchor-skip" onClick={() => handleAction('skipped')}>
-            ⏭️ דילוג
+            ⏭️ Skip
           </button>
         </div>
       </div>
@@ -132,6 +138,7 @@ function CommandMode() {
   const [closures, setClosures] = useState({ total: 0, breakdown: [] });
   const [showClosureBreakdown, setShowClosureBreakdown] = useState(false);
   const [anchorDone, setAnchorDone] = useState(false);
+  const [selectedTask, setSelectedTask] = useState(null);
 
   const fetchBrief = useCallback(async () => {
     if (!isSupabaseConfigured()) { setLoading(false); return; }
@@ -166,7 +173,7 @@ function CommandMode() {
         .lte('completed_at', `${TODAY}T23:59:59Z`);
       const taskCount = doneTasks?.length || 0;
       if (taskCount > 0) {
-        breakdown.push({ label: 'משימות', count: taskCount });
+        breakdown.push({ label: 'Tasks', count: taskCount });
         total += taskCount;
       }
 
@@ -181,7 +188,7 @@ function CommandMode() {
         .lt('end_time', nowISO);
       const eventCount = pastEvents?.length || 0;
       if (eventCount > 0) {
-        breakdown.push({ label: 'אירועים', count: eventCount });
+        breakdown.push({ label: 'Events', count: eventCount });
         total += eventCount;
       }
 
@@ -193,7 +200,7 @@ function CommandMode() {
         .eq('date', TODAY)
         .single();
       if (briefData?.metadata?.morning_anchor === 'done') {
-        breakdown.push({ label: 'עוגן בוקר', count: 1 });
+        breakdown.push({ label: 'Morning Anchor', count: 1 });
         total += 1;
       }
 
@@ -205,7 +212,7 @@ function CommandMode() {
         .eq('date', TODAY)
         .single();
       if (healthToday?.steps && healthToday.steps > 5000) {
-        breakdown.push({ label: 'פעילות גופנית', count: 1 });
+        breakdown.push({ label: 'Exercise', count: 1 });
         total += 1;
       }
     } catch (err) {
@@ -233,20 +240,44 @@ function CommandMode() {
 
   const getGreeting = () => {
     const hour = currentTime.getHours();
-    if (hour < 6) return 'לילה טוב';
-    if (hour < 12) return 'בוקר טוב';
-    if (hour < 17) return 'צהריים טובים';
-    if (hour < 21) return 'ערב טוב';
-    return 'לילה טוב';
+    if (hour < 6) return 'Good night';
+    if (hour < 12) return 'Good morning';
+    if (hour < 17) return 'Good afternoon';
+    if (hour < 21) return 'Good evening';
+    return 'Good night';
   };
 
   const getDayString = () => {
-    return new Date().toLocaleDateString('he-IL', {
+    return new Date().toLocaleDateString('en-US', {
       weekday: 'long',
       day: 'numeric',
       month: 'long',
       timeZone: 'Asia/Nicosia'
     });
+  };
+
+  // Handle task click to open TaskCard
+  const handleTaskClick = (item) => {
+    // Convert focus item to task format for TaskCard
+    const task = {
+      id: item.id || item.taskId || `temp-${Date.now()}`,
+      text: item.text,
+      title: item.text,
+      labels: item.labels || [],
+      energy_level: item.energy_level || 'medium',
+      dependencies: item.dependencies || '',
+      frozen: item.frozen || false,
+      archived: item.archived || false,
+      assignee: item.assignee || 'dan'
+    };
+    setSelectedTask(task);
+  };
+
+  // Handle task update from TaskCard
+  const handleTaskUpdate = (updatedTask) => {
+    // Refresh the brief to reflect changes
+    fetchBrief();
+    calculateClosures();
   };
 
   // Get focus items: re-classify at render time (live time-awareness)
@@ -273,7 +304,7 @@ function CommandMode() {
 
     // Legacy fallback: use doing_today as flat strings
     // Try to parse time from "HH:MM title" format
-    const items = (brief.doing_today || []).map(text => {
+    const items = (brief.doing_today || []).map((text, index) => {
       const timeMatch = text.match(/^(\d{1,2}:\d{2})\s/);
       if (timeMatch) {
         const [h, m] = timeMatch[1].split(':').map(Number);
@@ -282,9 +313,9 @@ function CommandMode() {
         // Estimate end as 1 hour after start
         const endDate = new Date(eventDate.getTime() + 60 * 60 * 1000);
         const status = classifyEventTime(text, eventDate, endDate);
-        return { text, liveStatus: status, isEvent: true };
+        return { text, liveStatus: status, isEvent: true, id: `event-${index}` };
       }
-      return { text, liveStatus: 'upcoming', isEvent: false };
+      return { text, liveStatus: 'upcoming', isEvent: false, isTask: true, id: `task-${index}` };
     });
 
     return {
@@ -336,9 +367,9 @@ function CommandMode() {
 
   const getLoadLevel = () => {
     const score = brief?.load_score || 0;
-    if (score >= 70) return { label: 'יום כבד', level: 'heavy', message: 'פחות = יותר. המסך ריק בכוונה.' };
-    if (score >= 45) return { label: 'יום בינוני', level: 'medium', message: '' };
-    return { label: 'יום קל', level: 'light', message: '' };
+    if (score >= 70) return { label: 'Heavy day', level: 'heavy', message: 'Less = more. Screen is empty on purpose.' };
+    if (score >= 45) return { label: 'Medium day', level: 'medium', message: '' };
+    return { label: 'Light day', level: 'light', message: '' };
   };
 
   if (loading) {
@@ -366,7 +397,7 @@ function CommandMode() {
       <div className="cmd-container">
         {/* Greeting */}
         <header className="cmd-header">
-          <h1 className="cmd-greeting">{getGreeting()}, דן</h1>
+          <h1 className="cmd-greeting">{getGreeting()}, Dan</h1>
           <p className="cmd-date">{getDayString()}</p>
           {brief?.load_score != null && (
             <div className={`cmd-load cmd-load-${load.level}`}>
@@ -384,15 +415,22 @@ function CommandMode() {
         <div className="cmd-cards">
           {/* 🎯 Main Focus — always ongoing or upcoming, never past */}
           {mainFocus ? (
-            <div className={`cmd-card cmd-card-focus ${mainFocus.status === 'ongoing' ? 'cmd-card-ongoing' : ''}`}>
+            <div 
+              className={`cmd-card cmd-card-focus ${mainFocus.status === 'ongoing' ? 'cmd-card-ongoing' : ''} ${mainFocus.isTask ? 'cmd-card-clickable' : ''}`}
+              onClick={() => mainFocus.isTask && handleTaskClick(mainFocus)}
+              style={mainFocus.isTask ? { cursor: 'pointer' } : {}}
+            >
               <div className="cmd-card-icon">🎯</div>
               <div className="cmd-card-content">
                 <span className="cmd-card-label">
-                  {mainFocus.status === 'ongoing' ? 'עכשיו' : 'הבא בתור'}
+                  {mainFocus.status === 'ongoing' ? 'Now' : 'Up Next'}
                 </span>
                 <span className="cmd-card-value">{mainFocus.text}</span>
                 {mainFocus.status === 'ongoing' && (
-                  <span className="cmd-card-badge cmd-badge-live">● פעיל</span>
+                  <span className="cmd-card-badge cmd-badge-live">● Active</span>
+                )}
+                {mainFocus.isTask && (
+                  <span className="cmd-card-badge cmd-badge-edit">✏️ Click to edit</span>
                 )}
               </div>
             </div>
@@ -400,8 +438,8 @@ function CommandMode() {
             <div className="cmd-card cmd-card-focus cmd-card-clear">
               <div className="cmd-card-icon">✨</div>
               <div className="cmd-card-content">
-                <span className="cmd-card-label">שאר היום</span>
-                <span className="cmd-card-value">כל האירועים סיימו. הזמן שלך.</span>
+                <span className="cmd-card-label">Rest of day</span>
+                <span className="cmd-card-value">All events done. Time is yours.</span>
               </div>
             </div>
           ) : null}
@@ -411,10 +449,16 @@ function CommandMode() {
             <div className="cmd-card cmd-card-upcoming">
               <div className="cmd-card-icon">📋</div>
               <div className="cmd-card-content">
-                <span className="cmd-card-label">אחר כך</span>
+                <span className="cmd-card-label">Later</span>
                 {upcomingItems.map((item, i) => (
-                  <span key={i} className="cmd-card-value cmd-card-upcoming-item">
+                  <span 
+                    key={i} 
+                    className={`cmd-card-value cmd-card-upcoming-item ${item.isTask ? 'cmd-card-clickable-item' : ''}`}
+                    onClick={() => item.isTask && handleTaskClick(item)}
+                    style={item.isTask ? { cursor: 'pointer' } : {}}
+                  >
                     {item.text}
+                    {item.isTask && <span className="cmd-edit-hint"> ✏️</span>}
                   </span>
                 ))}
               </div>
@@ -426,7 +470,7 @@ function CommandMode() {
             <div className="cmd-card cmd-card-not-today">
               <div className="cmd-card-icon">⛔</div>
               <div className="cmd-card-content">
-                <span className="cmd-card-label">לא היום</span>
+                <span className="cmd-card-label">Not Today</span>
                 {notToday.map((item, i) => (
                   <span key={i} className="cmd-card-value cmd-card-strike">{item}</span>
                 ))}
@@ -440,9 +484,9 @@ function CommandMode() {
               <div className="cmd-card-icon">⚠️</div>
               <div className="cmd-card-content">
                 <span className="cmd-card-label">
-                  שים לב
-                  {sleepConfidence === 'low' && warning.includes('שינה') && (
-                    <span className="cmd-confidence-tag"> · נתונים חלקיים</span>
+                  Heads up
+                  {sleepConfidence === 'low' && warning.includes('sleep') && (
+                    <span className="cmd-confidence-tag"> · Partial data</span>
                   )}
                 </span>
                 <span className="cmd-card-value">{warning}</span>
@@ -455,7 +499,7 @@ function CommandMode() {
             <div className="cmd-card cmd-card-action">
               <div className="cmd-card-icon">⚡</div>
               <div className="cmd-card-content">
-                <span className="cmd-card-label">החלטה</span>
+                <span className="cmd-card-label">Decision</span>
                 <span className="cmd-card-value">{smallAction}</span>
               </div>
             </div>
@@ -465,7 +509,7 @@ function CommandMode() {
         {/* Past events — visually downgraded, collapsed at bottom */}
         {pastItems.length > 0 && (
           <div className="cmd-completed">
-            <span className="cmd-completed-label">✓ הושלם</span>
+            <span className="cmd-completed-label">✓ Completed</span>
             <div className="cmd-completed-items">
               {pastItems.map((item, i) => (
                 <span key={i} className="cmd-completed-item">
@@ -484,8 +528,8 @@ function CommandMode() {
         {/* No brief fallback */}
         {!brief && (
           <div className="cmd-empty">
-            <p className="cmd-empty-text">אין תדריך להיום.</p>
-            <p className="cmd-empty-sub">הפעל את Decision Engine כדי ליצור אחד.</p>
+            <p className="cmd-empty-text">No brief for today.</p>
+            <p className="cmd-empty-sub">Run the Decision Engine to create one.</p>
           </div>
         )}
 
@@ -495,7 +539,7 @@ function CommandMode() {
             className="cmd-closures"
             onClick={() => setShowClosureBreakdown(!showClosureBreakdown)}
           >
-            <span className="cmd-closures-label">היום נסגרו: {closures.total}</span>
+            <span className="cmd-closures-label">Closures today: {closures.total}</span>
             {showClosureBreakdown && closures.breakdown.length > 0 && (
               <div className="cmd-closures-breakdown">
                 {closures.breakdown.map((item, i) => (
@@ -508,6 +552,15 @@ function CommandMode() {
           </div>
         )}
       </div>
+
+      {/* TaskCard Modal */}
+      {selectedTask && (
+        <TaskCard
+          task={selectedTask}
+          onClose={() => setSelectedTask(null)}
+          onUpdate={handleTaskUpdate}
+        />
+      )}
     </div>
   );
 }

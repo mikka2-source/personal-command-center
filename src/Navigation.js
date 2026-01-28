@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import './Navigation.css';
 
 const NAV_ITEMS = [
-  { id: 'home', icon: '🏠', label: 'פיד' },
+  { id: 'home', icon: '🏠', label: 'Feed' },
   { id: 'tasks', icon: '📋', label: 'Tasks' },
+  { id: 'pa-inbox', icon: '📥', label: 'PA Inbox' },
   { id: 'mikka', icon: '🤖', label: 'Mikka' },
   { id: 'engine', icon: '🧠', label: 'Engine' },
 ];

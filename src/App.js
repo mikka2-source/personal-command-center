@@ -4,25 +4,55 @@ import CommandMode from './modes/CommandMode';
 import TransparencyMode from './modes/TransparencyMode';
 import WorkbenchMode from './modes/WorkbenchMode';
 import HorizonMode from './modes/HorizonMode';
+import PAInbox from './components/PAInbox';
+import DayClose from './components/DayClose';
+import GoldenDemo from './pages/GoldenDemo';
+import { Toaster } from './components/ui/toaster';
+
+// Check if we're in dev mode
+const isDev = process.env.NODE_ENV === 'development' || window.location.hostname === 'localhost';
 
 const MODES = {
   command: { label: 'Command', icon: '⚡' },
   transparency: { label: 'Brain', icon: '🧠' },
   workbench: { label: 'Workbench', icon: '🔧' },
   horizon: { label: 'Horizon', icon: '🔭' },
+  'pa-inbox': { label: 'PA Inbox', icon: '📥' },
+  // Dev-only modes
+  ...(isDev && { 'golden-demo': { label: 'Golden', icon: '✨' } }),
 };
+
+// Get current hour in Asia/Nicosia timezone
+function getNicosiaHour() {
+  return new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Nicosia' })).getHours();
+}
 
 function App() {
   const [mode, setMode] = useState(() => {
     const params = new URLSearchParams(window.location.search);
     return params.get('mode') || 'command';
   });
+  const [showDayClose, setShowDayClose] = useState(false);
+  const [dayCloseDismissed, setDayCloseDismissed] = useState(false);
 
   useEffect(() => {
     // Remove old dark mode
     document.body.classList.remove('dark-mode');
     document.body.classList.add('light-mode');
   }, []);
+
+  // Auto-show DayClose after 21:00 (once per session)
+  useEffect(() => {
+    const checkDayClose = () => {
+      const hour = getNicosiaHour();
+      if (hour >= 21 && !dayCloseDismissed && !showDayClose) {
+        setShowDayClose(true);
+      }
+    };
+    checkDayClose();
+    const interval = setInterval(checkDayClose, 60000); // Check every minute
+    return () => clearInterval(interval);
+  }, [dayCloseDismissed, showDayClose]);
 
   const handleModeChange = (newMode) => {
     setMode(newMode);
@@ -44,6 +74,11 @@ function App() {
     return () => window.removeEventListener('popstate', handlePop);
   }, []);
 
+  const handleDayCloseClose = () => {
+    setShowDayClose(false);
+    setDayCloseDismissed(true);
+  };
+
   const renderMode = () => {
     switch (mode) {
       case 'transparency':
@@ -52,6 +87,10 @@ function App() {
         return <WorkbenchMode />;
       case 'horizon':
         return <HorizonMode />;
+      case 'pa-inbox':
+        return <PAInbox />;
+      case 'golden-demo':
+        return <GoldenDemo />;
       case 'command':
       default:
         return <CommandMode />;
@@ -75,6 +114,23 @@ function App() {
           </button>
         ))}
       </nav>
+
+      {/* Day Close button (visible after 21:00) */}
+      {getNicosiaHour() >= 21 && !showDayClose && (
+        <button
+          className="day-close-trigger"
+          onClick={() => setShowDayClose(true)}
+          title="Day Close"
+        >
+          🌙
+        </button>
+      )}
+
+      {/* Day Close Modal */}
+      {showDayClose && <DayClose onClose={handleDayCloseClose} />}
+      
+      {/* Global Toast Notifications */}
+      <Toaster />
     </div>
   );
 }
