@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Private Jet Companies - Crypto Services Opportunity | XBO</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+            color: white;
+            min-height: 100vh;
+        }
+        
+        .slide {
+            min-height: 100vh;
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-bottom: 2px solid rgba(255,255,255,0.1);
+        }
+        
+        .slide-title {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 100%);
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #f7931a, #ffd700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: #f7931a;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            color: #a0a0a0;
+        }
+        
+        .logo { font-size: 5rem; margin-bottom: 20px; }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .stat-card {
+            background: rgba(247,147,26,0.1);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            border: 1px solid rgba(247,147,26,0.3);
+        }
+        
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: #f7931a;
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            color: #a0a0a0;
+        }
+        
+        .company-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .company-card {
+            background: rgba(255,255,255,0.03);
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s;
+        }
+        
+        .company-card:hover {
+            background: rgba(247,147,26,0.1);
+            border-color: rgba(247,147,26,0.3);
+        }
+        
+        .company-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        
+        .company-name {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #fff;
+        }
+        
+        .company-location {
+            color: #888;
+            font-size: 0.9rem;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        .badge-hot { background: rgba(255,68,68,0.2); color: #ff6b6b; }
+        .badge-warm { background: rgba(255,215,0,0.2); color: #ffd700; }
+        .badge-dubai { background: rgba(0,212,255,0.2); color: #00d4ff; }
+        .badge-eu { background: rgba(0,255,136,0.2); color: #00ff88; }
+        .badge-large { background: rgba(139,92,246,0.2); color: #a78bfa; }
+        
+        .company-contacts {
+            margin-top: 10px;
+        }
+        
+        .contact-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            font-size: 0.95rem;
+        }
+        
+        .contact-name { color: #fff; }
+        .contact-title { color: #888; }
+        
+        .why-list {
+            margin-top: 30px;
+        }
+        
+        .why-item {
+            background: rgba(247,147,26,0.1);
+            border-radius: 15px;
+            padding: 25px 30px;
+            margin-bottom: 20px;
+            border-left: 4px solid #f7931a;
+            font-size: 1.2rem;
+        }
+        
+        .why-item strong {
+            color: #f7931a;
+        }
+        
+        .pitch-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .pitch-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .pitch-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        
+        .pitch-title {
+            font-size: 1.3rem;
+            color: #f7931a;
+            margin-bottom: 10px;
+        }
+        
+        .pitch-desc {
+            color: #888;
+            line-height: 1.5;
+        }
+        
+        .priority-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+        }
+        
+        .priority-table th,
+        .priority-table td {
+            padding: 18px 20px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .priority-table th {
+            background: rgba(247,147,26,0.2);
+            font-size: 1rem;
+            color: #f7931a;
+        }
+        
+        .priority-table tr:hover {
+            background: rgba(255,255,255,0.03);
+        }
+        
+        .action-items {
+            margin-top: 30px;
+        }
+        
+        .action-item {
+            background: rgba(0,212,255,0.1);
+            border-radius: 15px;
+            padding: 20px 30px;
+            margin-bottom: 15px;
+            border-left: 4px solid #00d4ff;
+            font-size: 1.1rem;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
+        
+        @media print {
+            .slide { page-break-after: always; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Slide 1: Title -->
+    <div class="slide slide-title">
+        <div class="logo">✈️</div>
+        <h1>Private Aviation × Crypto</h1>
+        <p class="subtitle">Target Companies for XBO Crypto Services</p>
+        <p class="subtitle" style="margin-top: 20px; color: #f7931a;">High-Net-Worth Client Opportunity</p>
+        <p style="margin-top: 40px; color: #666;">January 2026</p>
+    </div>
+    
+    <!-- Slide 2: Why Private Jets Need Crypto -->
+    <div class="slide">
+        <h2>💡 Why Private Aviation Needs Crypto</h2>
+        <div class="why-list">
+            <div class="why-item">
+                <strong>High-Value Transactions:</strong> Charter flights cost $5K-$200K+ per trip. Crypto enables fast, borderless payments without bank delays.
+            </div>
+            <div class="why-item">
+                <strong>International Clients:</strong> Wealthy clients from crypto-friendly regions (Dubai, Singapore, Switzerland) prefer paying in digital assets.
+            </div>
+            <div class="why-item">
+                <strong>Privacy & Speed:</strong> No waiting for wire transfers. Settlement in minutes, not days. Enhanced privacy for VIP clients.
+            </div>
+            <div class="why-item">
+                <strong>Competitive Edge:</strong> Early adopters can attract crypto-wealthy clientele that competitors can't serve.
+            </div>
+        </div>
+    </div>
+    
+    <!-- Slide 3: Market Overview -->
+    <div class="slide">
+        <h2>📊 Target Market Overview</h2>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">15+</div>
+                <div class="stat-label">Companies Identified</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">35+</div>
+                <div class="stat-label">Decision Makers</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">8</div>
+                <div class="stat-label">Countries</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">$50B+</div>
+                <div class="stat-label">Industry Size</div>
+            </div>
+        </div>
+        <div style="margin-top: 50px; text-align: center;">
+            <p style="font-size: 1.3rem; color: #888;">Key Regions: <span style="color: #00d4ff;">Dubai</span> • <span style="color: #00ff88;">Europe</span> • <span style="color: #f7931a;">UK</span> • <span style="color: #a78bfa;">USA</span></p>
+        </div>
+    </div>
+    
+    <!-- Slide 4: Top Priority Targets -->
+    <div class="slide">
+        <h2>🎯 Priority Targets</h2>
+        <table class="priority-table">
+            <thead>
+                <tr>
+                    <th>Company</th>
+                    <th>Location</th>
+                    <th>Size</th>
+                    <th>Key Contact</th>
+                    <th>Priority</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Falcon Aviation</strong></td>
+                    <td>Dubai, UAE</td>
+                    <td>320 emp</td>
+                    <td>Paramjit Singh (Owner)</td>
+                    <td><span class="badge badge-hot">HOT</span></td>
+                </tr>
+                <tr>
+                    <td><strong>AEROAFFAIRES</strong></td>
+                    <td>Paris, France</td>
+                    <td>7 emp</td>
+                    <td>François Clerc (Founder)</td>
+                    <td><span class="badge badge-hot">HOT</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Carte Blanche</strong></td>
+                    <td>Jersey (UK)</td>
+                    <td>2 emp</td>
+                    <td>Richard Harrison (MD)</td>
+                    <td><span class="badge badge-warm">WARM</span></td>
+                </tr>
+                <tr>
+                    <td><strong>AeroJet Me</strong></td>
+                    <td>London, UK</td>
+                    <td>5 emp</td>
+                    <td>Yves Makengo</td>
+                    <td><span class="badge badge-warm">WARM</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <!-- Slide 5: Falcon Aviation Deep Dive -->
+    <div class="slide">
+        <h2>🦅 Falcon Aviation - #1 Target</h2>
+        <div class="company-grid">
+            <div class="company-card">
+                <div class="company-header">
+                    <div>
+                        <div class="company-name">Company Profile</div>
+                    </div>
+                    <span class="badge badge-dubai">DUBAI</span>
+                </div>
+                <div style="color: #888; line-height: 1.8;">
+                    • <strong style="color: #fff;">320 employees</strong> - Largest target<br>
+                    • Private jet terminal in Dubai<br>
+                    • Fleet: Bombardier Global, Dassault Falcon<br>
+                    • Services: Charter, MRO, FBO<br>
+                    • VIP ground handling<br>
+                    • Global network
+                </div>
+            </div>
+            <div class="company-card">
+                <div class="company-header">
+                    <div>
+                        <div class="company-name">Key Decision Makers</div>
+                    </div>
+                    <span class="badge badge-large">10+ CONTACTS</span>
+                </div>
+                <div class="company-contacts">
+                    <div class="contact-item">
+                        <span class="contact-name">Paramjit Singh</span>
+                        <span class="contact-title">Owner</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-name">Furqan Ahmed</span>
+                        <span class="contact-title">Managing Director</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-name">Leandro Ferreira</span>
+                        <span class="contact-title">Managing Partner</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-name">David Vernon</span>
+                        <span class="contact-title">Partner</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="margin-top: 30px; padding: 20px; background: rgba(247,147,26,0.1); border-radius: 15px;">
+            <strong style="color: #f7931a;">Why Priority:</strong> Dubai-based = crypto-friendly jurisdiction. Large operation = significant transaction volume. Multiple decision-makers = higher conversion chance.
+        </div>
+    </div>
+    
+    <!-- Slide 6: European Targets -->
+    <div class="slide">
+        <h2>🇪🇺 European Targets</h2>
+        <div class="company-grid">
+            <div class="company-card">
+                <div class="company-header">
+                    <div>
+                        <div class="company-name">AEROAFFAIRES</div>
+                        <div class="company-location">Paris, France</div>
+                    </div>
+                    <span class="badge badge-eu">FRANCE</span>
+                </div>
+                <div class="company-contacts">
+                    <div class="contact-item">
+                        <span class="contact-name">François Clerc</span>
+                        <span class="contact-title">Founder & Ex-CEO</span>
+                    </div>
+                </div>
+                <div style="margin-top: 15px; color: #888; font-size: 0.9rem;">
+                    Private jet rental, helicopter charter, VIP transport, air ambulance. Fashion/music/sports industry clients.
+                </div>
+            </div>
+            <div class="company-card">
+                <div class="company-header">
+                    <div>
+                        <div class="company-name">Carte Blanche Limited</div>
+                        <div class="company-location">Jersey, Channel Islands</div>
+                    </div>
+                    <span class="badge badge-eu">JERSEY</span>
+                </div>
+                <div class="company-contacts">
+                    <div class="contact-item">
+                        <span class="contact-name">Richard Harrison</span>
+                        <span class="contact-title">Joint Managing Director</span>
+                    </div>
+                </div>
+                <div style="margin-top: 15px; color: #888; font-size: 0.9rem;">
+                    Ultra-luxury: Private jets, supercars, yachts, real estate. UHNW clients. Tax-efficient assets.
+                </div>
+            </div>
+            <div class="company-card">
+                <div class="company-header">
+                    <div>
+                        <div class="company-name">AeroJet Me</div>
+                        <div class="company-location">London, UK</div>
+                    </div>
+                    <span class="badge badge-eu">UK</span>
+                </div>
+                <div class="company-contacts">
+                    <div class="contact-item">
+                        <span class="contact-name">Yves Makengo</span>
+                        <span class="contact-title">Business Introducer</span>
+                    </div>
+                </div>
+                <div style="margin-top: 15px; color: #888; font-size: 0.9rem;">
+                    Private jet booking platform, empty leg deals, corporate jets, medical evacuation.
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Slide 7: XBO Value Proposition -->
+    <div class="slide">
+        <h2>💎 XBO Value Proposition</h2>
+        <div class="pitch-grid">
+            <div class="pitch-card">
+                <div class="pitch-icon">⚡</div>
+                <div class="pitch-title">Instant Settlement</div>
+                <div class="pitch-desc">Accept Bitcoin, ETH, USDT and convert instantly. No chargebacks, no waiting for wire transfers.</div>
+            </div>
+            <div class="pitch-card">
+                <div class="pitch-icon">🌍</div>
+                <div class="pitch-title">Global Reach</div>
+                <div class="pitch-desc">Serve clients from any country without banking restrictions. 24/7 availability.</div>
+            </div>
+            <div class="pitch-card">
+                <div class="pitch-icon">🔒</div>
+                <div class="pitch-title">Compliance & Security</div>
+                <div class="pitch-desc">Fully regulated exchange. KYC/AML compliant. Enterprise-grade security.</div>
+            </div>
+            <div class="pitch-card">
+                <div class="pitch-icon">💱</div>
+                <div class="pitch-title">Fiat Conversion</div>
+                <div class="pitch-desc">Receive crypto, get EUR/USD/GBP in your bank. Zero volatility risk.</div>
+            </div>
+            <div class="pitch-card">
+                <div class="pitch-icon">📊</div>
+                <div class="pitch-title">White Label</div>
+                <div class="pitch-desc">Custom branded payment gateway. Seamless integration with booking systems.</div>
+            </div>
+            <div class="pitch-card">
+                <div class="pitch-icon">🤝</div>
+                <div class="pitch-title">Dedicated Support</div>
+                <div class="pitch-desc">Account manager for high-value clients. Priority processing for large transactions.</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Slide 8: Action Plan -->
+    <div class="slide">
+        <h2>🚀 Recommended Actions</h2>
+        <div class="action-items">
+            <div class="action-item">
+                <strong>1. Falcon Aviation (Dubai)</strong> - Warm intro via Dubai network. Target: Paramjit Singh or Furqan Ahmed. Pitch: Crypto payments for MENA/Asian clients.
+            </div>
+            <div class="action-item">
+                <strong>2. AEROAFFAIRES (Paris)</strong> - Direct outreach to François Clerc. Angle: Serve crypto-wealthy fashion/music industry clients.
+            </div>
+            <div class="action-item">
+                <strong>3. Carte Blanche (Jersey)</strong> - Target Richard Harrison. Perfect fit: Already serves UHNW clients, tax-efficient focus.
+            </div>
+            <div class="action-item">
+                <strong>4. Create Case Study</strong> - Document first success story to use in pitches to remaining targets.
+            </div>
+            <div class="action-item">
+                <strong>5. Conference Strategy</strong> - Attend EBACE (European Business Aviation) or NBAA to meet more operators.
+            </div>
+        </div>
+    </div>
+    
+    <!-- Slide 9: Summary -->
+    <div class="slide slide-title">
+        <h2>📋 Summary</h2>
+        <div class="stats-grid" style="max-width: 900px;">
+            <div class="stat-card">
+                <div class="stat-number">15+</div>
+                <div class="stat-label">Target Companies</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">4</div>
+                <div class="stat-label">Priority Targets</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">#1</div>
+                <div class="stat-label">Falcon Aviation</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">$$$</div>
+                <div class="stat-label">High-Value Market</div>
+            </div>
+        </div>
+        <p style="margin-top: 60px; color: #888; font-size: 1.2rem;">Private aviation clients are ideal crypto adopters:<br>High-net-worth, international, value privacy and speed.</p>
+        <p style="margin-top: 40px; color: #666;">XBO Business Development | January 2026</p>
+    </div>
+    
+    <div class="footer">
+        Generated by Mikka 2.0 ✨ | January 26, 2026
+    </div>
+</body>
+</html>

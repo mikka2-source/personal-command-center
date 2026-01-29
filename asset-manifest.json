@@ -1,0 +1,11 @@
+{
+  "files": {
+    "main.css": "/personal-command-center/static/css/main.8f759473.css",
+    "main.js": "/personal-command-center/static/js/main.eb92add8.js",
+    "index.html": "/personal-command-center/index.html"
+  },
+  "entrypoints": [
+    "static/css/main.8f759473.css",
+    "static/js/main.eb92add8.js"
+  ]
+}
