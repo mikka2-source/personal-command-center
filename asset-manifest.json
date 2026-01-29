@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/personal-command-center/static/css/main.f41762ca.css",
-    "main.js": "/personal-command-center/static/js/main.72852435.js",
+    "main.js": "/personal-command-center/static/js/main.7e60b400.js",
     "index.html": "/personal-command-center/index.html",
     "main.f41762ca.css.map": "/personal-command-center/static/css/main.f41762ca.css.map",
-    "main.72852435.js.map": "/personal-command-center/static/js/main.72852435.js.map"
+    "main.7e60b400.js.map": "/personal-command-center/static/js/main.7e60b400.js.map"
   },
   "entrypoints": [
     "static/css/main.f41762ca.css",
-    "static/js/main.72852435.js"
+    "static/js/main.7e60b400.js"
   ]
 }
