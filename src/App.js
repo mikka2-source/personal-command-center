@@ -4,6 +4,7 @@ import CommandMode from './modes/CommandMode';
 import TransparencyMode from './modes/TransparencyMode';
 import WorkbenchMode from './modes/WorkbenchMode';
 import HorizonMode from './modes/HorizonMode';
+import CalendarMode from './modes/CalendarMode';
 import PAInbox from './components/PAInbox';
 import DayClose from './components/DayClose';
 import GoldenDemo from './pages/GoldenDemo';
@@ -17,6 +18,7 @@ const MODES = {
   transparency: { label: 'Brain', icon: '🧠' },
   workbench: { label: 'Workbench', icon: '🔧' },
   horizon: { label: 'Horizon', icon: '🔭' },
+  calendar: { label: 'Calendar', icon: '📅' },
   'pa-inbox': { label: 'PA Inbox', icon: '📥' },
   // Dev-only modes
   ...(isDev && { 'golden-demo': { label: 'Golden', icon: '✨' } }),
@@ -87,6 +89,8 @@ function App() {
         return <WorkbenchMode />;
       case 'horizon':
         return <HorizonMode />;
+      case 'calendar':
+        return <CalendarMode />;
       case 'pa-inbox':
         return <PAInbox />;
       case 'golden-demo':
