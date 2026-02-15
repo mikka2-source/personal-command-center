@@ -32,6 +32,19 @@ const LABELS = [
   { value: 'waiting', label: 'Waiting', color: '#64748b' }
 ];
 
+const TIME_ESTIMATES = [
+  { value: 30, label: '30 min' },
+  { value: 60, label: '1 hour' },
+  { value: 90, label: '1.5 hours' },
+  { value: 120, label: '2 hours' }
+];
+
+const URGENCY_LEVELS = [
+  { value: 'now', label: 'This Week', icon: '🔴', color: '#ef4444' },
+  { value: 'soon', label: 'This Month', icon: '🟡', color: '#f59e0b' },
+  { value: 'later', label: 'Someday', icon: '🟢', color: '#22c55e' }
+];
+
 function TaskCard({ task, onClose, onUpdate }) {
   const [editedTask, setEditedTask] = useState({ ...task });
   const [originalTask] = useState({ ...task });
@@ -99,6 +112,8 @@ function TaskCard({ task, onClose, onUpdate }) {
           archived: editedTask.archived,
           assignee: editedTask.assignee,
           family_override: hasFamilyOverride(),
+          estimated_minutes: editedTask.estimated_minutes || 30,
+          lane: editedTask.lane || 'later',
           updated_at: new Date().toISOString()
         })
         .eq('id', task.id);
@@ -192,6 +207,38 @@ function TaskCard({ task, onClose, onUpdate }) {
                 onClick={() => handleFieldChange('energy_level', level.value)}
               >
                 <span className="task-card-energy-icon">{level.icon}</span>
+                <span>{level.label}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Time Estimate */}
+        <div className="task-card-field">
+          <label>⏱️ Time Estimate</label>
+          <select
+            className="task-card-select"
+            value={editedTask.estimated_minutes || 30}
+            onChange={e => handleFieldChange('estimated_minutes', parseInt(e.target.value))}
+          >
+            {TIME_ESTIMATES.map(time => (
+              <option key={time.value} value={time.value}>{time.label}</option>
+            ))}
+          </select>
+        </div>
+
+        {/* Urgency */}
+        <div className="task-card-field">
+          <label>🚨 Urgency</label>
+          <div className="task-card-urgency">
+            {URGENCY_LEVELS.map(level => (
+              <button
+                key={level.value}
+                className={`task-card-urgency-btn ${(editedTask.lane || 'later') === level.value ? 'active' : ''}`}
+                style={{ '--urgency-color': level.color }}
+                onClick={() => handleFieldChange('lane', level.value)}
+              >
+                <span>{level.icon}</span>
                 <span>{level.label}</span>
               </button>
             ))}
